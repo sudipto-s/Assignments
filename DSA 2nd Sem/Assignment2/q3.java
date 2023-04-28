@@ -16,16 +16,11 @@ class q3 {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < s.length; i++) {
             s[i] = new q3();
-            // System.out.println("Enter name, roll number & marks:");
-            // s[i].name = sc.next();
-            // s[i].roll = sc.nextInt();
-            // s[i].marks = sc.nextDouble();
-        } sc.close();
-        s[0].getData(0125, "Abc", 85.5);
-        s[1].getData(8974, "shv", 87);
-        s[2].getData(0501, "jjad", 54.5);
-        s[3].getData(0547, "nsdj", 45);
-        s[4].getData(0247, "cvhd", 59.5); 
+            System.out.println("Enter name, roll number & marks:");
+            s[i].name = sc.next();
+            s[i].roll = sc.nextInt();
+            s[i].marks = sc.nextDouble();
+        } sc.close(); 
         System.out.println("Name\t"+"Roll\t"+"Marks");
         for (int i = 0; i < s.length; i++)
             s[i].show();
