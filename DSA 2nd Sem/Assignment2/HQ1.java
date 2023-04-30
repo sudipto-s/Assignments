@@ -5,7 +5,7 @@ class Commission {
         this.sales = sales;
     }
     String getComm(double sale) {
-        if (sale > 0 && sale < 100)
+        if (sale >= 0 && sale < 100)
             return "Rs "+sale * 0.02;
         else if (sale >= 100 && sale < 500)
             return "Rs "+sale * 0.03;
