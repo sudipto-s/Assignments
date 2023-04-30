@@ -12,12 +12,13 @@ class Person implements DetailInfo {
         System.out.println("Name: " + name);
     }
     public int count() {
-        return name.length();
+        maxcount = name.length();
+        return maxcount;
     }
 }
 public class q8 {
     public static void main(String[] args) {
-        Person p = new Person("Ansuman");
+        Person p = new Person("Sudipto");
         p.display();
         System.out.println("Name length: " + p.count());
     }
