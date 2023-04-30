@@ -7,7 +7,7 @@ interface HotelService {
     double fee = 24;
     int roomNumber = 1202;
 }
-class RoomServiceMeal implements RestaurantMeal, HotelService {
+public class RoomServiceMeal implements RestaurantMeal, HotelService {
     void display() {
         System.out.println("A '"+name+"' costing Rs. "+price+" is a '"+serviceName+"' provided to room "+roomNumber+" for Rs "+fee+" fee");
         System.out.println("The total fee to be paid is Rs. "+(price+fee));
