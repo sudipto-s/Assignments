@@ -14,13 +14,14 @@ class q4 {
             tot_price += pr[i].price;
         return tot_price;
     }
+public class q4 {
     public static void main(String[] args) {
-        q4[] p =  new q4[5];
-        p[0] = new q4("Screw", 879);
-        p[1] = new q4("Bolt", 258.1);
-        p[2] = new q4("Spanner", 156);
-        p[3] = new q4("Wire", 2500.1);
-        p[4] = new q4("Pipe", 916.6);
+        Product[] p =  new Product[5];
+        p[0] = new Product("Screw", 879);
+        p[1] = new Product("Bolt", 258.1);
+        p[2] = new Product("Spanner", 156);
+        p[3] = new Product("Wire", 2500.1);
+        p[4] = new Product("Pipe", 916.6);
         for (int i = 0; i < p.length; i++)
             p[i].display();
         System.out.println(totalAmount(p));
