@@ -7,7 +7,7 @@ class Complex {
     void display() {
        System.out.println(real+" i"+imag);
     }
-    public static Complex add(q2 n1, q2 n2) {
+    public static Complex add(Complex n1, Complex n2) {
         Complex r = new Complex();
         r.real = n1.real + n2.real;
         r.imag = n1.imag + n2.imag;
