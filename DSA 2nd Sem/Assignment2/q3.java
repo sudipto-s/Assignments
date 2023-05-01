@@ -1,5 +1,5 @@
 import java.util.*;
-class q3 {
+class Student {
     String name;
     int roll;
     double marks;
@@ -11,11 +11,12 @@ class q3 {
     void show() {
         System.out.println(name+"\t"+roll+"\t"+marks);
     }
+public class q3 {
     public static void main(String[] args) {
-        q3[] s = new q3[5];
+        Student[] s = new Student[5];
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < s.length; i++) {
-            s[i] = new q3();
+            s[i] = new Student();
             System.out.println("Enter name, roll number & marks:");
             s[i].name = sc.next();
             s[i].roll = sc.nextInt();
