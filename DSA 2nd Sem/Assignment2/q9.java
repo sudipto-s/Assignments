@@ -29,7 +29,7 @@ public class q9 {
         for (int i = 0; i < s.length; i++) {
             System.out.println("Enter details:");
             s[i] = new Exam();
-            s[i].inputS(sc.next(), sc.nextInt(), sc.next());
+            s[i].inputS(sc.next(), sc.next(), sc.nextInt());
             s[i].inputM(sc.nextDouble(), sc.nextDouble(), sc.nextDouble());
         } sc.close();
         System.out.println("Name\t"+"Roll\t"+"Branch\t"+"M1\t"+"M2\t"+"M3");
