@@ -1,4 +1,4 @@
-class q4 {
+class Product {
     String pid;
     double price;
     static double tot_price;
