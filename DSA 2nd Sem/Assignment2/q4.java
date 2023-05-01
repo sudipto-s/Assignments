@@ -2,14 +2,14 @@ class Product {
     String pid;
     double price;
     static double tot_price;
-    q4(String pid, double price) {
+    Product(String pid, double price) {
        this.pid = pid;
        this.price = price;
     }
     void display() {
         System.out.println(pid+"\tPrice: "+price);
     }
-    static double totalAmount(q4[] pr) {
+    static double totalAmount(Product[] pr) {
         for (int i = 0; i < pr.length; i++)
             tot_price += pr[i].price;
         return tot_price;
