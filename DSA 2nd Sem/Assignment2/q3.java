@@ -11,6 +11,7 @@ class Student {
     void show() {
         System.out.println(name+"\t"+roll+"\t"+marks);
     }
+}
 public class q3 {
     public static void main(String[] args) {
         Student[] s = new Student[5];
