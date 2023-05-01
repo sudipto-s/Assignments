@@ -14,6 +14,7 @@ class Product {
             tot_price += pr[i].price;
         return tot_price;
     }
+}
 public class q4 {
     public static void main(String[] args) {
         Product[] p =  new Product[5];
