@@ -2,11 +2,6 @@ class Phone {
     int area_code;
     int exchange;
     int number;
-    Phone() {
-        area_code = 0;
-        exchange = 0;
-        number = 0;
-    }
     void input(int a, int b, int c) {
         area_code = a;
         exchange = b;
