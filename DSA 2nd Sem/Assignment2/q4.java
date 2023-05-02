@@ -23,6 +23,6 @@ class q4 {
         p[4] = new q4("Pipe", 916.6);
         for (int i = 0; i < p.length; i++)
             p[i].display();
-        System.out.println(totalAmount(p));
+        System.out.println("Total amount payable: "+ totalAmount(p));
     }
 }
