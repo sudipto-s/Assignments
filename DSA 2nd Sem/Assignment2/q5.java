@@ -1,8 +1,8 @@
 class Deposit {
-    private long principle;
-    private int time;
-    private double rate;
-    private double t_amt;
+    long principle;
+    int time;
+    double rate;
+    double t_amt;
     Deposit() { }
     Deposit(long principle, int time, double rate) {
         this.principle = principle;
