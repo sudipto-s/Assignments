@@ -3,7 +3,7 @@ class Student {
     String name;
     int roll;
     double marks;
-    void getData(int r, String n, double m) {
+    void getData(String n, int r, double m) {
         roll = r;
         name = n;
         marks = m;
