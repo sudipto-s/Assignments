@@ -27,10 +27,8 @@ public class q3 {
         double max = s[0].marks;
         int m_index = 0;
         for (int i = 0; i < s.length; i++)
-            if (max < s[i].marks) {
-                max = s[i].marks;
+            if (max < s[i].marks)
                 m_index = i;
-            }
         System.out.println("Highest marks scored by "+s[m_index].name+" scoring "+s[m_index].marks+" Roll number "+s[m_index].roll);
     }
 }
