@@ -19,9 +19,7 @@ public class q3 {
         for (int i = 0; i < s.length; i++) {
             s[i] = new Student();
             System.out.println("Enter name, roll number & marks:");
-            s[i].name = sc.next();
-            s[i].roll = sc.nextInt();
-            s[i].marks = sc.nextDouble();
+            s[i].getdata(sc.next(), sc.nextInt(), sc.nextDouble());
         } sc.close(); 
         System.out.println("Name\t"+"Roll\t"+"Marks");
         for (int i = 0; i < s.length; i++)
