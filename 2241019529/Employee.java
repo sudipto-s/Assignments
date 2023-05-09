@@ -10,7 +10,7 @@ class Date {
 class Address extends Date {
     String address, country;
     int pin;
-    public Address(String address, String country, int pin, int d, int m, int y) {
+    Address(String address, String country, int pin, int d, int m, int y) {
         super(d, m, y);
         this.address = address;
         this.country = country;
@@ -21,7 +21,7 @@ public class Employee extends Address {
     String name, jobPosition, contactNumeber;
     int empId;
     double salary;
-    public Employee(String name, String jobPosition, int empId, double salary, String contactNumber, String addr, String co, int p, int d, int m, int y) {
+    Employee(String name, String jobPosition, int empId, double salary, String contactNumber, String addr, String co, int p, int d, int m, int y) {
         super(addr, co, p, d, m, y);
         this.name = name;
         this.jobPosition = jobPosition;
