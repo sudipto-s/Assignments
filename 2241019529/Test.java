@@ -2,7 +2,7 @@ import java.util.*;
 public class Test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Employe[] e = new Employe[2];
+        Employee[] e = new Employee[2];
         for (int i = 0; i < e.length; i++) {
             System.out.println("Enter details");
             String name = sc.next();
@@ -18,8 +18,8 @@ public class Test {
             int d = sc.nextInt();
             int m = sc.nextInt();
             int y = sc.nextInt();
-            e[i] = new Employe(name, jobP, cNum, eId, salry, stre, cit, sta, coun, pin, d, m, y);
-            //e[i] = new Employe("Sudipta", "manager", 1258, 59000+i, "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
+            e[i] = new Employee(name, jobP, cNum, eId, salry, stre, cit, sta, coun, pin, d, m, y);
+            //e[i] = new Employee("Sudipta", "manager", 1258, 59000+i, "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
         } sc.close();
         /*for (int i = 0; i < e.length; i++)
             e[i].getDetails(); */
@@ -33,7 +33,7 @@ public class Test {
         for (int i = 0; i < e.length; i++)
             for (int j = 0; j < e.length; j++)
                 if(e[i].salary > e[j].salary) {
-                    Employe temp = e[i];
+                    Employee temp = e[i];
                     e[i] = e[j];
                     e[j] = temp;
                 }
