@@ -18,19 +18,19 @@ class Address extends Date {
     }
 }
 public class Employee extends Address {
-    String name, jobPosition, contactNumeber;
+    String name, jobPosition, contactNumber;
     int empId;
     double salary;
     Employee(String name, String jobPosition, int empId, double salary, String contactNumber, String addr, String co, int p, int d, int m, int y) {
         super(addr, co, p, d, m, y);
         this.name = name;
         this.jobPosition = jobPosition;
-        this.contactNumeber = contactNumber;
+        this.contactNumber = contactNumber;
         this.empId = empId;
         this.salary = salary;
     }
     void getDetails() {
-        System.out.println("Details: "+name+"\t"+jobPosition+"\t"+empId+"\t"+contactNumeber+"\t"+salary);
+        System.out.println("Details: "+name+"\t"+jobPosition+"\t"+empId+"\t"+contactNumber+"\t"+salary);
         System.out.println("Address: "+address+", "+country+" "+pin);
         System.out.println("Hire date: "+day+"-"+month+"-"+year);
         System.out.println();
