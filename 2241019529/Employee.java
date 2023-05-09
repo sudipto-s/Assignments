@@ -19,10 +19,8 @@ class Address extends Date {
 }
 public class Employee extends Address {
     String name, jobPosition, contactNumeber;
-    Address address;
     int empId;
     double salary;
-    Date date;
     public Employee(String name, String jobPosition, int empId, double salary, String contactNumber, String addr, String co, int p, int d, int m, int y) {
         super(addr, co, p, d, m, y);
         this.name = name;
