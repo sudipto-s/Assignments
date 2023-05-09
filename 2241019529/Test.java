@@ -29,7 +29,7 @@ public class Test {
         // foreignEmployeeCount(e);
         // getEmployeeBySalary(e, 40000, 65000);
     }
-    public static void arrangeEmployeeBySalary(Employe[] e) {
+    public static void arrangeEmployeeBySalary(Employee[] e) {
         for (int i = 0; i < e.length; i++)
             for (int j = 0; j < e.length; j++)
                 if(e[i].salary > e[j].salary) {
@@ -38,12 +38,12 @@ public class Test {
                     e[j] = temp;
                 }
     }
-    public static void getEmployeeByJobPosition(Employe[] e, String jp) {
+    public static void getEmployeeByJobPosition(Employee[] e, String jp) {
         for (int i = 0; i < e.length; i++)
             if (e[i].jobPosition.equals(jp.toLowerCase()))
                 e[i].getDetails();
     }
-    public static void getEmployeeByHireDate(Employe[] e, Date d1, Date d2) {
+    public static void getEmployeeByHireDate(Employee[] e, Date d1, Date d2) {
         for (int i = 0; i < e.length; i++) {
             int d = e[i].day, m = e[i].month, y = e[i].year;
             if ((y >= d1.year && y <= d2.year) && (m >= d1.month && m <= d2.month) && (d >= d1.day && d <= d2.day))
@@ -55,7 +55,7 @@ public class Test {
             }
         }
     }
-    public static void foreignEmployeeCount(Employe[] e) {
+    public static void foreignEmployeeCount(Employee[] e) {
         int c = 0;
         for (int i = 0; i < e.length; i++)
             if (e[i].contactNumber.substring(0, 2).equals("91"))
@@ -64,7 +64,7 @@ public class Test {
                 c++;
         System.out.println("Number of Foreign employee(s): "+c);
     }
-    public static void getEmployeeBySalary(Employe[] e, double s1, double s2) {
+    public static void getEmployeeBySalary(Employee[] e, double s1, double s2) {
         for (int i = 0; i < e.length; i++)
             if (e[i].salary >= s1 && e[i].salary <= s2)
                 e[i].getDetails();
