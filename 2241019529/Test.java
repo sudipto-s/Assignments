@@ -58,7 +58,7 @@ public class Test {
     public static void foreignEmployeeCount(Employe[] e) {
         int c = 0;
         for (int i = 0; i < e.length; i++)
-            if (e[i].contactNumeber.substring(0, 2).equals("91"))
+            if (e[i].contactNumber.substring(0, 2).equals("91"))
                 c += 0;
             else
                 c++;
