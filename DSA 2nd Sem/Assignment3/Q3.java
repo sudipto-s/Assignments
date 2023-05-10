@@ -1,7 +1,4 @@
-package DSA_2nd_Sem.Assignment3;
-
 import java.util.*;
-
 class MarksOutOfBoundException extends Exception {
     MarksOutOfBoundException(String n) {
         super(n);
