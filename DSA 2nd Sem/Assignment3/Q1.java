@@ -1,5 +1,3 @@
-package DSA_2nd_Sem.Assignment3;
-
 import java.util.*;
 public class Q1 {
     public static void main(String[] args) {
