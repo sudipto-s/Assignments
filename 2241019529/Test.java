@@ -43,16 +43,11 @@ public class Test {
             if (e[i].jobPosition.equals(jp.toLowerCase()))
                 e[i].getDetails();
     }
-    public static void getEmployeeByHireDate(Employee[] e, Date d1, Date d2) {
+    public static void getEmployeeByHireDate(Employee[] e, Date d1, Date d2) { //to be updated
         for (int i = 0; i < e.length; i++) {
             int d = e[i].day, m = e[i].month, y = e[i].year;
             if ((y >= d1.year && y <= d2.year) && (m >= d1.month && m <= d2.month) && (d >= d1.day && d <= d2.day))
                 e[i].getDetails();
-            else if (d < d1.day || d > d2.day) {
-                if (m < d1.month || m > d2.month)
-                    if (y >= d1.year && y <= d2.year)
-                        e[i].getDetails();
-            }
         }
     }
     public static void foreignEmployeeCount(Employee[] e) {
