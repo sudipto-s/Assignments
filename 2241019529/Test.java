@@ -37,8 +37,6 @@ public class Test {
                     e[i] = e[j];
                     e[j] = temp;
                 }
-        for (int i = 0; i < e.length; i++)
-            e[i].getDetails();
     }
     public static void getEmployeeByJobPosition(Employee[] e, String jp) {
         for (int i = 0; i < e.length; i++)
