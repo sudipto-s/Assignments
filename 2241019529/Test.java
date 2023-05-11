@@ -35,7 +35,7 @@ public class Test {
     public static void foreignEmployeeCount(Employee[] e) {
         int c = 0;
         for (int i = 0; i < e.length; i++)
-            if (e[i].contactNumber.substring(0, 2).equals("91"))
+            if (e[i].country.toUpperCase().equals("INDIA"))
                 c += 0;
             else
                 c++;
