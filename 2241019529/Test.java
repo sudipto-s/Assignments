@@ -22,7 +22,7 @@ public class Test {
     }
     public static void getEmployeeByJobPosition(Employee[] e, String jp) {
         for (int i = 0; i < e.length; i++)
-            if (e[i].jobPosition.equals(jp.toLowerCase()))
+            if (e[i].jobPosition.toLowerCase().equals(jp.toLowerCase()))
                 e[i].getDetails();
     }
     public static void getEmployeeByHireDate(Employee[] e, Date d1, Date d2) { //to be updated
