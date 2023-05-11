@@ -24,7 +24,7 @@ public class Employee extends Address {
     Employee(String name, String jobPosition, int empId, double salary, String contactNumber, String addr, String co, int p, int d, int m, int y) {
         super(addr, co, p, d, m, y);
         this.name = name;
-        this.jobPosition = jobPosition;
+        this.jobPosition = jobPosition.toLowerCase();
         this.contactNumber = contactNumber;
         this.empId = empId;
         this.salary = salary;
