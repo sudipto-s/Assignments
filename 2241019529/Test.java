@@ -10,15 +10,13 @@ public class Test {
             String cNum = sc.next();
             int eId = sc.nextInt();
             double salry = sc.nextDouble();
-            String stre = sc.next();
-            String cit = sc.next();
-            String sta = sc.next();
+            String addr = sc.next();
             String coun = sc.next();
             int pin = sc.nextInt();
             int d = sc.nextInt();
             int m = sc.nextInt();
             int y = sc.nextInt();
-            e[i] = new Employee(name, jobP, cNum, eId, salry, stre, cit, sta, coun, pin, d, m, y);
+            e[i] = new Employee(name, jobP, eId, salry, addr, coun, pin, d, m, y);
             //e[i] = new Employee("Sudipta", "manager", 1258, 59000*(i+1), "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
         } sc.close();
         // arrangeEmployeeBySalary(e);
