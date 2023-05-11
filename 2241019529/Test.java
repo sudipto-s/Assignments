@@ -19,7 +19,7 @@ public class Test {
             int m = sc.nextInt();
             int y = sc.nextInt();
             e[i] = new Employee(name, jobP, cNum, eId, salry, stre, cit, sta, coun, pin, d, m, y);
-            //e[i] = new Employee("Sudipta", "manager", 1258, 59000+i, "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
+            //e[i] = new Employee("Sudipta", "manager", 1258, 59000*(i+1), "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
         } sc.close();
         // arrangeEmployeeBySalary(e);
         // getEmployeeByJobPosition(e, "Manager");
