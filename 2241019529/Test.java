@@ -21,13 +21,13 @@ public class Test {
             e[i] = new Employee(name, jobP, cNum, eId, salry, stre, cit, sta, coun, pin, d, m, y);
             //e[i] = new Employee("Sudipta", "manager", 1258, 59000+i, "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
         } sc.close();
-        /*for (int i = 0; i < e.length; i++)
-            e[i].getDetails(); */
         // arrangeEmployeeBySalary(e);
         // getEmployeeByJobPosition(e, "Manager");
         // getEmployeeByHireDate(e, new Date(5, 5, 2015), new Date(10, 8, 2016));
         // foreignEmployeeCount(e);
         // getEmployeeBySalary(e, 40000, 65000);
+        /*for (int i = 0; i < e.length; i++)
+            e[i].getDetails(); */
     }
     public static void arrangeEmployeeBySalary(Employee[] e) {
         for (int i = 0; i < e.length; i++)
@@ -37,6 +37,8 @@ public class Test {
                     e[i] = e[j];
                     e[j] = temp;
                 }
+        for (int i = 0; i < e.length; i++)
+            e[i].getDetails();
     }
     public static void getEmployeeByJobPosition(Employee[] e, String jp) {
         for (int i = 0; i < e.length; i++)
