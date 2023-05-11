@@ -6,7 +6,7 @@ public class Test {
         for (int i = 0; i < e.length; i++) {
             System.out.println("Enter details");
             String name = sc.next();
-            String jobP = sc.next().toLowerCase();
+            String jobP = sc.next();
             String cNum = sc.next();
             int eId = sc.nextInt();
             double salry = sc.nextDouble();
