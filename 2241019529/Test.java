@@ -1,24 +1,8 @@
 import java.util.*;
 public class Test {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Employee[] e = new Employee[2];
-        for (int i = 0; i < e.length; i++) {
-            System.out.println("Enter details");
-            String name = sc.next();
-            String jobP = sc.next();
-            String cNum = sc.next();
-            int eId = sc.nextInt();
-            double salry = sc.nextDouble();
-            String addr = sc.next();
-            String coun = sc.next();
-            int pin = sc.nextInt();
-            int d = sc.nextInt();
-            int m = sc.nextInt();
-            int y = sc.nextInt();
-            e[i] = new Employee(name, jobP, eId, salry, cNum, addr, coun, pin, d, m, y);
-            //e[i] = new Employee("Sudipta", "manager", 1258, 59000*(i+1), "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
-        } sc.close();
+        input(e);
         // arrangeEmployeeBySalary(e);
         // getEmployeeByJobPosition(e, "Manager");
         // getEmployeeByHireDate(e, new Date(5, 5, 2015), new Date(10, 8, 2016));
@@ -61,6 +45,25 @@ public class Test {
         for (int i = 0; i < e.length; i++)
             if (e[i].salary >= s1 && e[i].salary <= s2)
                 e[i].getDetails();
+    }
+    public static void input(Employee[] e) {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < e.length; i++) {
+            /*System.out.println("Enter details");
+            String name = sc.next();
+            String jobP = sc.next();
+            String cNum = sc.next();
+            int eId = sc.nextInt();
+            double salry = sc.nextDouble();
+            String addr = sc.next();
+            String coun = sc.next();
+            int pin = sc.nextInt();
+            int d = sc.nextInt();
+            int m = sc.nextInt();
+            int y = sc.nextInt();
+            e[i] = new Employee(name, jobP, eId, salry, cNum, addr, coun, pin, d, m, y); */
+            e[i] = new Employee("Sudipta", "Manager", 1258, 59000*(i+1), "921234567890", "ITER, Bhubaneshwar", "India", 851030, 2, 2, 2016);
+        } sc.close();
     }
 }
 
