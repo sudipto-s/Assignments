@@ -4,7 +4,7 @@ public class Test {
         Scanner sc = new Scanner(System.in);
         Employee[] e = new Employee[500];
 
-	// Create an employee database 500 employees
+	// Create an employee database of 500 employees
         for (int i = 0; i < e.length; i++) {
             System.out.print("Enter "+(i+1)+"th employee details:\nName:");
             String name = sc.next();
