@@ -9,5 +9,6 @@ public class Q10 implements Sports {
 
         s.outputS();
         s.outputM();
+        System.out.println("Score1: "+Sports.score1+"\t"+"Score2: "+Sports.score2);
     }
 }
