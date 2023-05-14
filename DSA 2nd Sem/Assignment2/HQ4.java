@@ -42,11 +42,10 @@ class CircleType extends PointType {
 }
 public class HQ4 {
     public static void main(String[] args) {
-        PointType p = new PointType(1, 2);
-        p.getCor();
-        p.setCor(8, 9);
-        System.out.println("("+p.getX()+", "+p.getY()+")");
         CircleType c = new CircleType(1, 2, 5);
+        c.getCor();
+        c.setCor(8, 9);
+        System.out.println("("+c.getX()+", "+c.getY()+")");
         c.getR();
         c.setR(10);
         c.getR();
