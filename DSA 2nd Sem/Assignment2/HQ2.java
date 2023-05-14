@@ -20,8 +20,8 @@ public class HQ2 {
             b[i] = new Book(sc.next(), sc.next(), sc.nextDouble());
         } sc.close();
         System.out.println("Name\t"+"Edition\t"+"Price");
-        for (int i = 0; i < b.length; i++)
-            b[i].display();
+        for (Book i : b)
+            i.display();
         double e = b[0].Bprice;
         int j = 0;
         for(int i = 0; i < b.length; i++)
