@@ -22,5 +22,12 @@ public class HQ2 {
         System.out.println("Name\t"+"Edition\t"+"Price");
         for (int i = 0; i < b.length; i++)
             b[i].display();
+        double e = b[0].Bprice;
+        int j = 0;
+        for(int i = 0; i < b.length; i++)
+            if(e < b[i].Bprice)
+                j = i;
+        System.out.println("Book with maximum price:");
+        System.out.println("Name: "+b[j].Bname+"\nEdition: "+b[j].Bedition+"\nPrice: "+b[j].Bprice);
     }
 }
