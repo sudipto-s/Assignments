@@ -22,7 +22,7 @@ public class q2 {
         c2.set(3,4);
         c1.display();
         c2.display();
-        Complex r = add(c1, c2);
+        Complex r = c1.add(c1, c2);
         r.display();
     }
 }
