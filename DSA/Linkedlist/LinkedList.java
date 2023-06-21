@@ -6,13 +6,13 @@ public class LinkedList {
 	private int length;
 	
 	class Node {
-        int value;
-        Node next;
+            int value;
+            Node next;
 
-        Node(int value) {
-            this.value = value;
+            Node(int value) {
+                this.value = value;
+            }
         }
-    }
 
     public LinkedList(int value) {
         Node newNode = new Node(value);
@@ -176,22 +176,23 @@ public class LinkedList {
 
     public Node mid() {
         Node slow = head;
-	    Node fast = head;
-	    while (fast != null && fast.next != null) {
-		slow = slow.next;
-		fast = fast.next.next;
-	    }
-	    return slow;
+	Node fast = head;
+        while (fast != null && fast.next != null) {
+	    slow = slow.next;
+	    fast = fast.next.next;
+	}
+	return slow;
     }
 
     public Boolean hasLoop() {
         Node slow = head;
-	    Node fast = head;
-	    while (fast != null && fast.next != null) {
-		slow = slow.next;
-		fast = fast.next.next;
-        if (slow == fast) return true;
-	    }
-	    return false;
+	Node fast = head;
+	while (fast != null && fast.next != null) {
+	    slow = slow.next;
+	    fast = fast.next.next;
+            if (slow == fast)
+		    return true;
+	}
+	return false;
     }
 }
