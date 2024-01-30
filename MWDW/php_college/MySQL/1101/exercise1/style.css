@@ -1,0 +1,65 @@
+#main {
+    width: 860px;
+    margin: 40px auto;
+    font-family: Calibri;
+}
+span {
+    color:red;
+}
+h2 {
+    background-color:#FEFFED;
+    text-align:center;
+    border-radius:9px 9px 0 0;
+    margin:-10px -40px;
+    padding:10px;
+}
+hr {
+    background-color: #FEFFED;
+    border-bottom: 1px solid #ccc;
+    margin: 10px -40px;
+    margin-bottom: 30px;
+}
+#login {
+    width: 250px;
+    float: left;
+    border-radius: 9px;
+    font-family: calibri;
+    border: 2px solid #ccc;
+    padding: 10px 40px 25px;
+    margin-top: 50px;
+}
+input[type=text],
+input[type=password] {
+    width: 99%;
+    padding: 9px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+    font-size: 16px;
+    font-family: raleway;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #ffbc00;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+#profile {
+    padding: 30px;
+    font-size: 20px;
+    background-color: #dce6f7;
+}
+#logout {
+    float: right;
+    padding: 50px;
+}
+a {
+    text-decoration: none;
+    color: #6495ed;
+}
+i {
+    color: #6495ed;
+}

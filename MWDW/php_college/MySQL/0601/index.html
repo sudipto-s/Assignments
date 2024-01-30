@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Demo text</p>
+    <button onclick="f1()">Try it!</button>
+    <style>
+        body {
+            background-color: #fff0e5;
+        }
+    </style>
+    <script>
+        let r = Math.floor(Math.random()*5+1);
+        console.log(r)
+        while (false) {
+            let p = prompt("Enter guess between 0 & 6")
+            if(p === r) {
+                document.write("Correct!")
+                break
+            }
+        }
+    </script>
+</body>
+</html>
