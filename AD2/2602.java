@@ -36,27 +36,20 @@ class LL {
     }
     static void addTwoLL(LL h1, LL h2) {
         Node hN1 = h1.head, hN2 = h2.head;
-        if(h1.size > h2.size) {
-            while (hN1.next != null) {
-                hN1.val += hN2.val;
-                hN1 = hN1.next;
-            }
-            h1.print();
+        while (hN1 != null && hN2 != null) {
+            hN1.val += hN2.val;
+            hN1 = hN1.next;
+            hN2 = hN2.next;
         }
-        else if(h1.size < h2.size) {
-            while (hN2.next != null) {
-                hN2.val += hN1.val;
+        if (hN1 == null) {
+            while (hN2 != null) {
+                h1.addTail(hN2.val);
                 hN2 = hN2.next;
             }
-            h2.print();
+        } else if (hN2 == null) {
+            // No need to do anything here, as h1 already contains all its elements.
         }
-        else {
-            while (hN2.next != null) {
-                hN2.val += hN1.val;
-                hN2 = hN2.next;
-            }
-            h1.print();
-        }
+        h1.print();
     }
     void print() {
         for (Node temp = head; temp != null; temp = temp.next)
@@ -72,6 +65,10 @@ class LL {
         l1.addHead(10);
         l1.addTail(60);
         l1.print();
-        addTwoLL(l1, l1);
+        LL l2 = new LL();
+        l2.addHead(50);
+        l2.addHead(40);
+        l2.print();
+        addTwoLL(l1, l2);
     }
 }
