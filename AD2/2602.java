@@ -46,8 +46,6 @@ class LL {
                 h1.addTail(hN2.val);
                 hN2 = hN2.next;
             }
-        } else if (hN2 == null) {
-            // No need to do anything here, as h1 already contains all its elements.
         }
         h1.print();
     }
@@ -68,7 +66,9 @@ class LL {
         LL l2 = new LL();
         l2.addHead(50);
         l2.addHead(40);
+        l2.addTail(60);
         l2.print();
-        addTwoLL(l1, l2);
+        // addTwoLL(l1, l2);
+        addTwoLL(l2, l1);
     }
 }
