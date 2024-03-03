@@ -34,6 +34,21 @@ class LL {
         }
         size++;
     }
+    void deleteKth(int k) {
+        if(k > size || k < 1)
+            return ;
+        Node temp = head;
+        if(k == 1) {
+            head = head.next;
+        } else {
+            while(--k > 1)
+                temp = temp.next;
+            Node u = temp;
+            temp = temp.next;
+            u.next = temp.next;
+        }
+        size--;
+    }
     static void addTwoLL(LL h1, LL h2) {
         Node hN1 = h1.head, hN2 = h2.head;
         while (hN1 != null && hN2 != null) {
@@ -62,6 +77,8 @@ class LL {
         l1.addHead(20);
         l1.addHead(10);
         l1.addTail(60);
+        l1.print();
+        l1.deleteKth(2);
         l1.print();
         LL l2 = new LL();
         l2.addHead(50);
