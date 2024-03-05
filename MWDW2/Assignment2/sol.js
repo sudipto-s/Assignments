@@ -59,39 +59,22 @@
 
 /* Q4 */
 var hk = ['rock', 'paper', 'scissors'],
-comp = hk[Math.floor(Math.random()*3)]
-function askUser() {
-    return prompt('Enter your choice: 0 - Rock, 1 - Paper or 2 - Scissor')
-}
-user = askUser()
-if(user > 2 || user < 0) {
-    user = askUser();
-}
+comp = hk[Math.floor(Math.random()*3)],
+user = prompt('Enter your choice: 0 - Rock, 1 - Paper or 2 - Scissor', Math.floor(Math.random()*3))
 console.log(`You chose ${hk[user]}`)
-console.log(`Computer chose ${comp}\n`)
-// switch (`${hk[user]}${comp}`) {
-//     case 'rock0':
-//     case 'rock1':
-//     case 'rock2':
-//         console.log('It\'s a tie!'); break;
-//     case 'paper0':
-//     case 'paper1':
-//         console.log('You win!'); break;
-//     case 'scissors0':
-//     case 'scissors2':
-//         console.log('You lose!'); break;
-//     default:
-//         console.log('Computer wins!')
-// }
-if(user === 0 && comp === 2)
-    console.log('User wins')
-else if(user === 1 && comp === 0)
-    console.log('User wins')
-else if (user === comp)
-    console.log('Its a tie')
-else if ((user + comp) %  3 === 1)
-    console.log('User loses')
-
+console.log(`Computer chose ${comp}`)
+switch (`${hk[user]}${comp}`) {
+    case 'rockscissors':
+    case 'paperrock':
+    case 'scissorspaper':
+        console.log('You win!'); break;
+    case 'rockrock':
+    case 'paperpaper':
+    case 'scissorsscissors':
+        console.log('It\'s a draw!'); break;
+    default:
+        console.log('Computer wins!')
+}
 
 
 /* Q5 */
