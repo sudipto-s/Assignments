@@ -81,26 +81,26 @@ console.log(type(true))
 
 /* Q9 */
 class University {
-   constructor(name) {
-      this.name = name
-      this.deps = []
-   }
-   addDepartments(...depts) {
-      depts.forEach(e => this.deps.push(e))
-   }
-   removeDepartment(depts) {
-      let found = this.deps.filter(e => e === depts).length
-      if(found) {
-         found = this.deps.indexOf(depts)
-         this.deps.splice(found, 1)
-         console.log(`Department ${depts} removed from ${this.name}`)
-      } else
-         console.log(`Department ${depts} not found in ${this.name}`)
-   }
-   showDepartments() {
-      console.log(`Departments in ${this.name}:`)
-      this.deps.forEach(e => console.log(e))
-   }
+    constructor(name) {
+        this.name = name
+        this.deps = []
+    }
+    addDepartments(...depts) {
+        depts.forEach(e => this.deps.push(e))
+    }
+    removeDepartment(depts) {
+        let found = this.deps.filter(e => e === depts).length
+        if(found) {
+            found = this.deps.indexOf(depts)
+            this.deps.splice(found, 1)
+            console.log(`Department ${depts} removed from ${this.name}`)
+        } else
+            console.log(`Department ${depts} not found in ${this.name}`)
+    }
+    showDepartments() {
+        console.log(`Departments in ${this.name}:`)
+        this.deps.forEach(e => console.log(e))
+    }
 }
 let u1 = new University('SOA')
 u1.addDepartments('CSE', 'CSIT', 'ECE', 'EEE', 'EE', 'ME', 'CE')

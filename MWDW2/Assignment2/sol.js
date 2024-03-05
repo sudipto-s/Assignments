@@ -78,85 +78,84 @@ switch (`${hk[user]}${comp}`) {
 
 
 /* Q5 */
-// let final = [], max = 10
-// for(i = 1; i <= max; i++) {
-//     let temp = []
-//     for(j = 1; j <= max; j++)
-//         temp.push(i * j)
-//     final.push(temp)
-// }
-// console.log(final)
+let final = [], max = 10
+for(i = 1; i <= max; i++) {
+    let temp = []
+    for(j = 1; j <= max; j++)
+        temp.push(i * j)
+    final.push(temp)
+}
+console.log(final)
 
 
 /* Q6 */
-// function rec(n) {
-//     if(n > 10) return
-//     console.log(n)
-//     rec(++n)
-// }
-// rec(-2)
+function rec(n) {
+    if(n > 10) return
+    console.log(n)
+    rec(++n)
+}
+rec(-2)
 
 
 /* Q7 */
-// let f1 = () => {
-//     console.log("one")
-// }
-// let f2 = () => {
-//     console.log("two")
-// }
-// let f3 = () => {
-//     console.log("three")
-//     f1()
-//     f2()
-// }
-// let f4 = () => {
-//     console.log("four")
-//     f3()
-//     setTimeout(f1, 0);
-// }
-// f4()
+let f1 = () => {
+    console.log("one")
+}
+let f2 = () => {
+    console.log("two")
+}
+let f3 = () => {
+    console.log("three")
+    f1()
+    f2()
+}
+let f4 = () => {
+    console.log("four")
+    f3()
+    setTimeout(f1, 0);
+}
+f4()
 
 
 /* Q8 */
-// class EmployeeTracker {
-//     constructor(fName, lName, years) {
-//         this.fName = fName
-//         this.lName = lName
-//         this.years = years
-//     }
-// }
-// const empArr = []
-// let e1 = new EmployeeTracker("f1", "l1", 5)
-// let e2 = new EmployeeTracker("f2", "l2", 8)
-// empArr.push(e1, e2)
-// EmployeeTracker.prototype.details = function() {
-//     console.log(`
-//     Name: ${this.fName} ${this.lName}
-//     Years: ${this.years}`)
-// }
-// empArr.forEach(e => e.details())
+class EmployeeTracker {
+    constructor(fName, lName, years) {
+        this.fName = fName
+        this.lName = lName
+        this.years = years
+    }
+}
+const empArr = []
+let e1 = new EmployeeTracker("f1", "l1", 5)
+let e2 = new EmployeeTracker("f2", "l2", 8)
+empArr.push(e1, e2)
+EmployeeTracker.prototype.details = function() {
+    console.log(`
+    Name: ${this.fName} ${this.lName}
+    Years: ${this.years}`)
+}
+empArr.forEach(e => e.details())
 
 
 /* Q9 */
-// class Menu {
-//     #price1 = 50
-//     #price2 = 60
-//     constructor(n1, n2) {
-//         this.n1 = n1
-//         this.n2 = n2
-//     }
-//     total() {
-//         this.val = this.n1 * this.#price1 + this.n2 * this.#price2
-//         return this.val
-//     }
-//     get totalPrice() {
-//         return this.val
-//     }
-// }
-// let m1 = new Menu(2, 5)
-// console.log(m1.total())
-// console.log(m1.totalPrice)
-
-// let m2 = new Menu(6, 4)
-// console.log(m2.total())
-// console.log(m2.totalPrice)
+class Menu {
+    #price1 = 50
+    #price2 = 60
+    constructor(n1, n2) {
+        this.n1 = n1
+        this.n2 = n2
+    }
+    total() {
+        this.val = this.n1 * this.#price1 + this.n2 * this.#price2
+        return this.val
+    }
+    get totalPrice() {
+        return this.val
+    }
+}
+let m1 = new Menu(2, 5)
+console.log(m1.total())
+console.log(m1.totalPrice)
+let m2 = new Menu(6, 4)
+console.log(m2.total())
+console.log(m2.totalPrice)
