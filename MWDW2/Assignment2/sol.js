@@ -58,6 +58,23 @@ switch (name) {
 
 
 /* Q4 */
+var hk = ['rock', 'paper', 'scissors'],
+comp = hk[Math.floor(Math.random()*3)],
+user = prompt('Enter your choice: 0 - Rock, 1 - Paper or 2 - Scissor', Math.floor(Math.random()*3))
+console.log(`You chose ${hk[user]}`)
+console.log(`Computer chose ${comp}`)
+ switch (`${hk[user]}${comp}`) {
+     case 'rockscissors':
+     case 'paperrock':
+     case 'scissorspaper':
+         console.log('You win!'); break;
+     case 'rockrock':
+     case 'paperpaper':
+     case 'scissorsscissors':
+         console.log('It\'s a draw!'); break;
+     default:
+         console.log('Computer wins!')
+ }
 
 
 /* Q5 */
