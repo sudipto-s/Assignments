@@ -92,7 +92,7 @@ class University {
       let found = this.deps.filter(e => e === depts).length
       if(found) {
          found = this.deps.indexOf(depts)
-         delete this.deps[found]
+         this.deps.splice(found, 1)
          console.log(`Department ${depts} removed from ${this.name}`)
       } else
          console.log(`Department ${depts} not found in ${this.name}`)
