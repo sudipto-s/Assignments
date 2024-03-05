@@ -91,7 +91,7 @@ class University {
    removeDepartment(depts) {
       let found = this.deps.filter(e => e === depts).length
       if(found) {
-         found = this.deps.indexOf(this.deps[found])
+         found = this.deps.indexOf(depts)
          delete this.deps[found]
          console.log(`Department ${depts} removed from ${this.name}`)
       } else
