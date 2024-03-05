@@ -1,60 +1,60 @@
 /* Q1 */
-// const theList = ['Laurence', 'Svekis', true, 35, null, undefined,
-//     {
-//         test: 'one',
-//         score: 55
-//     },
-//     ['one', 'two']
-// ]
-// theList.shift()
-// theList.pop()
-// theList.unshift('FIRST')
-// theList.pop()
-// theList.pop()
-// theList.pop()
-// theList.pop()
-// theList.pop()
-// theList.push('MIDDLE', 'hello world', 'LAST')
-// console.log(theList)
+const theList = ['Laurence', 'Svekis', true, 35, null, undefined,
+    {
+        test: 'one',
+        score: 55
+    },
+    ['one', 'two']
+]
+theList.shift()
+theList.pop()
+theList.unshift('FIRST')
+theList.pop()
+theList.pop()
+theList.pop()
+theList.pop()
+theList.pop()
+theList.push('MIDDLE', 'hello world', 'LAST')
+console.log(theList)
 
 
 /* Q2 */
-// const inventory = []
-// const item1 = {
-//     name: "Koinegsegg",
-//     model: "Revera",
-//     cost: 500,
-//     quantity: 10
-// }
-// const item2 = {
-//     name: "Koinegsegg",
-//     model: "Revera",
-//     cost: 500,
-//     quantity: 10
-// }
-// const item3 = {
-//     name: "Koinegsegg",
-//     model: "Revera",
-//     cost: 500,
-//     quantity: 10
-// }
-// inventory.push(item1, item2, item3);
-// console.log(inventory)
-// console.log(inventory[2].quantity)
+const inventory = []
+const item1 = {
+    name: "Koinegsegg",
+    model: "Revera",
+    cost: 500,
+    quantity: 10
+}
+const item2 = {
+    name: "Koinegsegg",
+    model: "Revera",
+    cost: 500,
+    quantity: 10
+}
+const item3 = {
+    name: "Koinegsegg",
+    model: "Revera",
+    cost: 500,
+    quantity: 10
+}
+inventory.push(item1, item2, item3);
+console.log(inventory)
+console.log(inventory[2].quantity)
 
 
 /* Q3 */
-// const name = prompt("Enter name")
-// switch (name) {
-//     case "name1":
-//     case "name2":
-//     case "name3":
-//     case "name4":
-//         console.log("Friend")
-//         break;
-//     default:
-//         console.log("Not friend")
-// }
+const name = prompt("Enter name")
+switch (name) {
+    case "name1":
+    case "name2":
+    case "name3":
+    case "name4":
+        console.log("Friend")
+        break;
+    default:
+        console.log("Not friend")
+}
 
 
 /* Q4 */
