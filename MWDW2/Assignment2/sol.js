@@ -139,23 +139,23 @@ empArr.forEach(e => e.details())
 
 /* Q9 */
 class Menu {
-    #price1 = 50
-    #price2 = 60
+    #item1Q
+    #item2Q
     constructor(n1, n2) {
-        this.n1 = n1
-        this.n2 = n2
+        this.#item1Q = n1
+        this.#item2Q = n2
     }
-    total() {
-        this.val = this.n1 * this.#price1 + this.n2 * this.#price2
-        return this.val
+    total(item1P, item2P) {
+        this.total = item1P * this.#item1Q + item2P * this.#item2Q
+        return this.total
     }
     get totalPrice() {
-        return this.val
+        return this.total
     }
 }
 let m1 = new Menu(2, 5)
-console.log(m1.total())
+console.log(m1.total(50, 80))
 console.log(m1.totalPrice)
 let m2 = new Menu(6, 4)
-console.log(m2.total())
+console.log(m2.total(20, 40))
 console.log(m2.totalPrice)
