@@ -28,14 +28,14 @@ const item1 = {
 }
 const item2 = {
     name: "Koinegsegg",
-    model: "Revera",
-    cost: 500,
+    model: "Agera R",
+    cost: 600,
     quantity: 10
 }
 const item3 = {
     name: "Koinegsegg",
-    model: "Revera",
-    cost: 500,
+    model: "Trevita",
+    cost: 700,
     quantity: 10
 }
 inventory.push(item1, item2, item3);
