@@ -1,3 +1,5 @@
+/* LAB 2 - Graph */
+
 import java.util.*;
 
 /* Q1 - Adjacency list representation of graph */
