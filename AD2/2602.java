@@ -1,4 +1,4 @@
-/* LAB 1 - Linked List
+/* Linked List
  * 1. Create a singly linked list.
  * 2. Add nodes at the head of the list.
  * 3. Add nodes at the tail of the list.
