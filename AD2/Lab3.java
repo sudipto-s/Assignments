@@ -54,7 +54,7 @@ public class Lab3 {
     static int powRec(int a, int n) {
         if (n == 0)
             return 1;
-        int res = powIte(a, n / 2);
+        int res = powRec(a, n / 2);
         if (n % 2 == 0)
             return res * res;
         else
