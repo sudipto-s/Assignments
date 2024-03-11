@@ -1,3 +1,5 @@
+/* Lab 2 - Graph */
+
 import java.util.*;
 
 /* Q1 - Adjacency list representation of graph */
@@ -5,7 +7,7 @@ public class Graph {
     int count;
     private LinkedList<LinkedList<Edge>> Adj;
 
-    class Edge {
+    static class Edge {
         private int dest, cost;
         public Edge(int d, int c) {
             dest = d;
@@ -100,7 +102,7 @@ public class Graph {
 } */
 
 
-/* Q4 - Example 12.8 Coount all path DFS */
+/* Q4 - Example 12.8 Count all path DFS */
 /* public static int countAllpathDFS(Graph gph, boolean[] visited, int source, int dest) {
     if(source == dest)
         return 1;
@@ -122,7 +124,7 @@ public static int countAllPaths(Graph gph, int source, int dest) {
 
 
 /* Q5 - Example 12.22 Prim's Algorithm (MST) */
-/* public static int prims(Graph gph) {
+/* public static void prims(Graph gph) {
     int count = gph.count;
     int[] prev = new int[count];
     int[] dist = new int[count];
@@ -161,4 +163,14 @@ public static int countAllPaths(Graph gph, int source, int dest) {
         else
             System.out.println("node id "+i+" prev "+prev[i]+" distance: "+dist[i]);
     }
-} */
+}
+static class EdgeComparator implements Comparator<Edge> {
+    int compare(Edge x, Edge y) {
+        if(x.cost < y.cost)
+            return -1;
+        if(x.cost > y.cost)
+            return 1;
+        return 0;
+    }
+}
+*/
