@@ -165,7 +165,7 @@ public static int countAllPaths(Graph gph, int source, int dest) {
     }
 }
 static class EdgeComparator implements Comparator<Edge> {
-    int compare(Edge x, Edge y) {
+    public int compare(Edge x, Edge y) {
         if(x.cost < y.cost)
             return -1;
         if(x.cost > y.cost)
