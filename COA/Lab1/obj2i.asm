@@ -1,5 +1,5 @@
-; NAME: SUDIPTA SINGHA
-; REDG: 2241019529
+; NAME: 
+; REDG: 
 
 ; i. Swapping a nibble of data1
 MOV [1000H], 32H

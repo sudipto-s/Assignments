@@ -1,5 +1,5 @@
-; NAME: SUDIPTA SINGHA
-; REDG: 2241019529
+; NAME: 
+; REDG: 
 
 ; 8 bit gray code converter
 mov al, 34h

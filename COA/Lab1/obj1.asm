@@ -1,5 +1,5 @@
-; NAME: SUDIPTA SINGHA
-; REGD: 2241019529
+; NAME: 
+; REGD: 
              
 ; 16 bit Addition
 mov ax, 0009h ; or 0ffffh

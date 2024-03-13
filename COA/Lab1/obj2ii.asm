@@ -1,5 +1,5 @@
-; NAME: SUDIPTA SINGHA
-; REDG: 2241019529
+; NAME: 
+; REDG: 
 
 ; ii. Y = (data1 and data2 ) or (data1 xor data2)
 MOV [1000H], 12H
