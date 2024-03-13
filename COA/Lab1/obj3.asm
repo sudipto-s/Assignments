@@ -1,7 +1,7 @@
-;mov ax, 5000
-;mov ds, ax
+; NAME: SUDIPTA SINGHA
+; REDG: 2241019529
 
-; Q3 - 8 bit gray code converter
+; 8 bit gray code converter
 mov al, 34h
 mov bl, al 
 shr al, 01h

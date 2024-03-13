@@ -1,10 +1,6 @@
 ; NAME: SUDIPTA SINGHA
-; REGD NO: 2241019529
+; REGD: 2241019529
              
-; Start of Data Segment             
-;mov ax, 5000h           
-;mov ds, ax
-
 ; 16 bit Addition
 mov ax, 0009h ; or 0ffffh
 mov cx, ax
