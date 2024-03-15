@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation using JS & PHP</title>
+</head>
+<body>
+    <form action='validate.php' method='POST'>
+        Name: <input type='text' id='name' name='name'><br>
+        Username: <input type='text' id='username' name='username'><br>
+        Email: <input id='email' name='email'><br>
+        Password: <input id="password" type='passwor' name='password'><br>
+        <input type='submit'>
+    </form>
+
+    <script>
+        $('form').addEventListener('submit', e => {
+            e.preventDefault()
+            validate(e)
+        })
+        
+        function validate(e) {
+            const name = $('#name'), username = $('#username'), email = $('#email'), password = $('#password')
+            
+            const regUsername = /^[a-zA-Z0-9._]+$/g,  /* REGEX for Username [OK TESTED] */
+            regEmail = /(^[a-zA-Z0-9._-]+\@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$)/g,  /* REGEX for Email */
+            regPassword = /[a-zA-Z0-9._]+@#\w{5,}/g /* REGEX for Password */
+            
+            console.log(regPassword.test(password.value))
+            // if(username.value.match(regUsername) && email.value.match(regEmail) && password.value.match(regPassword))
+            //     alert(1)
+            // else
+            //     e.preventDefault()
+        }
+        
+        function $(v) {
+            return document.querySelector(v)
+        }
+    </script>
+</body>
+</html>
