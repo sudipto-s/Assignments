@@ -23,15 +23,10 @@
         function validate(e) {
             const name = $('#name'), username = $('#username'), email = $('#email'), password = $('#password')
             
-            const regUsername = /^[a-zA-Z0-9._]+$/g,  /* REGEX for Username [OK TESTED] */
+            const regUsername = /^[a-zA-Z0-9._]+$/g,  /* REGEX for Username */
             regEmail = /(^[a-zA-Z0-9._-]+\@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$)/g,  /* REGEX for Email */
-            regPassword = /[a-zA-Z0-9._]+@#\w{5,}/g /* REGEX for Password */
+            regPassword = /^[a-zA-Z0-9.@#]{5,}$/g /* REGEX for Password */
             
-            console.log(regPassword.test(password.value))
-            // if(username.value.match(regUsername) && email.value.match(regEmail) && password.value.match(regPassword))
-            //     alert(1)
-            // else
-            //     e.preventDefault()
         }
         
         function $(v) {
