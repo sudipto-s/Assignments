@@ -23,7 +23,7 @@ public class Lab3 {
         }
     }
 
-    /* Q2i - Linear search iterative - O(n) = 1, S(n) = 1 */
+    /* Q2i - Linear search iterative - T(n) = 1, S(n) = 1 */
     static int linearSearchIte(int[] arr, int n, int x) {
         for (int i = 0; i < n; i++) {
             if (arr[i] == x)
@@ -32,7 +32,7 @@ public class Lab3 {
         return -1;
     }
 
-    /* Q2ii - Linear search recursive - O(n) = n, S(n) = n */
+    /* Q2ii - Linear search recursive - T(n) = n, S(n) = n */
     static int linearSearchRec(int[] arr, int n, int x) {
         if (n <= 0)
             return -1;
@@ -42,7 +42,7 @@ public class Lab3 {
             return linearSearchRec(arr, n - 1, x);
     }
 
-    /* Q3i - Compute a^n iterative - O(n) = n, S(n) = 1 */
+    /* Q3i - Compute a^n iterative - T(n) = n, S(n) = 1 */
     static int powIte(int a, int n) {
         int result = 1;
         for (int i = 1; i <= n; i++)
@@ -50,7 +50,7 @@ public class Lab3 {
         return result;
     }
 
-    /* Q3ii - Compute a^n recursive - O(n) = log n, S(n) = log n */
+    /* Q3ii - Compute a^n recursive - T(n) = log n, S(n) = log n */
     static int powRec(int a, int n) {
         if (n == 0)
             return 1;
