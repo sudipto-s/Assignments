@@ -13,6 +13,7 @@
         Password: <input id="password" type='passwor' name='password'><br>
         <input type='submit'>
     </form>
+    <p id="msg"></p>
 
     <script>
         $('form').addEventListener('submit', e => {
@@ -21,12 +22,26 @@
         })
         
         function validate(e) {
-            const name = $('#name'), username = $('#username'), email = $('#email'), password = $('#password')
+            const name = $('#name'), username = $('#username'), email = $('#email'), password = $('#password'), msg = $('#msg')
             
             const regUsername = /^[a-zA-Z0-9._]+$/g,  /* REGEX for Username */
             regEmail = /(^[a-zA-Z0-9._-]+\@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$)/g,  /* REGEX for Email */
             regPassword = /^[a-zA-Z0-9.@#]{5,}$/g /* REGEX for Password */
             
+            msg.innerText = "JS validation!<br>"
+            if (!name.trim() || !username.trim() || !email.trim() || !password.trim()) {
+                msg.innerText += 'All field are required!<br>';
+                return;
+            }
+            if (!regUsername.test(username)) {
+                msg.innerText += "Invalid username! Should contain only letters, alphanumeric characters, dot and underscores.<br>"
+            }
+            if (!regEmail.test(email)) {
+                msg.innerText += "Invalid email!<br>"
+            }
+            if (!regPassword.test(password)) {
+                msg.innerText += "Invalid password! Should be more than 4 characters & contains at least one number and one special character."
+            }
         }
         
         function $(v) {
