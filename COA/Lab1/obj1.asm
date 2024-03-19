@@ -25,7 +25,7 @@ mov [5006h], dx
 ; Divide
 mov dx, 0000h
 mov ax, cx
-mul bx
+div bx
 mov [5008h], ax
 mov [500Ah], dx
 
