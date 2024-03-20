@@ -1,7 +1,7 @@
 ; NAME: 
 ; REDG: 
 
-; i. Swapping a nibble of data1
+; Obj 2 - i. Swapping a nibble of data1
 MOV [1000H], 32H
 MOV SI, 1000H
 MOV AL, [SI]

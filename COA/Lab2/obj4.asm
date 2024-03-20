@@ -1,9 +1,9 @@
-; NAME: SUDIPTA SINGHA
-; REDG: 2241019529
+; NAME: 
+; REDG: 
 
-; Multiply two 16-bits numbers without MUL instruction
-MOV [1000H], 02H
-MOV [1002H], 02H
+; Obj 4 - Multiply two 16-bits numbers without MUL instruction
+MOV [1000H], 09H
+MOV [1002H], 06H
 MOV SI, 1000H
 MOV BX, [SI]
 INC SI

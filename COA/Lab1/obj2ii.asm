@@ -1,7 +1,7 @@
 ; NAME: 
 ; REDG: 
 
-; ii. Y = (data1 and data2 ) or (data1 xor data2)
+; Obj 2 - ii. Y = (data1 and data2 ) or (data1 xor data2)
 MOV [1000H], 12H
 MOV [1001H], 24H
 MOV SI, 1000H
