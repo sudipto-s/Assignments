@@ -1,0 +1,40 @@
+[{
+    "id" : 1,
+    "name" : "Sudipta Singha",
+    "email" : "sudipto@gmail.com",
+    "age" : 20,
+    "gender" : "male",
+    "occupation" : "Software Engineer"
+},
+{
+    "id" : 2,
+    "name" : "John Doe",
+    "email" : "john@doe.com",
+    "age" : 30,
+    "gender" : "male",
+    "occupation" : "Hardware Engineer"
+},
+{
+    "id" : 3,
+    "name" : "Jane Smith",
+    "email" : "jane@smith.com",
+    "age" : 45,
+    "gender" : "female",
+    "occupation" : "Doctor"
+},
+{
+    "id" : 4,
+    "name" : "Bruce Wayne",
+    "email" : "batman@gothamcity.org",
+    "age" : 35,
+    "gender" : "male",
+    "occupation" : "Unguarded Billionaire Playboy Philanthropist"
+},
+{
+    "id" : 5,
+    "name" : "Harry Potter",
+    "email" : "harry.potter@wizardingworld.org",
+    "age" : 17,
+    "gender" : "male",
+    "occupation" : "Wizard"
+}]
