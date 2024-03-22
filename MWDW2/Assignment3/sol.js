@@ -1,11 +1,11 @@
-/* Q1
+/* Q1 */
 document.querySelector('button').addEventListener('click', () => {
    var s = document.querySelector('#output'), sText = document.querySelector('#sText').value, rText = document.querySelector('#rText').value
    
    s.innerText = s.innerText.replace(new RegExp(sText, 'gi'), rText)
-}) */
+})
 
-/* Q2 DONE
+/* Q2 */
 document.querySelector('button').addEventListener('click', () => {
     const email = document.querySelector('input').value, output = document.querySelector('#output')
     if (email.match(/(^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/)) {
@@ -15,9 +15,9 @@ document.querySelector('button').addEventListener('click', () => {
         output.innerText = 'Invalid Email!'
         output.style.color = 'red'
     }
-}) */
+})
 
-/* Q3 DONE
+/* Q3 */
 document.querySelector('button').addEventListener('click', () => {
    const txt1 = document.querySelector('textarea')[0], txt2 = document.querySelector('textarea')[1],
    arr = [], reg = /(^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g,
@@ -26,9 +26,9 @@ document.querySelector('button').addEventListener('click', () => {
    res.forEach(e => !arr.includes(e) ? arr.push(e) : 0)
    
    txt2.value = arr.join(' ')
-}) */
+})
 
-/* Q4 DONE
+/* Q4 */
 try {
     const url = "test.json",
     xhttp = new XMLHttpRequest()
@@ -46,9 +46,9 @@ try {
     xhttp.send()
 } catch (err) {
     console.log("Error:", err.message)
-} */
+}
 
-/* Q5 DONE
+/* Q5 */
 document.querySelector("form").addEventListener
 ("submit", e => {
     e.preventDefault()  // Prevents form from submitting
@@ -83,9 +83,9 @@ document.querySelector("form").addEventListener
     } catch (err) {
         console.log("Error:", err.message)
     }
-}) */
+})
 
-/* Q6 DONE
+/* Q6 */
 document.querySelector("form").addEventListener
 ("submit", e => {
     e.preventDefault()  // Prevents form from submitting
@@ -119,9 +119,9 @@ document.querySelector("form").addEventListener
     } catch (err) {
         console.log("Error:", err.message)
     }
-}) */
+})
 
-/* Q7 DONE
+/* Q7 */
 function fetchData() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -143,9 +143,9 @@ function fetchData() {
     xhttp.open("GET", "example.xml", true)
     xhttp.send();
 }
-fetchData() */
+fetchData()
 
-/* Q8 DONE
+/* Q8 */
 function updateXML() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -185,9 +185,9 @@ function updateXML() {
     xhttp.open("GET", "example.xml", true)
     xhttp.send();
 }
-updateXML() */
+updateXML()
 
-/* Q9*/
+/* Q9 incomplete */
 document.querySelector("form").addEventListener
 ("submit", e => {
     e.preventDefault()  //Prevents form from submitting
@@ -199,23 +199,41 @@ document.querySelector("form").addEventListener
                     console.log("Error fetching", this.status, this.statusText)
                     return
                 }
-                const data = JSON.parse(this.responseText)
-                console.log(data)
-                const field = e.same.value,
-                    text = e.text.value
-                const finalD = data.filter(e => e[field] == text)
+                var xmlDoc = this.responseXML
 
-                console.log(finalD)
+                var filter = document.querySelector("select").value,
+                text = e.target.text.value,
+                result = xmlDoc.getElementsByTagName(text),
+                ol = document.querySelector("ol")
+                
+                console.log(result)
+                for (var e of result) {
+                    console.log(e)
+                    var li = document.createElement("li")
+                    li.innerText = e.childNodes[0].nodeValue
+                    ol.append(li)
+                }
+
+                var result = xmlDoc.getatt(text)
+                console.log(result)
+                for (var e of result) {
+                    console.log(e)
+                    var li = document.createElement("li")
+                    li.innerText = e.childNodes[0].nodeValue
+                    ol.append(li)
+                }
+
+                console.log(xmlDoc)
             }
         }
-        xhttp.open("GET", "example.xml", true)
+        xhttp.open("GET", "bookstore.xml", true)
         xhttp.send()
     } catch (err) {
         console.log("Error:", err.message)
     }
 }) 
 
-/* Q10 DONE
+/* Q10 */
 function updateWeather() {
     const inp = document.querySelector('input').value,
     url = `https://api.weatherapi.com/v1/current.json?q=${inp}&key=df1745f8c6cc4466bf545635232304`;
@@ -248,5 +266,5 @@ function updateWeather() {
     } catch (err) {
         console.log("Error:", err.message)
     }
-} */
+}
 
