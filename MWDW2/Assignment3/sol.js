@@ -1,11 +1,11 @@
-/* Q1 COMPLETE
+/* Q1 DONE
 document.querySelector('button').addEventListener('click', () => {
    var s = document.querySelector('#output'), sText = document.querySelector('#sText').value, rText = document.querySelector('#rText').value
    
    s.innerText = s.innerText.replace(new RegExp(sText, 'gi'), rText)
 }) */
 
-/* Q2 COMPLETE
+/* Q2 DONE
 document.querySelector('button').addEventListener('click', () => {
     const email = document.querySelector('input').value, output = document.querySelector('#output')
     if (email.match(/(^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/)) {
@@ -17,7 +17,7 @@ document.querySelector('button').addEventListener('click', () => {
     }
 }) */
 
-/* Q3 COMPLETE
+/* Q3 DONE
 document.querySelector('button').addEventListener('click', () => {
    const txt1 = document.querySelector('textarea')[0], txt2 = document.querySelector('textarea')[1],
    arr = [], reg = /(^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g,
@@ -28,7 +28,7 @@ document.querySelector('button').addEventListener('click', () => {
    txt2.value = arr.join(' ')
 }) */
 
-/* Q4 COMPLETE
+/* Q4 DONE
 try {
     const url = "test.json",
     xhttp = new XMLHttpRequest()
@@ -95,7 +95,7 @@ document.querySelector("form").addEventListener
             if (this.readyState === 4) {
                 if (this.status !== 200) {
                     console.log("Error fetching", this.status, this.statusText)
-                    return false
+                    return
                 }
                 const data = JSON.parse(this.responseText)
                 console.log(data)
@@ -110,7 +110,6 @@ document.querySelector("form").addEventListener
     } catch (err) {
         console.log("Error:", err.message)
     }
-    return false
 }) */
 
 /* Q7
