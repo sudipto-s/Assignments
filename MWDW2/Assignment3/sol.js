@@ -188,7 +188,7 @@ function updateXML() {
 }
 updateXML()
 
-/* Q9 */
+/* Q9 incomplete */
 document.querySelector("form").addEventListener
 ("submit", evnt => {
     evnt.preventDefault() //Prevents form from submitting
