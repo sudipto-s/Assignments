@@ -3,14 +3,9 @@
 MOV AX, 4246H
 MOV BX, 123FH
 
-AND AX, BX
-MOV [1000H], AX ; 0206
-
-ADD AX, BX
-MOV [1002H], AX ; 1445
-
-ROR AX, 02H
-MOV [1004H], AX ; 4511
+AND AX, BX      ; 0206
+ADD AX, BX      ; 1445
+ROR AX, 02H     ; 4511
 
 INC BX          ; 1240
 INC BX          ; 1241

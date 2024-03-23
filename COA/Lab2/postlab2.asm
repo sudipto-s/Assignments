@@ -7,7 +7,6 @@ XOR CX, CX
 L1:
     CMP AX, BX
     JB L2
-    
     SUB AX, BX
     INC CX
     JMP L1
