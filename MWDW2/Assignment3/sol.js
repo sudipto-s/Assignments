@@ -7,7 +7,7 @@ document.querySelector('button').addEventListener('click', () => {
 
 /* Q2 */
 document.querySelector('button').addEventListener('click', () => {
-    const email = document.querySelector('input').value, output = document.querySelector('#output')
+    var email = document.querySelector('input').value, output = document.querySelector('#output')
     if (email.match(/(^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/)) {
         output.innerText = 'Valid Email'
         output.style.color = 'green'
@@ -19,18 +19,18 @@ document.querySelector('button').addEventListener('click', () => {
 
 /* Q3 */
 document.querySelector('button').addEventListener('click', () => {
-   const txt1 = document.querySelector('textarea')[0], txt2 = document.querySelector('textarea')[1],
-   arr = [], reg = /(^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g,
+   var txt = document.querySelectorAll('textarea'),
+   arr = [], reg = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g,
    
-   res = txt1.value.match(reg)
+   res = txt[0].value.match(reg)
    res.forEach(e => !arr.includes(e) ? arr.push(e) : 0)
    
-   txt2.value = arr.join(' ')
+   txt[1].value = arr.join()
 })
 
 /* Q4 */
 try {
-    const url = "test.json",
+    var url = "test.json",
     xhttp = new XMLHttpRequest()
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4) {
@@ -38,7 +38,7 @@ try {
                 console.log("Error fetching", url, this.status)
                 return
             }
-            const data = JSON.parse(this.responseText)
+            var data = JSON.parse(this.responseText)
             console.log(data)
         }
     }
@@ -53,7 +53,7 @@ document.querySelector("form").addEventListener
 ("submit", e => {
     e.preventDefault()  // Prevents form from submitting
     try {
-        const xhttp = new XMLHttpRequest()
+        var xhttp = new XMLHttpRequest()
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4) {
                 if (this.status !== 200) {
@@ -61,10 +61,10 @@ document.querySelector("form").addEventListener
                     return
                 }
     
-                const data = JSON.parse(this.responseText)
+                var data = JSON.parse(this.responseText)
                 document.querySelector("#before").innerText = JSON.stringify(data)
                 
-                const name = e.target.name.value,
+                var name = e.target.name.value,
                     age = e.target.age.value,
                     email = e.target.email.value
                 if (name)
@@ -90,25 +90,25 @@ document.querySelector("form").addEventListener
 ("submit", e => {
     e.preventDefault()  // Prevents form from submitting
     try {
-        const xhttp = new XMLHttpRequest()
+        var xhttp = new XMLHttpRequest()
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4) {
                 if (this.status !== 200) {
                     console.log("Error fetching", this.status, this.statusText)
                     return
                 }
-                const data = JSON.parse(this.responseText)
+                var data = JSON.parse(this.responseText)
                 console.log(data)
 
-                const field = e.target.same.value,
+                var field = e.target.same.value,
                     text = e.target.text.value
-                const finalD = data.filter(e => e[field] == text)
+                var finalD = data.filter(e => e[field] == text)
 
+                var p = document.querySelector("p")
                 if (!finalD.length) {
                     p.innerText = "No data found!"
                     return
                 }
-                const p = document.querySelector("p")
                 p.innerText = ""
                 for (let d of finalD)
                     p.innerHTML += JSON.stringify(d) + "<br>"
@@ -159,7 +159,7 @@ function updateXML() {
             var xmlDoc = this.responseXML;
 
             // Create a new elements
-            const book = xmlDoc.createElement("book"),
+            var book = xmlDoc.createElement("book"),
             title = xmlDoc.createElement("title"),
             author = xmlDoc.createElement("author"),
             year = xmlDoc.createElement("year"),
@@ -193,7 +193,7 @@ document.querySelector("form").addEventListener
 ("submit", evnt => {
     evnt.preventDefault() //Prevents form from submitting
     try {
-        const xhttp = new XMLHttpRequest()
+        var xhttp = new XMLHttpRequest()
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4) {
                 if (this.status !== 200) {
@@ -261,7 +261,7 @@ document.querySelector("form").addEventListener
 
 /* Q10 */
 function updateWeather() {
-    const inp = document.querySelector('input').value,
+    var inp = document.querySelector('input').value,
     url = `https://api.weatherapi.com/v1/current.json?q=${inp}&key=df1745f8c6cc4466bf545635232304`;
     if (!inp.trim()) {
         alert("Enter location to continue!")
@@ -278,7 +278,7 @@ function updateWeather() {
                 var data = JSON.parse(this.response);
                 console.log(data)
     
-                document.querySelector('#location').innerText = `${data.location.name}, ${data.location.country}`
+                document.querySelector('#location').innerText = `${data.location.name}, ${data.location.region} ${data.location.country}`
                 document.querySelector('#temp').innerText = `${data.current.temp_c}°C`
                 document.querySelector('#humid').innerText = `${data.current.humidity}%`
                 document.querySelector('#condition').innerText = `${data.current.condition.text}`
