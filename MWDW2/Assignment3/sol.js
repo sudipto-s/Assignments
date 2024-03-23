@@ -99,6 +99,7 @@ document.querySelector("form").addEventListener
                 }
                 const data = JSON.parse(this.responseText)
                 console.log(data)
+
                 const field = e.target.same.value,
                     text = e.target.text.value
                 const finalD = data.filter(e => e[field] == text)
@@ -189,8 +190,8 @@ updateXML()
 
 /* Q9 incomplete */
 document.querySelector("form").addEventListener
-("submit", e => {
-    e.preventDefault()  //Prevents form from submitting
+("submit", evnt => {
+    evnt.preventDefault() //Prevents form from submitting
     try {
         const xhttp = new XMLHttpRequest()
         xhttp.onreadystatechange = function () {
@@ -201,26 +202,51 @@ document.querySelector("form").addEventListener
                 }
                 var xmlDoc = this.responseXML
 
-                var filter = document.querySelector("select").value,
-                text = e.target.text.value,
-                result = xmlDoc.getElementsByTagName(text),
+                var filter = evnt.target.filter.value,
+                data = evnt.target.data.value,
                 ol = document.querySelector("ol")
+                ol.innerText = ""
                 
-                console.log(result)
-                for (var e of result) {
-                    console.log(e)
-                    var li = document.createElement("li")
-                    li.innerText = e.childNodes[0].nodeValue
-                    ol.append(li)
+                if (!data.trim()) {
+                    ol.innerText = "No result found!"
+                    return
                 }
+                if (filter === "tag") {
+                    var result = xmlDoc.getElementsByTagName(data)
+                    console.log(result)
+                    if (!result.length) {
+                        ol.innerText = "No result found!"
+                        return
+                    }
 
-                var result = xmlDoc.getatt(text)
-                console.log(result)
-                for (var e of result) {
-                    console.log(e)
-                    var li = document.createElement("li")
-                    li.innerText = e.childNodes[0].nodeValue
-                    ol.append(li)
+                    for (var e of result) {
+                        console.log(e)
+                        var li = document.createElement("li")
+                        li.innerText = e.childNodes[0].nodeValue
+                        ol.append(li)
+                    }
+                } else {
+                    var result = xmlDoc.getElementsByTagName("book")
+                    
+                    var found = false
+                    for (var i = 0; i < result.length; i++) {
+                        if (result[i].getAttribute("category") == data) {
+                            var title = result[i].childNodes[1].childNodes[0].nodeValue,
+                            author = result[i].childNodes[3].childNodes[0].nodeValue,
+                            year = result[i].childNodes[5].childNodes[0].nodeValue,
+                            price = result[i].childNodes[7].childNodes[0].nodeValue
+
+                            var li = document.createElement("li")
+                            li.innerText = `Title: ${title}
+                            Author: ${author}
+                            Year: ${year}
+                            Price: ${price}`
+                            ol.append(li)
+                            found = true
+                        }
+                    }
+                    if (!found)
+                        ol.append("No result found!")
                 }
 
                 console.log(xmlDoc)
