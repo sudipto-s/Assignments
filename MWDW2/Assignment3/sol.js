@@ -190,74 +190,53 @@ updateXML()
 
 /* Q9 */
 document.querySelector("form").addEventListener
-("submit", evnt => {
-    evnt.preventDefault() //Prevents form from submitting
-    try {
-        var xhttp = new XMLHttpRequest()
-        xhttp.onreadystatechange = function () {
-            if (this.readyState === 4) {
-                if (this.status !== 200) {
-                    console.log("Error fetching", this.status, this.statusText)
-                    return
-                }
-                var xmlDoc = this.responseXML
+("submit", e => {
+    e.preventDefault() //Prevents form from submitting
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status !== 200) {
+                console.log("Error fetching", this.status, this.statusText)
+                return
+            }
+            var xmlDoc = this.responseXML
 
-                var filter = evnt.target.filter.value,
-                data = evnt.target.data.value,
-                ol = document.querySelector("ol")
-                ol.innerText = ""
-                
-                if (!data.trim()) {
-                    ol.innerText = "No result found!"
-                    return
-                }
-                if (filter === "tag") {
-                    var result = xmlDoc.getElementsByTagName(data)
-                    console.log(result)
-                    if (!result.length) {
-                        ol.innerText = "No result found!"
-                        return
-                    }
+            var aqi = xmlDoc.getElementsByTagName("air_quality")[0],
+            alerts = xmlDoc.getElementsByTagName("alerts")[0],
+            filter = e.target.filter.value,
+            p = document.querySelector("p")
 
-                    for (var e of result) {
-                        console.log(e)
-                        var li = document.createElement("li")
-                        li.innerText = e.childNodes[0].nodeValue
-                        ol.append(li)
-                    }
-                } else {
-                    var result = xmlDoc.getElementsByTagName("book")
-                    
-                    var found = false
-                    for (var i = 0; i < result.length; i++) {
-                        if (result[i].getAttribute("category") == data) {
-                            var title = result[i].childNodes[1].childNodes[0].nodeValue,
-                            author = result[i].childNodes[3].childNodes[0].nodeValue,
-                            year = result[i].childNodes[5].childNodes[0].nodeValue,
-                            price = result[i].childNodes[7].childNodes[0].nodeValue
-
-                            var li = document.createElement("li")
-                            li.innerText = `Title: ${title}
-                            Author: ${author}
-                            Year: ${year}
-                            Price: ${price}`
-                            ol.append(li)
-                            found = true
-                        }
-                    }
-                    if (!found)
-                        ol.append("No result found!")
-                }
-
-                console.log(xmlDoc)
+            if (filter === "current") {
+                p.innerHTML = `<h2>${val(xmlDoc, "name")}, ${val(xmlDoc, "country")}</h2>
+                Temperature: ${val(xmlDoc, "temp_c")}°C<br>
+                Wind: ${val(xmlDoc, "wind_kph")} Km/h<br>
+                Pressure: ${val(xmlDoc, "pressure_mb")} hPa<br>
+                Humidity: ${val(xmlDoc, "humidity")}%`
+            } else if (filter === "aqi") {
+                p.innerHTML = !aqi ? "No result found!" :
+                `<h2>${val(xmlDoc, "name")}, ${val(xmlDoc, "country")}</h2>
+                CO: ${val(xmlDoc, "co")}<br>
+                NO<sub>2</sub>: ${val(xmlDoc, "no2")}<br>
+                O<sub>3</sub>: ${val(xmlDoc, "o3")}<br>
+                SO<sub>2</sub>: ${val(xmlDoc, "so2")}<br>
+                PM<sub>2.5</sub>: ${val(xmlDoc, "pm2_5")}<br>
+                PM<sub>10</sub>: ${val(xmlDoc, "pm10")}<br>
+                EPA Index: ${val(xmlDoc, "us-epa-index")}`
+            } else {
+                p.innerHTML = !alerts ? "No result found!" :
+                `<h2>${val(xmlDoc, "name")}, ${val(xmlDoc, "country")}</h2>
+                ${val(xmlDoc, "event")}`
             }
         }
-        xhttp.open("GET", "bookstore.xml", true)
-        xhttp.send()
-    } catch (err) {
-        console.log("Error:", err.message)
     }
-}) 
+
+    var search = e.target.location.value
+    xhttp.open("GET", `https://api.weatherapi.com/v1/current.xml?q=${search}&key=df1745f8c6cc4466bf545635232304&aqi=yes&alerts=yes`, true)
+    xhttp.send()
+})
+function val(xml, tag) {
+    return xml.getElementsByTagName(tag)[0].childNodes[0].nodeValue
+}
 
 /* Q10 */
 function updateWeather() {
