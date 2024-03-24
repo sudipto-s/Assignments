@@ -200,10 +200,10 @@ document.querySelector("form").addEventListener
                 return
             }
             var xmlDoc = this.responseXML
+            console.log(xmlDoc)
 
             var aqi = xmlDoc.getElementsByTagName("air_quality")[0],
             alerts = xmlDoc.getElementsByTagName("alerts")[0],
-            filter = e.target.filter.value,
             p = document.querySelector("p")
 
             if (filter === "current") {
@@ -230,8 +230,8 @@ document.querySelector("form").addEventListener
         }
     }
 
-    var search = e.target.location.value
-    xhttp.open("GET", `https://api.weatherapi.com/v1/current.xml?q=${search}&key=df1745f8c6cc4466bf545635232304&aqi=yes&alerts=yes`, true)
+    var search = e.target.location.value, filter = e.target.filter.value
+    xhttp.open("GET", `https://api.weatherapi.com/v1/current.xml?q=${search}&key=df1745f8c6cc4466bf545635232304&${filter}=yes`, true)
     xhttp.send()
 })
 function val(xml, tag) {
