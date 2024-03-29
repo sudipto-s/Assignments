@@ -11,7 +11,6 @@
     // Find the node to update based on the car name
     $targetNode = null;
     foreach ($xml->person as $pr) {
-        print_r($pr); echo '<br>';
         if ($pr->id == $id) {
             $targetNode = $pr;
             break;
