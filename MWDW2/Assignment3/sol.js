@@ -1,13 +1,16 @@
 /* Q1 */
 document.querySelector('button').addEventListener('click', () => {
-   var s = document.querySelector('#output'), sText = document.querySelector('#sText').value, rText = document.querySelector('#rText').value
-   
-   s.innerText = s.innerText.replace(new RegExp(sText, 'gi'), rText)
+    var s = document.querySelector('#output'),
+        sText = document.querySelector('#sText').value,
+        rText = document.querySelector('#rText').value
+
+    s.innerText = s.innerText.replace(new RegExp(sText, 'gi'), rText)
 })
 
 /* Q2 */
 document.querySelector('button').addEventListener('click', () => {
-    var email = document.querySelector('input').value, output = document.querySelector('#output')
+    var email = document.querySelector('input').value,
+        output = document.querySelector('#output')
     if (email.match(/(^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/)) {
         output.innerText = 'Valid Email'
         output.style.color = 'green'
@@ -19,107 +22,98 @@ document.querySelector('button').addEventListener('click', () => {
 
 /* Q3 */
 document.querySelector('button').addEventListener('click', () => {
-   var txt = document.querySelectorAll('textarea'),
-   arr = [], reg = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g,
-   
-   res = txt[0].value.match(reg)
-   res.forEach(e => !arr.includes(e) ? arr.push(e) : 0)
-   
-   txt[1].value = arr.join()
+    var txt = document.querySelectorAll('textarea'),
+        arr = [], reg = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g,
+
+        res = txt[0].value.match(reg)
+    res.forEach(e => !arr.includes(e) ? arr.push(e) : 0)
+
+    txt[1].value = arr.join()
 })
 
 /* Q4 */
-try {
-    var url = "test.json",
-    xhttp = new XMLHttpRequest()
-    xhttp.onreadystatechange = function() {
-        if (this.readyState === 4) {
-            if (this.status !== 200) {
-                console.log("Error fetching", url, this.status)
-                return
-            }
-            var data = JSON.parse(this.responseText)
-            console.log(data)
+var url = "test.json",
+xhttp = new XMLHttpRequest()
+xhttp.onreadystatechange = function() {
+    if (this.readyState === 4) {
+        if (this.status !== 200) {
+            console.log("Error fetching", url, this.status)
+            return
         }
+        var data = JSON.parse(this.responseText)
+        console.log(data)
     }
-    xhttp.open("GET", url, true)
-    xhttp.send()
-} catch (err) {
-    console.log("Error:", err.message)
 }
+xhttp.open("GET", url, true)
+xhttp.send()
 
 /* Q5 */
-document.querySelector("form").addEventListener
-("submit", e => {
-    e.preventDefault()  // Prevents form from submitting
-    try {
-        var xhttp = new XMLHttpRequest()
-        xhttp.onreadystatechange = function () {
-            if (this.readyState === 4) {
-                if (this.status !== 200) {
-                    console.log("Error fetching", this.status, this.statusText)
-                    return
-                }
-    
-                var data = JSON.parse(this.responseText)
-                document.querySelector("#before").innerText = JSON.stringify(data)
-                
-                var name = e.target.name.value,
-                    age = e.target.age.value,
-                    email = e.target.email.value
-                if (name)
-                    data.name = name
-                if (age)
-                    data.age = age
-                if (email)
-                    data.email = email
-                if (name || age || email)
-                    alert("Successfully updated!")
-                document.querySelector("#after").innerText = JSON.stringify(data)
-            }
-        }
-        xhttp.open("GET", "test.json", true)
-        xhttp.send()
-    } catch (err) {
-        console.log("Error:", err.message)
+document.querySelector("form").addEventListener("submit", e => {
+    e.preventDefault() // Prevents form from submitting
+
+    var name = e.target.name.value,
+        age = e.target.age.value
+        email = e.target.email.value,
+        gender = e.target.gender.value,
+        occupation = e.target.occupation.value
+
+    var data = {
+        name: name,
+        age: age,
+        email: email,
+        gender: gender,
+        occupation: occupation
     }
+
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status !== 200) {
+                alert(`Error upddating: ${this.status} ${this.statusText}`)
+                console.log("Error updating", this.status, this.statusText)
+                return
+            }
+
+            document.querySelector("#msg").innerText = "Successfully updated"
+        }
+    }
+    xhttp.open("POST", "update.php", true)
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+    xhttp.send(JSON.stringify(data))
 })
 
 /* Q6 */
 document.querySelector("form").addEventListener
 ("submit", e => {
     e.preventDefault()  // Prevents form from submitting
-    try {
-        var xhttp = new XMLHttpRequest()
-        xhttp.onreadystatechange = function () {
-            if (this.readyState === 4) {
-                if (this.status !== 200) {
-                    console.log("Error fetching", this.status, this.statusText)
-                    return
-                }
-                var data = JSON.parse(this.responseText)
-                console.log(data)
 
-                var field = e.target.same.value,
-                    text = e.target.text.value
-                var finalD = data.filter(e => e[field] == text)
-
-                var p = document.querySelector("p")
-                if (!finalD.length) {
-                    p.innerText = "No data found!"
-                    return
-                }
-                p.innerText = ""
-                for (let d of finalD)
-                    p.innerHTML += JSON.stringify(d) + "<br>"
-                console.log(finalD)
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status !== 200) {
+                console.log("Error fetching", this.status, this.statusText)
+                return
             }
+            var data = JSON.parse(this.responseText)
+            console.log(data)
+
+            var field = e.target.same.value,
+                text = e.target.text.value
+            var finalD = data.filter(e => e[field] == text)
+
+            var p = document.querySelector("p")
+            if (!finalD.length) {
+                p.innerText = "No data found!"
+                return
+            }
+            p.innerText = ""
+            for (let d of finalD)
+                p.innerHTML += JSON.stringify(d) + "<br>"
+            console.log(finalD)
         }
-        xhttp.open("GET", "test2.json", true)
-        xhttp.send()
-    } catch (err) {
-        console.log("Error:", err.message)
     }
+    xhttp.open("GET", "users.json", true)
+    xhttp.send()
 })
 
 /* Q7 */
@@ -147,46 +141,30 @@ function fetchData() {
 fetchData()
 
 /* Q8 */
-function updateXML() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 4) {
+document.querySelector('form').addEventListener('submit', e => {
+    e.preventDefault();
+
+    var id = e.target.id.value,
+        name = e.target.name.value,
+        age = e.target.age.value
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
             if (this.status !== 200) {
-                console.log("Error fetching", this.status, this.statusText)
+                alert(`Error upddating: ${this.status} ${this.statusText}`)
+                console.log("Error updating", this.status, this.statusText)
                 return
             }
-            // Parse the XML response
-            var xmlDoc = this.responseXML;
 
-            // Create a new elements
-            var book = xmlDoc.createElement("book"),
-            title = xmlDoc.createElement("title"),
-            author = xmlDoc.createElement("author"),
-            year = xmlDoc.createElement("year"),
-            price = xmlDoc.createElement("price")
-
-            // Set attributes
-            book.setAttribute("category", "cooking")
-            title.setAttribute("lang", "en")
-
-            // Set text contents
-            title.textContent = "Everyday Italian"
-            author.textContent = "Giada De Laurentiis"
-            year.textContent = "2005"
-            price.textContent = "30.00"
-
-            // Append title, author, year & price tags in book & book tag in xmlDoc
-            book.append(title, author, year, price)
-            xmlDoc.documentElement.append(book)
-
-            document.querySelector("p").innerText = "Successfully updated data!"
-            console.log(xmlDoc)
+            document.querySelector('#msg').textContent = 'Data updated successfully.';
         }
     }
-    xhttp.open("GET", "example.xml", true)
-    xhttp.send();
-}
-updateXML()
+
+    xhr.open('POST', 'update_xml.php', true)
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+    xhr.send(`id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}`)
+})
 
 /* Q9 */
 document.querySelector("form").addEventListener
@@ -256,7 +234,7 @@ function updateWeather() {
                 }
                 var data = JSON.parse(this.response);
                 console.log(data)
-    
+
                 document.querySelector('#location').innerText = `${data.location.name}, ${data.location.region} ${data.location.country}`
                 document.querySelector('#temp').innerText = `${data.current.temp_c}°C`
                 document.querySelector('#humid').innerText = `${data.current.humidity}%`
@@ -272,4 +250,3 @@ function updateWeather() {
         console.log("Error:", err.message)
     }
 }
-

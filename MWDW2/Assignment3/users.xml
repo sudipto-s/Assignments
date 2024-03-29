@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <person>
+        <id>1</id>
+        <name>[object HTMLInputElement]</name>
+        <age>20</age>
+    </person>
+    <person>
+        <id>2</id>
+        <name>John Doe</name>
+        <age>30</age>
+    </person>
+    <person>
+        <id>3</id>
+        <name>Jane Smith</name>
+        <age>45</age>
+    </person>
+    <person>
+        <id>4</id>
+        <name>Bruce Wayne</name>
+        <age>35</age>
+    </person>
+    <person>
+        <id>5</id>
+        <name>Harry Potter</name>
+        <age>17</age>
+    </person>
+</users>
