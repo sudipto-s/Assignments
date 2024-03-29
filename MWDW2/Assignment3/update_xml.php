@@ -8,7 +8,7 @@
     $xmlFile = 'users.xml';
     $xml = simplexml_load_file($xmlFile);
 
-    // Find the node to update based on the car name
+    // Find the node to update based on the user ID
     $targetNode = null;
     foreach ($xml->person as $pr) {
         if ($pr->id == $id) {
