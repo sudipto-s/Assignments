@@ -53,16 +53,12 @@ document.querySelector("form").addEventListener("submit", e => {
 
     var name = e.target.name.value,
         age = e.target.age.value
-        email = e.target.email.value,
-        gender = e.target.gender.value,
-        occupation = e.target.occupation.value
+        email = e.target.email.value
 
     var data = {
         name: name,
         age: age,
-        email: email,
-        gender: gender,
-        occupation: occupation
+        email: email
     }
 
     var xhttp = new XMLHttpRequest()

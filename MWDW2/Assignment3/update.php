@@ -11,8 +11,6 @@
             $val['name'] = $data['name'];
             $val['age'] = $data['age'];
             $val['gender'] = $data['gender'];
-            $val['email'] = $data['email'];
-            $val['occupation'] = $data['occupation'];
             break;
         }
     }
