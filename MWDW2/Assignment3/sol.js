@@ -51,11 +51,13 @@ xhttp.send()
 document.querySelector("form").addEventListener("submit", e => {
     e.preventDefault() // Prevents form from submitting
 
-    var name = e.target.name.value,
+    var id = e.target.id.value,
+        name = e.target.name.value,
         age = e.target.age.value
         email = e.target.email.value
 
     var data = {
+        id: id,
         name: name,
         age: age,
         email: email
