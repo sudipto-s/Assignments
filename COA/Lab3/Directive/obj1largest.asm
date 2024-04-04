@@ -4,7 +4,7 @@
 ; Obj 1ii - Finding largest number in an array
 .DATA
     ARR DB 09H, 10H, 0FH, 23H
-    SIZE DB EQN 04H
+    SIZE DB 04H
     RESULT DB 00H
 .CODE
     MAIN PROC
