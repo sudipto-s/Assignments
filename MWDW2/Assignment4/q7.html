@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Q7</title>
+</head>
+<body>
+    <canvas id="c1"></canvas>
+    <canvas id="c2"></canvas>
+    <canvas id="c3"></canvas>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        let cnv1 = document.querySelector('#c1'),
+        ctx1 = cnv1.getContext('2d')
+        let cnv2 = document.querySelector('#c2'),
+        ctx2 = cnv2.getContext('2d')
+        let cnv3 = document.querySelector('#c3'),
+        ctx3 = cnv3.getContext('2d')
+        cnv1.width = cnv2.width = cnv3.width = 300
+        cnv1.height = cnv2.height = cnv3.height = 200
+
+        ctx1.fillStyle = '#008080'
+        ctx1.fillRect(20, 40, 200, 100)
+        ctx2.arc(150, 60, 40, 0, Math.PI*2)
+        ctx2.stroke()
+
+        ctx3.drawImage(cnv1, 0, 0)
+        ctx3.drawImage(cnv2, 0, 0)
+    </script>
+</body>
+</html>

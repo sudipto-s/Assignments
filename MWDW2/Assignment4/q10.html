@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video - Q10</title>
+</head>
+<body>
+    <video controls width="500" height="600">
+        <source src="./Media/v1.mp4" type="video/mp4">
+        Your browser doesn't support <code>audio</code> tag
+    </video>
+    <select>
+        <option value="v1">Video 1</option>
+        <option value="v2">Video 2</option>
+        <option value="v3">Video 3</option>
+        <option value="v4">Video 4</option>
+    </select>
+    <script>
+        let video = document.querySelector('video'),
+        opt = document.querySelector('select'),
+        source = document.querySelector('source')
+        opt.addEventListener('change', e => {
+            source.src = `./Media/${e.target.value}.mp4`
+            video.load()
+            video.play()
+        })
+    </script>
+</body>
+</html>

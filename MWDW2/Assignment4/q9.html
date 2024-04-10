@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio - Q9</title>
+</head>
+<body>
+    <audio controls>
+        <source src="./Media/audio.mp3" type="audio/mpeg">
+        Your browser doesn't support <code>video</code> tag
+    </audio>
+    <p>0:00</p>
+    <script>
+        let audio = document.querySelector('audio')
+        audio.addEventListener('timeupdate', e => {
+            let min = Math.floor(e.target.currentTime / 60),
+            sec = Math.floor(e.target.currentTime % 60)
+            document.querySelector('p').innerText = `${min}:${sec}`
+        })
+    </script>
+</body>
+</html>

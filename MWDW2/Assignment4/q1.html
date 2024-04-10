@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Q1</title>
+</head>
+<body>
+    <canvas></canvas>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        let cnv = document.querySelector('canvas'),
+        ctx = cnv.getContext('2d')
+        console.log(cnv)
+        cnv.width = 400
+        cnv.height = 200
+
+        ctx.fillStyle = '#008080'
+        ctx.fillRect(20, 40, 100, 100)
+        ctx.arc(200, 90, 40, 0, Math.PI*2)
+        ctx.stroke()
+    </script>
+</body>
+</html>

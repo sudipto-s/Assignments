@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Q6</title>
+</head>
+<body>
+    <input type="text"> <button onclick="load()">Add text</button><br><br>
+    <canvas></canvas>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        let cnv = document.querySelector('canvas'),
+        ctx = cnv.getContext('2d')
+        console.log(cnv)
+        cnv.width = 400
+        cnv.height = 200
+
+        function load() {
+            let txt = document.querySelector('input').value
+            ctx.font = '20px Arial'
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle'
+            ctx.fillText(txt, cnv.width/2, cnv.height/2)
+        }
+    </script>
+</body>
+</html>
