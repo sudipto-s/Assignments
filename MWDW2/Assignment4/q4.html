@@ -22,10 +22,13 @@
     <script>
         let cnv = document.querySelector('canvas'),
         ctx = cnv.getContext('2d')
-        console.log(cnv)
         cnv.width = cnv.height = 500
 
-        
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', e => {
+            if (confirm('Confirm clear?'))
+                ctx.clearRect(0, 0, cnv.width, cnv.height)
+        })
     </script>
 </body>
 </html>
