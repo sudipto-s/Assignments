@@ -15,13 +15,111 @@
         }
     </style>
     <script>
-        let cnv = document.querySelector('canvas'),
-        ctx = cnv.getContext('2d')
-        console.log(cnv)
-        cnv.width = 400
-        cnv.height = 200
+        window.onload = function() {
+            const canvas = document.querySelector('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.height = 400
 
-        
+            // Your image path
+            const imagePath = './Media/img.jpg';
+
+            let image = new Image();
+            let pieces;
+
+            image.onload = function() {
+                image.width = canvas.width;
+                image.height = canvas.height;
+
+                // Define number of rows and columns for the puzzle grid
+                const rows = 3;
+                const cols = 3;
+                const pieceWidth = canvas.width / cols;
+                const pieceHeight = canvas.height / rows;
+
+                pieces = [];
+                for (let j = 0; j < rows; j++) {
+                    for (let i = 0; i < cols; i++) {
+                        const piece = {
+                            x: i * pieceWidth,
+                            y: j * pieceHeight,
+                            width: pieceWidth,
+                            height: pieceHeight,
+                            originalX: i * pieceWidth,
+                            originalY: j * pieceHeight,
+                            dragging: false,
+                            offsetX: 0,
+                            offsetY: 0
+                        };
+                        pieces.push(piece);
+                    }
+                }
+
+                draw();
+                setupEventListeners();
+            };
+
+            image.src = imagePath;
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(image, 0, 0);
+
+                for (let piece of pieces) {
+                    ctx.strokeRect(piece.x, piece.y, piece.width, piece.height);
+                    if (piece.dragging) {
+                        ctx.drawImage(image, piece.originalX, piece.originalY, piece.width, piece.height, piece.x, piece.y, piece.width, piece.height);
+                    }
+                }
+            }
+
+            function setupEventListeners() {
+                canvas.addEventListener('mousedown', onMouseDown);
+                canvas.addEventListener('mousemove', onMouseMove);
+                canvas.addEventListener('mouseup', onMouseUp);
+            }
+
+            function getMousePos(event) {
+                const rect = canvas.getBoundingClientRect();
+                return {
+                    x: event.clientX - rect.left,
+                    y: event.clientY - rect.top
+                };
+            }
+
+            function onMouseDown(event) {
+                const mousePos = getMousePos(event);
+                for (let piece of pieces) {
+                    if (mousePos.x >= piece.x && mousePos.x <= piece.x + piece.width &&
+                        mousePos.y >= piece.y && mousePos.y <= piece.y + piece.height) {
+                        piece.dragging = true;
+                        piece.offsetX = mousePos.x - piece.x;
+                        piece.offsetY = mousePos.y - piece.y;
+                        break;
+                    }
+                }
+                draw();
+            }
+
+            function onMouseMove(event) {
+                if (!pieces) return;
+                const mousePos = getMousePos(event);
+                for (let piece of pieces) {
+                    if (piece.dragging) {
+                        piece.x = mousePos.x - piece.offsetX;
+                        piece.y = mousePos.y - piece.offsetY;
+                        break;
+                    }
+                }
+                draw();
+            }
+
+            function onMouseUp(event) {
+                for (let piece of pieces) {
+                    piece.dragging = false;
+                }
+                draw();
+            }
+        }
     </script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-<!-- Incomplete -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +15,41 @@
     <script>
         let cnv = document.querySelector('canvas'),
         ctx = cnv.getContext('2d')
-        console.log(cnv)
-        cnv.width = 400
-        cnv.height = 200
-
+        cnv.width = cnv.height = 400    // Set canvas width & height to 400 px
+        ctx.fillStyle = '#008080'
         
+        let x = Math.random() * cnv.width, y = Math.random() * cnv.height,
+        dx = dy = 4, radius = 15
+        function animate() {
+            requestAnimationFrame(animate)  // It requests the browser to call a user-supplied callback function before the next repaint.
+            ctx.clearRect(0, 0, cnv.width, cnv.height)  // Clear screen before every call
+            
+            // Create the circle
+            ctx.beginPath()
+            ctx.arc(x, y, radius, 0, Math.PI * 2)
+            ctx.fill()
+
+            // Change direction when hit left or right side
+            if (x + radius > cnv.width || x - radius < 0) {
+                dx = -dx
+                changeColor()   // Change color of circle on every hit
+            }
+            // Change direction when hit upper or lower side
+            if (y + radius > cnv.height || y - radius < 0) {
+                dy = -dy
+                changeColor()
+            }
+            // Update position on every call
+            x += dx
+            y += dy
+        }
+        function changeColor() {
+            let r = Math.floor(Math.random() * 255),
+            g = Math.floor(Math.random() * 255),
+            b = Math.floor(Math.random() * 255)
+            ctx.fillStyle = `rgb(${r}, ${g}, ${b})`
+        }
+        animate()
     </script>
 </body>
 </html>
