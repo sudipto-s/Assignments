@@ -6,20 +6,16 @@
     <title>Canvas - Q5</title>
 </head>
 <body>
-    <canvas></canvas>
-    <style>
-        canvas {
-            border: 1px solid #000;
-        }
-    </style>
+    <canvas style="border:1px solid #000"></canvas>
     <script>
         let cnv = document.querySelector('canvas'),
         ctx = cnv.getContext('2d')
-        cnv.width = cnv.height = 400    // Set canvas width & height to 400 px
+        cnv.width = 400
+        cnv.height = 300
         ctx.fillStyle = '#008080'
         
         let x = Math.random() * cnv.width, y = Math.random() * cnv.height,
-        dx = dy = 4, radius = 15
+        dx = dy = 6, radius = 15
         function animate() {
             requestAnimationFrame(animate)  // It requests the browser to call a user-supplied callback function before the next repaint.
             ctx.clearRect(0, 0, cnv.width, cnv.height)  // Clear screen before every call
