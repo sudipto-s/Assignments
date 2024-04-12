@@ -9,52 +9,53 @@
     <div>
         <button>Clear</button>
         <span>Color</span> <input type="color" id="penColor">
-        <input id="penSize" type="range" min="5" max="20" value="10">
+        <input id="penSize" type="range" min="5" max="15" value="7">
     </div><br>
-    <canvas></canvas>
-    <style>
-        canvas {
-            border: 1px solid #000;
-        }
-    </style>
+    <canvas style="border: 1px solid #000;"></canvas>
     <script>
-        window.onload =  init
+        window.onload = init;
 
         let cnv = document.querySelector('canvas'),
-        ctx = cnv.getContext('2d')
-        cnv.width = cnv.height = 400
+            ctx = cnv.getContext('2d');
+        cnv.width = cnv.height = 400;
 
-        let btn = document.querySelector('button')
-        let penSize = document.querySelector('#penSize')
-        let penColor = document.querySelector('#penColor')
+        let clearButton = document.querySelector('button');
+        let penSize = document.querySelector('#penSize');
+        let penColor = document.querySelector('#penColor');
 
-        let pos = {
-            x: 0, y: 0
-        }
+        let pos = { x: 0, y: 0 };
+
         function init() {
-            cnv.addEventListener('click', draw)
-            cnv.addEventListener('mouseover', setPos)
-            cnv.addEventListener('mouseenter', setPos)
+            cnv.addEventListener('mousedown', e => setPos(e));
+            cnv.addEventListener('mouseenter', e => setPos(e));
+            cnv.addEventListener('mousemove', e => draw(e));
+            cnv.addEventListener('mouseup', e => draw(e));
+            clearButton.addEventListener('click', clear);
         }
+
         function draw(e) {
-            // if (e.buttons !== 0) return
-            ctx.beginPath()
-            ctx.moveTo(pos.x, pos.y)
-            setPos(e)
-            ctx.lineTo(pos.x, pos.y)
-            ctx.strokeStyle = penColor.value
-            ctx.lineWidth = penSize.value
-            ctx.lineCap = 'round'
-            ctx.stroke()
+            if (e.buttons === 1) {
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+                setPos(e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.strokeStyle = penColor.value;
+                ctx.lineWidth = penSize.value;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+            }
         }
+
         function setPos(e) {
-            pos.x = e.offsetX
-            pos.y = e.offsetY
+            pos.x = e.offsetX;
+            pos.y = e.offsetY;
         }
-        btn.addEventListener('click', e => {
-            if (confirm('Confirm clear?'))
-                ctx.clearRect(0, 0, cnv.width, cnv.height)
-        })
+
+        function clear() {
+            if (confirm('Confirm clear?')) {
+                ctx.clearRect(0, 0, cnv.width, cnv.height);
+            }
+        }
     </script>
 </body>
 </html>
