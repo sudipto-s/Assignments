@@ -14,8 +14,9 @@
         cnv.height = 300
         ctx.fillStyle = '#008080'
         
-        let x = Math.random() * cnv.width, y = Math.random() * cnv.height,
-        dx = dy = 6, radius = 15
+        let x = Math.random() * cnv.width, y = Math.random() * cnv.height,  // Randomly generate starting point of the ball
+        dx = dy = 7,  // Control the speed of the ball by adjusting this value. dx - x-axis speed, dy - y-axis speed
+        radius = 15   // Radius of the ball
         function animate() {
             requestAnimationFrame(animate)  // It requests the browser to call a user-supplied callback function before the next repaint.
             ctx.clearRect(0, 0, cnv.width, cnv.height)  // Clear screen before every call
