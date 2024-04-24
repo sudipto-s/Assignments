@@ -8,10 +8,9 @@
 <body>
     <canvas style="border:1px solid #000"></canvas>
     <script>
-        let cnv = document.querySelector('canvas'),
+        cnv = document.querySelector('canvas')
         ctx = cnv.getContext('2d')
-        cnv.width = 400
-        cnv.height = 300
+        cnv.width = 400; cnv.height = 300
         ctx.fillStyle = '#008080'
         
         let x = Math.random() * cnv.width, y = Math.random() * cnv.height,  // Randomly generate starting point of the ball

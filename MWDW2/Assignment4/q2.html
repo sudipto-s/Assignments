@@ -6,19 +6,11 @@
     <title>Canvas - Q2</title>
 </head>
 <body>
-    <canvas></canvas>
-    <style>
-        canvas {
-            border: 1px solid #000;
-        }
-    </style>
+    <canvas style="border:1px solid #000;"></canvas>
     <script>
-        let cnv = document.querySelector('canvas'),
+        cnv = document.querySelector('canvas')
         ctx = cnv.getContext('2d')
-        console.log(cnv)
-        cnv.width = 400
-        cnv.height = 200
-
+        cnv.width = 400; cnv.height = 200
         ctx.fillStyle = '#008080'
         ctx.fillRect(5, 5, 390, 190)
         ctx.clearRect(40, 40, 320, 120)
