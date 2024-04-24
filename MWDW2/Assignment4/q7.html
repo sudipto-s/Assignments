@@ -24,8 +24,9 @@
         cnv1.width = cnv2.width = cnv3.width = 300
         cnv1.height = cnv2.height = cnv3.height = 200
 
-        ctx1.strokeRect(50, 50, 200, 100)
-        ctx2.arc(150, 100, 50, 0, Math.PI*2)
+        ctx1.fillStyle = '#008080'
+        ctx1.fillRect(20, 40, 200, 100)
+        ctx2.arc(150, 60, 40, 0, Math.PI*2)
         ctx2.stroke()
 
         ctx3.drawImage(cnv1, 0, 0)
