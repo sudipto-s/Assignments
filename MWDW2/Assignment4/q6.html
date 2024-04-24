@@ -7,16 +7,22 @@
 </head>
 <body>
     <input type="text"> <button onclick="load()">Add text</button><br><br>
-    <canvas style="border:1px solid #000;"></canvas>
+    <canvas></canvas>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
     <script>
-        cnv = document.querySelector('canvas')
+        let cnv = document.querySelector('canvas'),
         ctx = cnv.getContext('2d')
         console.log(cnv)
-        cnv.width = 400; cnv.height = 200
+        cnv.width = 400
+        cnv.height = 200
 
         function load() {
             ctx.clearRect(0, 0, cnv.width, cnv.height)  // Clear canvas before writing again
-            txt = document.querySelector('input').value
+            let txt = document.querySelector('input').value
             ctx.font = '20px Arial'
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle'

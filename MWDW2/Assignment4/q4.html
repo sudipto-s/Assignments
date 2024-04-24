@@ -11,12 +11,12 @@
         <span>Color</span> <input type="color" id="penColor">
         <input id="penSize" type="range" min="5" max="15" value="7">
     </div><br>
-    <canvas style="border:1px solid #000;"></canvas>
+    <canvas style="border: 1px solid #000;"></canvas>
     <script>
         window.onload = init;
 
-        cnv = document.querySelector('canvas')
-        ctx = cnv.getContext('2d');
+        let cnv = document.querySelector('canvas'),
+            ctx = cnv.getContext('2d');
         cnv.width = cnv.height = 400;
 
         let clearButton = document.querySelector('button');
@@ -26,15 +26,14 @@
         let pos = { x: 0, y: 0 };
 
         function init() {
-            cnv.addEventListener('mousedown', setPos);
-            cnv.addEventListener('mouseenter', setPos);
-            cnv.addEventListener('mousemove', draw);
+            cnv.addEventListener('mousedown', e => setPos(e));
+            cnv.addEventListener('mouseenter', e => setPos(e));
+            cnv.addEventListener('mousemove', e => draw(e));
             clearButton.addEventListener('click', clear);
         }
 
         function draw(e) {
             if (e.buttons === 1) {
-                console.log(e)
                 ctx.beginPath();
                 ctx.moveTo(pos.x, pos.y);
                 setPos(e);
@@ -52,8 +51,9 @@
         }
 
         function clear() {
-            if (confirm('Confirm clear?'))
+            if (confirm('Confirm clear?')) {
                 ctx.clearRect(0, 0, cnv.width, cnv.height);
+            }
         }
     </script>
 </body>

@@ -6,11 +6,17 @@
     <title>Canvas Hero - Q3</title>
 </head>
 <body>
-    <canvas style="border:1px solid #000;"></canvas>
+    <canvas></canvas>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
     <script>
-        cnv = document.querySelector('canvas')
+        let cnv = document.querySelector('canvas'),
         ctx = cnv.getContext('2d')
-        cnv.width = cnv.height = 400
+        cnv.width = 400
+        cnv.height = 400
 
         // Round face
         ctx.beginPath()
