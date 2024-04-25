@@ -1,3 +1,5 @@
+/* This file is cloned from https://github.com/cubiczx/html5_puzzle.git */
+
 var size = 3;
 var PUZZLE_HOVER_TINT = '#58a7d3';
 
