@@ -1,3 +1,5 @@
+/* Huffman coding */
+
 import java.util.*; 
 
 class Huffman { 

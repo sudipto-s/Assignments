@@ -7,11 +7,9 @@ public class fractionalKnapsack {
 			int curWt = (int)i.weight;
 			int curVal = (int)i.profit;
 			if (capacity - curWt >= 0) {
-				// This weight can be picked whole
 				capacity = capacity - curWt;
 				totalValue += curVal;
 			} else {
-				// Item cant be picked whole
 				double fraction = ((double)capacity / (double)curWt);
 				totalValue += (curVal * fraction);
 				capacity = (int)(capacity - (curWt * fraction));
