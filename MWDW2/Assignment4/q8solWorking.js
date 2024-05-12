@@ -1,3 +1,5 @@
+/* This is the complete working code for puzzle game */
+
 var size = 3;
 var PUZZLE_HOVER_TINT = '#58a7d3';
 
@@ -23,9 +25,10 @@ function init() {
     _img = new Image();
     _img.addEventListener('load', onImage);
     _img.src = "./Media/puzzle.jpg";
+    _canvas = document.querySelector('canvas');
 }
 
-function onImage(e) {
+function onImage() {
     _pieceWidth = Math.floor(_img.width / size);
     _pieceHeight = Math.floor(_img.height / size);
     _puzzleWidth = _pieceWidth * size;
@@ -35,7 +38,6 @@ function onImage(e) {
 }
 
 function setCanvas() {
-    _canvas = document.querySelector('canvas');
     _stage = _canvas.getContext('2d');
     _canvas.width = _puzzleWidth;
     _canvas.height = _puzzleHeight;
@@ -70,7 +72,7 @@ function buildPieces() {
         }
     }
     document.onmousedown = shufflePuzzle;
-    document.getElementById('canvas').ontouchstart = shufflePuzzle;
+    _canvas.ontouchstart = shufflePuzzle;
 }
 
 function shufflePuzzle() {
@@ -92,7 +94,7 @@ function shufflePuzzle() {
         }
     }
     document.onmousedown = onPuzzleClick;
-    document.getElementById('canvas').ontouchstart = onPuzzleClick;
+    _canvas.ontouchstart = onPuzzleClick;
 }
 
 function onPuzzleClick(e) {
@@ -111,9 +113,9 @@ function onPuzzleClick(e) {
         _stage.drawImage(_img, _currentPiece.sx, _currentPiece.sy, _pieceWidth, _pieceHeight, _mouse.x - (_pieceWidth / 2), _mouse.y - (_pieceHeight / 2), _pieceWidth, _pieceHeight);
         _stage.restore();
         document.onmousemove = updatePuzzle;
-        document.getElementById('canvas').ontouchmove = updatePuzzle;
+        _canvas.ontouchmove = updatePuzzle;
         document.onmouseup = pieceDropped;
-        document.getElementById('canvas').ontouchend = pieceDropped;
+        _canvas.ontouchend = pieceDropped;
     }
 }
 
@@ -173,10 +175,10 @@ function updatePuzzle(e) {
 
 function pieceDropped(e) {
     document.onmousemove = null;
-    document.getElementById('canvas').ontouchmove = null;
+    _canvas.ontouchmove = null;
 
     document.onmouseup = null;
-    document.getElementById('canvas').ontouchend = null;
+    _canvas.ontouchend = null;
     if (_currentDropPiece != null) {
         var tmp = {
             xPos: _currentPiece.xPos,
@@ -210,13 +212,12 @@ function resetPuzzleAndCheckWin() {
 
 function gameOver() {
     document.onmousedown = null;
-    document.getElementById('canvas').ontouchstart = null;
+    _canvas.ontouchstart = null;
     document.onmousemove = null;
-    document.getElementById('canvas').ontouchmove = null;
+    _canvas.ontouchmove = null;
     document.onmouseup = null;
-    document.getElementById('canvas').ontouchend = null;
+    _canvas.ontouchend = null;
     alert('You Win!');
-    // initPuzzle();
 }
 
 function shuffleArray(o) {
