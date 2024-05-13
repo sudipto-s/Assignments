@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        main {
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid;
+        }
+        #logo {
+            width: 100px;
+            margin: auto;
+        }
+        #form {
+            line-height: 3;
+            text-align: center;
+        }
+    </style>
+    <title>Repeating image</title>
+</head>
+<body>
+    <main>
+        <div id="logo">
+            <img src="./soa.png" alt="soa logo">
+        </div>
+        <div id="form">
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Enter name" id="name" required><br>
+                <label for="name">Email:</label>
+                <input type="email" placeholder="Enter email" id="email" required><br>
+                <label for="name">Password:</label>
+                <input type="password" pattern="[a-z]+[A-Z]+[!@#$%^&*/.]+[0-9]+" placeholder="Enter password" id="password" required><br>
+                <label for="branche">Branch:</label>
+                <label for="cse">CSE</label>
+                <input type="radio" name="branch" id="cse">
+                <label for="csit">CSIT</label>
+                <input type="radio" name="branch" id="csit">
+                <label for="ece">ECE</label>
+                <input type="radio" name="branch" id="ece">
+                <label for="eee">EEE</label>
+                <input type="radio" name="branch" id="eee"><br>
+                <label for="year">Year of admission:</label>
+                <select name="year" id="year">
+                    <option value="">-</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(0deg, #4ac1ff, yellow);
+        }
+    </style>
+    <title>Linear gradient</title>
+</head>
+<body>
+    <div></div>
+    <p></p>
+    <script>
+        var box = document.querySelector('div')
+        box.addEventListener('mousemove', e => {
+            const x = e.clientX, y = e.clientY;
+            box.style.background = `linear-gradient(${x}deg, #4ac1ff, yellow)`;
+        })
+    </script>
+</body>
+</html>
