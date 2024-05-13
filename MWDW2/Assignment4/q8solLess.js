@@ -1,4 +1,7 @@
-/* This file is cloned from https://github.com/m11tdev/HTML5-canvas-puzzle.git */
+/* This file is cloned from https://github.com/m11tdev/HTML5-canvas-puzzle.git
+This is not the perfectly working code, it has less lines. (<100)
+Check q8solWorking.js for complete working code.
+*/
 
 var puzzleCanvas = document.getElementById('canvas'),
     c = puzzleCanvas.getContext('2d'),
