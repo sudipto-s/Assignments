@@ -28,16 +28,16 @@
             <img src="./soa.png" alt="soa logo">
         </div>
         <div id="form">
-            <form action="#">
+            <form action="#" method="">
                 <label for="name">Name:</label>
-                <input type="text" placeholder="Enter name" id="name" required><br>
+                <input type="text" name="name" placeholder="Enter name" id="name" required><br>
                 <label for="name">Email:</label>
-                <input type="email" placeholder="Enter email" id="email" required><br>
+                <input type="email" name="email" placeholder="Enter email" id="email" required><br>
                 <label for="name">Password:</label>
-                <input type="password" pattern="[a-z]+[A-Z]+[!@#$%^&*/.]+[0-9]+" placeholder="Enter password" id="password" required><br>
+                <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{4,}" placeholder="Enter password" id="password" required><br>
                 <label for="branche">Branch:</label>
                 <label for="cse">CSE</label>
-                <input type="radio" name="branch" id="cse">
+                <input type="radio" name="branch" id="cse" value="cse">
                 <label for="csit">CSIT</label>
                 <input type="radio" name="branch" id="csit">
                 <label for="ece">ECE</label>
@@ -46,7 +46,6 @@
                 <input type="radio" name="branch" id="eee"><br>
                 <label for="year">Year of admission:</label>
                 <select name="year" id="year">
-                    <option value="">-</option>
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
                 </select><br>
