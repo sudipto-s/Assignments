@@ -49,10 +49,11 @@
     </nav>
     <div id="img"></div>
     <script>
-        document.querySelector('nav').onmousemove = function(e) {
+        var nav = document.querySelector('nav')
+        nav.addEventListener('mousemove', function(e) {
             var x = (e.clientX / innerWidth) * 100
-            e.target.style.background = `linear-gradient(140deg, orange ${x}%, indigo)`
-        }
+            nav.style.background = `linear-gradient(140deg, orange ${x}%, indigo)`
+        })
     </script>
 </body>
 </html>
