@@ -15,7 +15,7 @@
             padding: 10px;
             align-items: center;
             justify-content: space-between;
-            background-image: linear-gradient(to right, orange 10%, indigo 90%);
+            background-image: linear-gradient(140deg, orange, indigo);
         }
         #name {
             font-size: 25px;
@@ -48,5 +48,11 @@
         </div>
     </nav>
     <div id="img"></div>
+    <script>
+        document.querySelector('nav').onmousemove = function(e) {
+            var x = (e.clientX / innerWidth) * 100
+            e.target.style.background = `linear-gradient(140deg, orange ${x}%, indigo)`
+        }
+    </script>
 </body>
 </html>
