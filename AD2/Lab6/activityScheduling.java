@@ -1,3 +1,5 @@
+/* Lab 6 */
+
 /* Activity scheduling problem */
 
 public class activityScheduling {

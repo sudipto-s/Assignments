@@ -1,9 +1,9 @@
-/* Lab 2 - Graph */
+/* Lab 2 - Graph - BFS, DFS, MST */
 
 import java.util.*;
 
 /* Q1 - Adjacency list representation of graph */
-public class Graph {
+class Lab2 {
     int count;
     private LinkedList<LinkedList<Edge>> Adj;
 
@@ -15,7 +15,7 @@ public class Graph {
         }
     }
 
-    Graph(int cnt) {
+    Lab2(int cnt) {
         count = cnt;
         Adj = new LinkedList<LinkedList<Edge>>();
         for (int i = 0; i < cnt; i++)
@@ -51,7 +51,7 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Graph grp = new Graph(4);
+        Lab2 grp = new Lab2(4);
         grp.addDirectedEdge(0, 1, 1);
         grp.addDirectedEdge(0, 2, 1);
         grp.addDirectedEdge(1, 2, 1);

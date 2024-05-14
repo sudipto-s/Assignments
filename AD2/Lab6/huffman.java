@@ -1,3 +1,5 @@
+/* Lab 6 */
+
 /* Huffman coding */
 
 import java.util.*; 

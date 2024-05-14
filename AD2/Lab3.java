@@ -1,4 +1,4 @@
-/* Lab 3 */
+/* Lab 3 - Searching, Sorting & Dijkstra's */
 
 import java.util.*;
 

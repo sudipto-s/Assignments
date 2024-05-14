@@ -1,3 +1,5 @@
+/* Lab 6 */
+
 /* Fractional Knapsack */
 
 public class fractionalKnapsack {

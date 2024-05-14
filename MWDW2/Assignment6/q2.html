@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input> <input> <input> <input>
+    <script>
+        $('input').focus(function() {
+            $(this).css('background', '#ff0')
+        })
+        .blur(function() {
+            $(this).css('background', '#fff')
+        })
+    </script>
+</body>
+</html>

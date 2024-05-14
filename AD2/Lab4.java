@@ -1,4 +1,6 @@
-public class HashTableLP {
+/* Lab 4 - Hash table - Linear Probing */
+
+class HashTableLP {
     private static int EMPTY_VALUE = 0;
     private static int DELETED_VALUE = 1;
     private static int FILLED_VALUE = 2;

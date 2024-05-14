@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script src='./jquery-3.7.1.min.js'></script>
+    <style>
+        canvas {
+            background: #def;
+            border: 1px solid #000;
+        }
+    </style>
+    </head>
+    <body>
+        <canvas width='480' height='320'></canvas>
+        <script>
+            var canvas  = $('canvas')[0]
+            var context = canvas.getContext("2d")
+            var pendown = false
+
+            $('canvas').mousemove(function(event) {
+                var xpos = event.pageX - canvas.offsetLeft
+                var ypos = event.pageY - canvas.offsetTop
+
+                if (event.buttons)
+                    context.lineTo(xpos, ypos)
+                else
+                    context.moveTo(xpos, ypos)
+
+                context.stroke()
+            })
+        </script>
+    </body>
+</html>
