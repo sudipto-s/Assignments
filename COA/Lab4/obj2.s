@@ -1,11 +1,11 @@
 .data
     num1:   .word 14      @ First 32-bit number
     num2:   .word 2       @ Second 32-bit number
-	res_add:	.word 0   @ Variable to store addition
-	res_sub:	.word 0   @ Variable to store addition
-	res_mul:	.word 0   @ Variable to store addition
+    res_add:	.word 0   @ Variable to store addition
+    res_sub:	.word 0   @ Variable to store subtraction
+    res_mul:	.word 0   @ Variable to store multiplication
 
-	.text
+    .text
     .global main
 
 main:
