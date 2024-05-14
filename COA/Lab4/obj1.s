@@ -1,6 +1,8 @@
+@ Obj 1 - Add & subtract two 32-bit numbers
+
 .data
-    num1:   .word 10       @ First 32-bit number
-    num2:   .word 4        @ Second 32-bit number
+    num1:   .word 8       @ First 32-bit number
+    num2:   .word 5        @ Second 32-bit number
 
 	.text
     .global main

@@ -1,11 +1,13 @@
-.data
-    num1:   .word 14      @ First 32-bit number
-    num2:   .word 2       @ Second 32-bit number
-    res_add:	.word 0   @ Variable to store addition
-    res_sub:	.word 0   @ Variable to store subtraction
-    res_mul:	.word 0   @ Variable to store multiplication
+@ Obj 2 - Add, subtract & multiply two 32-bit numbers
 
-    .text
+.data
+    num1:   .word 6      @ First 32-bit number
+    num2:   .word 3       @ Second 32-bit number
+	res_add:	.word 0   @ Variable to store addition
+	res_sub:	.word 0   @ Variable to store addition
+	res_mul:	.word 0   @ Variable to store addition
+
+	.text
     .global main
 
 main:
