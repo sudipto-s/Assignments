@@ -17,11 +17,11 @@ main:
     LDR r1, =num2       @ Load the address of num2 into r1
     LDR r3, [r1]        @ Load the value of num2 into r3
 	
-    ADD r4, r2, r3      @ Add the values of num1 and num2 and store the result in r4
+    AND r4, r2, r3      @ AND the values of num1 and num2 and store the result in r4
 	LDR r1, =res_and
 	STR r4, [r1]
 	
-    ORR r5, r2, r3      @ Subtract the values of num2 from num1 and store the result in r5
+    ORR r5, r2, r3      @ OR the values of num1 and num2 and store the result in r5
 	LDR r1, =res_or
 	STR r5, [r1]
 	
