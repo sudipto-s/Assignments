@@ -1,4 +1,4 @@
-/* Lab 7 */
+/* Lab 6 */
 
 /* Counting inversion */
 
@@ -6,12 +6,10 @@ public class inversion {
     static int countInversions(int[] arr, int n) {
         int count = 0;
         for (int i = 0; i < n - 1; i++) {
-            int sm = 0;
             for (int j = i + 1; j < n; j++) {
                 if (arr[i] > arr[j])
-                    sm++;
+                    count++;
             }
-            count += sm;
         }
         return count;
     }

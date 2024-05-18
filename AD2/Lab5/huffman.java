@@ -1,4 +1,4 @@
-/* Lab 6 */
+/* Lab 5 */
 
 /* Huffman coding */
 
