@@ -22,7 +22,7 @@ fwd1:
 	BNE back
 B .
 .data
-	count: .word 0x07
+	count: .word 0x06
 	array: .word 0x22, 0xd5, 0x11, 0x4a, 0x19, 0x55
 	even: .word 0, 0, 0, 0
 	odd: .word 0, 0, 0, 0
