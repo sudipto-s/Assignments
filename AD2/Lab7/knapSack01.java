@@ -3,11 +3,11 @@
 /* 0/1 Knapsack problem */
 
 public class knapSack01 {
-    static int getMaxValue(ItemValue[] arr, int capacity) {
+    static int getMaxValue(int[] weight, int[] value, int capacity) {
         int totalValue = 0;
-        for (ItemValue i : arr) {
-            int curWt = i.weight;
-            int curVal = i.profit;
+        for (int i = 0; i < weight.length; i++) {
+            int curWt = weight[i];
+            int curVal = value[i];
             if (capacity - curWt >= 0) {
                 capacity -= curWt;
                 totalValue += curVal;
@@ -15,17 +15,12 @@ public class knapSack01 {
         }
         return totalValue;
     }
-    static class ItemValue {
-        int profit, weight;
-        public ItemValue(int val, int wt) {
-            this.weight = wt;
-            this.profit = val;
-        }
-    }
+    
     public static void main(String[] args) {
-        ItemValue[] item = { new ItemValue(300, 2), new ItemValue(190, 2), new ItemValue(180, 2) };
         int capacity = 4;
-        int maxValue = getMaxValue(item, capacity);
+        int[] weight = { 2, 2, 2 };
+        int[] value = { 300, 190, 180};
+        int maxValue = getMaxValue(weight, value, capacity);
         System.out.println(maxValue);
     }
 }
