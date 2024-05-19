@@ -16,7 +16,7 @@ back:
 	STR R6, [R5], #4
 	B fwd1
 fwd:
-	STR R6, [R5], #4
+	STR R6, [R4], #4
 fwd1:
 	SUBS R1, R1, #1
 	BNE back
