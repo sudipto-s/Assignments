@@ -1,7 +1,3 @@
-@ NAME: 
-@ REDG: 
-@ Obj 1 - Perform addition & subtraaction of two 32-bit numbers
-
 .global _start
 _start:
 	MOV R0, #0x40

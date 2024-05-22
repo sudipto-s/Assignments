@@ -1,7 +1,3 @@
-@ NAME: 
-@ REDG: 
-@ Obj 3 - Perform AND, OR, XOR & NOT of two 32-bit numbers
-
 .global _start
 _start:
 	LDR R0, =0X10100000

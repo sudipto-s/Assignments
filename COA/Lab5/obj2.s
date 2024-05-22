@@ -1,7 +1,3 @@
-@ NAME: 
-@ REDG: 
-@ Obj 2 - Even numbers fom an array
-
 .global _start
 _start:
 	LDR R0, =count

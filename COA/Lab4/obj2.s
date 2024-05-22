@@ -1,7 +1,3 @@
-@ NAME: 
-@ REDG: 
-@ Obj 2 - Perform addition, subtraction & multiplication of two 32-bit numbers
-
 .global _start
 _start:
 	LDR R0, =0X10100000

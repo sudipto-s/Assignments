@@ -1,7 +1,3 @@
-@ NAME: 
-@ REDG: 
-@ Obj 1 - Largest number in an array
-
 .global _start
 _start:
 	LDR R0, =count
