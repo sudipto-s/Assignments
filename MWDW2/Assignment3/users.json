@@ -1,8 +1,8 @@
 [{
     "id" : 1,
-    "name" : "Sudipta Singha",
-    "email" : "sudipto@gmail.com",
-    "age" : 20,
+    "name" : "Doe John",
+    "email" : "doe@john.com",
+    "age" : 10,
     "gender" : "male",
     "occupation" : "Software Engineer"
 },
