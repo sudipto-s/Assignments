@@ -8,5 +8,5 @@ _start:
 	SUBS R4, R1, R2
 	STR R4, [R0], #4
 	MUL R5, R1, R2
-	STR R5, [R0], #4
+	STR R5, [R0]
 B .
