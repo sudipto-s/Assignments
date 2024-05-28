@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form align="center">
+        Filter: <select name="filter">
+            <option value="current">Current</option>
+            <option value="aqi">AQI</option>
+            <option value="alerts">Alerts</option>
+        </select><br><br>
+        Enter location: <input type="text" name="location" placeholder="Enter location"><br><br>
+        <input type="submit">
+    </form>
+    <p align="center"></p>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault() //Prevents form from submitting
+            
+            var xhttp = new XMLHttpRequest()
+            xhttp.onload = function () {
+                if (this.status !== 200) {
+                    console.log("Error fetching", this.status, this.statusText)
+                    return
+                }
+                var xmlDoc = this.responseXML
+                console.log(xmlDoc)
+
+                var aqi = xmlDoc.getElementsByTagName("air_quality")[0],
+                alerts = xmlDoc.getElementsByTagName("alerts")[0],
+                p = document.querySelector("p")
+
+                if (filter === "current") {
+                    p.innerHTML = `<h2>${val(xmlDoc, "name")}, ${val(xmlDoc, "country")}</h2>
+                    Temperature: ${val(xmlDoc, "temp_c")}°C<br>
+                    Wind: ${val(xmlDoc, "wind_kph")} Km/h<br>
+                    Pressure: ${val(xmlDoc, "pressure_mb")} hPa<br>
+                    Humidity: ${val(xmlDoc, "humidity")}%`
+                } else if (filter === "aqi") {
+                    p.innerHTML = !aqi ? "No result found!" :
+                    `<h2>${val(xmlDoc, "name")}, ${val(xmlDoc, "country")}</h2>
+                    CO: ${val(xmlDoc, "co")}<br>
+                    NO<sub>2</sub>: ${val(xmlDoc, "no2")}<br>
+                    O<sub>3</sub>: ${val(xmlDoc, "o3")}<br>
+                    SO<sub>2</sub>: ${val(xmlDoc, "so2")}<br>
+                    PM<sub>2.5</sub>: ${val(xmlDoc, "pm2_5")}<br>
+                    PM<sub>10</sub>: ${val(xmlDoc, "pm10")}<br>
+                    EPA Index: ${val(xmlDoc, "us-epa-index")}`
+                } else {
+                    p.innerHTML = !alerts ? "No result found!" :
+                    `<h2>${val(xmlDoc, "name")}, ${val(xmlDoc, "country")}</h2>
+                    ${val(xmlDoc, "event")}`
+                }
+            }
+
+            var search = e.target.location.value, filter = e.target.filter.value
+            xhttp.open("GET", `https://api.weatherapi.com/v1/current.xml?q=${search}&key=df1745f8c6cc4466bf545635232304&${filter}=yes`, true)
+            xhttp.send()
+        })
+        function val(xml, tag) {
+            return xml.getElementsByTagName(tag)[0].childNodes[0].nodeValue
+        }
+    </script>
+</body>
+</html>

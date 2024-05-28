@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        ID: <input type="radio" name="same" value="id" checked>
+        Name: <input type="radio" name="same" value="name">
+        Age: <input type="radio" name="same" value="age">
+        Gender: <input type="radio" name="same" value="gender">
+        Occupation: <input type="radio" name="same" value="occupation">
+        Email: <input type="radio" name="same" value="email"><br><br>
+        Enter data: <input type="text" name="text" value="1"><br><br>
+        <input type="submit">
+    </form>
+    <p></p>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault()  // Prevents form from submitting
+
+            var xhttp = new XMLHttpRequest()
+            xhttp.onload = function () {
+                if (this.status !== 200) {
+                    console.log("Error fetching", this.status, this.statusText)
+                    return
+                }
+                var data = JSON.parse(this.responseText)
+                console.log(data)
+
+                var field = e.target.same.value,
+                    text = e.target.text.value
+                var finalD = data.filter(e => e[field] == text)
+
+                var p = document.querySelector("p")
+                if (!finalD.length) {
+                    p.innerText = "No data found!"
+                    return
+                }
+                p.innerText = ""
+                for (let d of finalD)
+                    p.innerHTML += JSON.stringify(d) + "<br>"
+                console.log(finalD)
+            }
+            xhttp.open("GET", "users.json", true)
+            xhttp.send()
+        })
+    </script>
+</body>
+</html>

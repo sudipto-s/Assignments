@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Filter: <input type="number" name="id" placeholder="Enter ID"><br><br>
+        Name: <input type="text" id="name"><br><br>
+        Age: <input type="number" id="age"><br><br>
+        Email: <input type="email" name="email"><br><br>
+        <input type="submit">
+    </form><br>
+    <p id="msg"></p>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault() // Prevents form from submitting
+
+            var id = e.target.id.value,
+                name = e.target.name.value,
+                age = e.target.age.value
+                email = e.target.email.value
+
+            var data = {
+                id: id,
+                name: name,
+                age: age,
+                email: email
+            }
+
+            var xhttp = new XMLHttpRequest()
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4) {
+                    if (this.status !== 200) {
+                        alert(`Error upddating: ${this.status} ${this.statusText}`)
+                        console.log("Error updating", this.status, this.statusText)
+                        return
+                    }
+
+                    document.querySelector("#msg").innerText = "Successfully updated"
+                }
+            }
+            xhttp.open("POST", "update.php", true)
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+            xhttp.send(JSON.stringify(data))
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='output'>Complete Javascript Course</div>
+    Filter: <input id='sText'><br>
+    Update: <input id='rText'><br>
+    <button>Update</button>
+
+    <script>
+        document.querySelector('button').addEventListener('click', () => {
+            var s = document.querySelector('#output'),
+                sText = document.querySelector('#sText').value,
+                rText = document.querySelector('#rText').value
+
+            s.innerText = s.innerText.replace(new RegExp(sText, 'gi'), rText)
+        })
+    </script>
+</body>
+</html>

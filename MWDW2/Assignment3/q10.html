@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div align='center'>
+        <h1>Weather App</h1>
+        <input placeholder='Enter location'>
+        <button onclick='updateWeather()'>Search</button>
+        <h1 id='location'></h1>
+        Temperature: <span id='temp'></span><br><br>
+        Humidity: <span id='humid'></span><br><br>
+        Weather: <span id='condition'></span><br><br>
+        Wind: <span id='wind'></span><br><br>
+        Pressure: <span id='pressure'></span><br>
+        <img>
+    </div>
+
+    <script>
+        function updateWeather() {
+            var inp = document.querySelector('input').value,
+            url = `https://api.weatherapi.com/v1/current.json?q=${inp}&key=df1745f8c6cc4466bf545635232304`;
+            if (!inp.trim()) {
+                alert("Enter location to continue!")
+                return
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                if (this.status !== 200) {
+                    console.log("Error fetching", url, this.status, this.statusText)
+                    return
+                }
+                var data = JSON.parse(this.response);
+                console.log(data)
+
+                document.querySelector('#location').innerText = `${data.location.name}, ${data.location.region}, ${data.location.country}`
+                document.querySelector('#temp').innerText = `${data.current.temp_c}°C`
+                document.querySelector('#humid').innerText = `${data.current.humidity}%`
+                document.querySelector('#condition').innerText = `${data.current.condition.text}`
+                document.querySelector('#wind').innerText = `${data.current.wind_kph} Kmph / ${data.current.wind_mph} mph (${data.current.wind_degree}° - ${data.current.wind_dir})`
+                document.querySelector('#pressure').innerText = `${data.current.pressure_mb} hPa`
+                document.querySelector('img').src = data.current.condition.icon
+            }
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>

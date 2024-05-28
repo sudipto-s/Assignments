@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        (function() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                if (this.status !== 200) {
+                    console.log("Error fetching", this.status, this.statusText)
+                    return false
+                }
+                // Parse the XML response
+                var xmlDoc = this.responseXML;
+
+                // Extract required data from the XML
+                var data = xmlDoc.getElementsByTagName("data1")[0].childNodes[0].nodeValue;
+                
+                // Display the extracted data on the webpage
+                document.querySelector("p").innerText = data;
+            }
+            xhttp.open("GET", "example.xml", true)
+            xhttp.send();
+        })()
+    </script>
+</body>
+</html>
