@@ -17,6 +17,24 @@ public class lcs {
                 }
             }
         }
+
+        // Construct the LCS string
+        /* Not necessary */
+        StringBuilder lcsString = new StringBuilder();
+        int row = 0, col = 0;
+        while (row < n && col < m) {
+            if (s1.charAt(row) == s2.charAt(col)) {
+                lcsString.append(s1.charAt(row));
+                row++;
+                col++;
+            } else if (dpGrid[row + 1][col] >= dpGrid[row][col + 1]) {
+                row++;
+            } else {
+                col++;
+            }
+        }
+        System.out.println(lcsString);
+        
         return dpGrid[0][0];
     }
     public static void main(String[] args) {
