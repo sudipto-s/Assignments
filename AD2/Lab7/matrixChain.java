@@ -15,7 +15,7 @@ public class matrixChain {
         return min;
     }
     public static void main(String[] args) {
-        int[] arr = { 40, 20, 30, 10, 30 };
+        int[] arr = { 10, 100, 10 };    /* M1:= 10 x 100 | M2:= 100 x 10 */
         System.out.println(matrix(arr, 1, arr.length - 1));
     }
 }
