@@ -3,42 +3,21 @@
 /* Largest common subsequence */
 
 public class lcs {
-    static int lCS(String s1, String s2) {
-        int n = s1.length();
-        int m = s2.length();
-        int[][] dpGrid = new int[n + 1][m + 1];
-
-        for (int row = n - 1; row >= 0; row--) {
-            for (int col = m - 1; col >= 0; col--) {
-                if (s1.charAt(row) == s2.charAt(col)) {
-                    dpGrid[row][col] = 1 + dpGrid[row + 1][col + 1];
-                } else {
-                    dpGrid[row][col] = Math.max(dpGrid[row + 1][col], dpGrid[row][col + 1]);
-                }
-            }
-        }
-
-        // Construct the LCS string
-        /* Not necessary */
-        StringBuilder lcsString = new StringBuilder();
-        int row = 0, col = 0;
-        while (row < n && col < m) {
-            if (s1.charAt(row) == s2.charAt(col)) {
-                lcsString.append(s1.charAt(row));
-                row++;
-                col++;
-            } else if (dpGrid[row + 1][col] >= dpGrid[row][col + 1]) {
-                row++;
-            } else {
-                col++;
-            }
-        }
-        System.out.println(lcsString);
-        
-        return dpGrid[0][0];
+    static int lCS(String s1, String s2, int l1, int l2) {
+        if (l1 == 0 || l2 == 0)
+            return 0;
+        if (s1.charAt(l1 - 1) == s2.charAt(l2 - 1))
+            return 1 + lCS(s1, s2, l1 - 1, l2 - 1);
+        else
+            return max(lCS(s1, s2, l1, l2 - 1), lCS(s1, s2, l1 - 1, l2));
     }
+
+    static int max(int a, int b) {
+        return a > b ? a : b;
+    }
+
     public static void main(String[] args) {
         String s1 = "abcde", s2 = "ace";
-        System.out.println(lCS(s1, s2));
+        System.out.println(lCS(s1, s2, s1.length(), s2.length()));
     }
 }
