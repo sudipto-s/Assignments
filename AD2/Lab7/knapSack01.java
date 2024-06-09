@@ -1,4 +1,4 @@
-/* Lab 7 */
+/* Lab 7 - Dynamic Programming */
 
 /* 0/1 Knapsack problem */
 
