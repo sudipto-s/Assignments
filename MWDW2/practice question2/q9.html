@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer">
+        <img src="./sunflower.jpg" alt="sunflower" width="200">
+        <div id="inner">
+            <a href="#">Download</a>
+            <a href="#">Visit</a>
+        </div>
+    </div>
+    <style>
+        #outer {
+            width: 200px;
+        }
+        #inner {
+            position: absolute;
+            top: 220px;
+            right: -100%;
+        }
+        #outer:hover #inner {
+            left: 0;
+        }
+    </style>
+</body>
+</html>

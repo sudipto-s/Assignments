@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <p>Hover over the blue box</p>
+    <button>Click</button>
+    <img src="./sunflower.jpg" alt="sunflower">
+    <p>Click on the button to change scale of the image</p>
+
+    <style>
+        div {
+            width: 5em;
+            height: 5em;
+            background: #5353dd;
+        }
+    </style>
+
+    <script>
+        $(function() {
+            $('div').hover(function() {
+                $(this).css('background', 'red')
+            })
+            
+            $('button').click(function() {
+                $('img').animate({'scale': '1.2'})
+            })
+        })
+    </script>
+</body>
+</html>
