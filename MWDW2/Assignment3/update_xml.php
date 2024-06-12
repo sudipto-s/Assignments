@@ -9,22 +9,15 @@
     $xml = simplexml_load_file($xmlFile);
 
     // Find the node to update based on the user ID
-    $targetNode = null;
     foreach ($xml->person as $pr) {
         if ($pr->id == $id) {
-            $targetNode = $pr;
-            break;
+            $pr->name = $name;
+            $pr->age = $age;
+
+            $xml->asXML($xmlFile);
+            http_response_code(200);    /* User found */
+
+            return;
         }
     }
-
-    // If the node is found, update its price
-    if ($targetNode !== null) {
-        $targetNode->name = $name;
-        $targetNode->age = $age;
-
-        // Save the changes back to the XML file
-        $xml->asXML($xmlFile);
-        http_response_code(200); // Success
-    } else {
-        http_response_code(404); // Not Found
-    }
+    http_response_code(404);    /* User not found */
