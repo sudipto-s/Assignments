@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+    <ul>
+        <li>Text 1</li>
+    </ul>
+    <script>
+        var i = 1
+        $('button').click(function() {
+            $('ul').append(`<li>Text ${++i}</li>`)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+    <input type="text">
+    <p>Text 1</p>
+    <p>Text 2</p>
+    <h1>H1 text</h1>
+    <img src="./sunflower.jpg" style="position:relative">
+    
+    <script>
+        $(function() {
+            $('button').click(function() {
+                $('img').animate({ left: 100 })
+                alert($('p').length)
+            })
+            
+            $('input').focus(function() {
+                $(this).css('background', '#ccc')
+            })
+            .blur(function() {
+                $(this).css('background', '#fff')
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check console for output</h1>
+    <script>
+        var arr = [1, 2, 3, 4, 5]
+
+        var a1 = $.map(arr, function(a) {
+            return a * 2
+        })
+        console.log(a1)
+
+        var a2 = $.map(arr, a => a * 2)
+        console.log(a2)
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="450" height="350"></canvas>
+    <style>
+        canvas {
+            background: antiquewhite;
+            border: 1px solid;
+        }
+    </style>
+    <script>
+        $(function() {
+            var cnv = $('canvas').get(0)
+            var ctx = cnv.getContext('2d')
+            
+            $('canvas').mousemove(e => {
+                var x = e.pageX - cnv.offsetLeft
+                var y = e.pageY - cnv.offsetTop
+
+                if (e.buttons)      /* The 'buttons' property of Event object holds 1 when left-click is triggered else 0 */
+                    ctx.lineTo(x, y)
+                else
+                    ctx.moveTo(x, y)
+                ctx.stroke()
+            })
+        })
+    </script>
+</body>
+</html>

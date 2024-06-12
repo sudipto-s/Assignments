@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Year</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>2014</td>
+            <td>$10000</td>
+        </tr>
+        <tr>
+            <td>2015</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>2016</td>
+            <td>$10</td>
+        </tr>
+    </table>
+    <button>Click</button>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid;
+        }
+    </style>
+
+    <script>
+        $('button').click(function() {
+            $('tr:not(:first)').remove()    /* Removes all tr except the first one */
+
+            // $('tr:gt(0)').remove()       /* or, Removes all tr from index 1 (greater than 0) */
+        })
+    </script>
+</body>
+</html>

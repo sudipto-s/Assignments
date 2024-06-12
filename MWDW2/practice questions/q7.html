@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas width='640' height='240'></canvas>
+
+    <script>
+        var cnv = $('canvas')[0]
+        var ctx = cnv.getContext('2d')
+
+        var grad = ctx.createRadialGradient(320, 120, 0, 320, 120, 320)
+        grad.addColorStop(0.00, 'red')
+        grad.addColorStop(0.14, 'orange')
+        grad.addColorStop(0.28, 'yellow')
+        grad.addColorStop(0.42, 'green')
+        grad.addColorStop(0.56, 'blue')
+        grad.addColorStop(0.70, 'indigo')
+        grad.addColorStop(0.84, 'violet')
+
+        ctx.fillStyle = grad
+        ctx.fillRect(20, 20, 600, 200)
+    </script>
+</body>
+</html>
