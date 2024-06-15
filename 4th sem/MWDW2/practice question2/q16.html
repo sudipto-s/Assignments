@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <title>Exam question - 5</title>
+</head>
+<body>
+    <button>Click</button> <input placeholder="Focus here to change background of h1">
+    <h1>Hello</h1>
+    <script>
+        $('input').focus(function() {
+            $('h1').css('background', 'teal')
+        }).blur(function() {
+            $('h1').css('background', 'white')
+        })
+    </script>
+</body>
+</html>

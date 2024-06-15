@@ -1,0 +1,20 @@
+* SQL injection is code injection technique that allows an attacker to interfare with the queries that an application makes to its database.
+* This can allow an attacker to view, modify or delete data that they are normally not able to access.
+
+* SELECT * FROM user WHERE username='admin' OR 1=1--;
+
+* The '--' symbol is a comment that ignores the rest of the query.
+* And the 'OR 1=1' condition is always true so attacker can bypass the password check & login as a admin.
+
+1. REGEX (Regular Expression):-
+* 
+
+2. PDO (PHP Data Objects):- 
+* It is a database access here that provide a uniform & consistent interface for working with different database with PHP application.
+* PDO allow to use prepared statements, transactions, error handling & other features that make database oprations easies & more secure.
+* It supports MySQL, PostgreSQL, Oracle, SQLite.
+* Steps:- 
+    1. Enable PDO_MYSQL driver in php.ini
+    2. Create data source name (DSN) that contains the database server host, database name, user, password & other parameter.
+    3. Create an instance of PDO class with the DSN, user & password as argument.
+    4. Set PDO error mode to exception handle errors.

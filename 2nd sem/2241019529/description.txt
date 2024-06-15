@@ -1,0 +1,18 @@
+The code represents a program that manages the employee database for a company. It defines three classes: 'Date', 'Address', and 'Employee'.
+'Date' class represents the date object and contains three instance variables: 'day', 'month', and 'year'. The 'Address' class is derived
+from the 'Date' class and contains additional instance variables: 'address', 'country', and 'pin'. The 'Employee' class is derived from
+the 'Address' class and contains additional instance variables: 'name', 'jobPosition', 'contactNumber', 'empId', and 'salary'.
+It also defines several methods to manage the employee database.
+
+The 'main()' method creates an array of 500 'Employee' objects, gets input from the user to initialize the objects, and then
+performs several operations on the objects.
+
+The 'arrangeEmployeeBySalary()' method sorts the employees in descending order by salary.
+
+The 'getEmployeeByJobPosition()' method displays the details of employees whose job position is "Manager".
+
+The 'getEmployeeByHireDate()' method displays details of employees whose hire date is in between 01-04-2022 to 31-03-2023.
+
+The 'foreignEmployeeCount()' method displays the number of foreign employees.
+
+The 'getEmployeeBySalary()' method displays the details of employees whose salary is in the range of 150000 INR to 300000 INR.

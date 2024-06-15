@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./source/jquery.mobile-1.4.5.min.css">
+    <script src="./source/jquery-2.2.4.min.js"></script>
+    <script src="./source/jquery.mobile-1.4.5.min.js"></script>
+    <title>jQueryMobile</title>
+</head>
+<body>
+    <div data-role="page" id="page-1">
+        <div data-role="header" data-position="fixed">
+            <h1>Header</h1>
+            <a href="#page-2" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-icon-forward ui-btn-right ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="content" style="text-align:center;">
+            <p><a target="_blank" href="//github.com/RobinNixon/lpmj6">Visit</a> the author's github repo for all source code of the book</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>Footer</h1>
+        </div>
+    </div>
+    <div data-role="page" id="page-2">
+        <div data-role="header" data-position="fixed">
+            <a href="#page-1" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext"></a>
+            <h1>Header 2</h1>
+            <a href="#page-3" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-icon-forward ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="content" style="text-align:center;">
+            <p>This is another single boilerplate page</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>Footer 2</h1>
+        </div>
+    </div>
+    <div data-role="page" id="page-3">
+        <div data-role="header" data-position="fixed">
+            <a href="#page-2" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext"></a>
+            <h1>Header 3</h1>
+            <a href="#page-4" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-icon-forward ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="content" style="text-align:center;">
+            <p>This is another single boilerplate page</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>Footer 3</h1>
+        </div>
+    </div>
+    <div data-role="page" id="page-4">
+        <div data-role="header" data-position="fixed">
+            <a href="#page-3" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext"></a>
+            <h1>Header 4</h1>
+            <a href="#page-1" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="content" style="text-align:center;">
+            <p>This is another single boilerplate page</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>Footer 4</h1>
+        </div>
+    </div>
+</body>
+</html>

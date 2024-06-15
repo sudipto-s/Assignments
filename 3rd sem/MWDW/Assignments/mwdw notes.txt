@@ -1,0 +1,49 @@
+data types:- 
+Integer
+String 
+Null
+Boolean
+Float
+Array
+Object
+Resource 
+
+define('PI', 3.14, true);
+var_dump(PI);
+
+print():- 
+print() takes only 1 argument.
+print() returns a value '1' if it runs successfully.
+we can write more complex expressions using print().
+print() works slightly faster than echo.
+
+echo:-
+there is no limit in the numbers of arguments.
+it doesn't return any value.
+it is slower than print().
+we can't perform complex expression evaluation.
+
+global, local, static & super global variables.
+
+echo (n & 1) //0 for even & 1 for odd.
+
+Assignment 2:- Submit by 17/10(Tuesday)
+1. 1
+   1 2
+   1 2 3
+   1 2 3 4
+   1 2 3 4 5
+2. 1
+   2 3
+   4 5 6
+   7 8 9 10
+3. Factorial of a number
+4. Reverse a string
+5. Area os rectangle, square & circle
+6. Count the number of 1's in binary representation of a number using bitwise '&'
+7. Print odd number within range
+8. Count the number of uppercase letters in a string
+9.     *
+     * *
+   * * *
+

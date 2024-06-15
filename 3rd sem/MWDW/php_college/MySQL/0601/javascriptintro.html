@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+    <script>
+        document.write("Today is " + Date()+"We are Learning Javascript" );
+    </script>
+</head>
+<body>
+    <h1>JavaScript Example</h1>
+    <script>
+        // Declare a variable using var
+      var name = "John";
+      var name = "Aaditya";
+      // Declare a variable using let
+      let age = 25;
+      // Declare a variable using const
+      const city = "New York";
+      // Display the values of the variables
+      console.log(name); // John
+      console.log(age); // 25
+      console.log(city); // New York
+      // Declare a number variable
+      var num = 10;
+      // Declare a string variable
+      var str = "Hello";
+      // Declare a boolean variable
+      var bool = true;
+      // Declare a null variable
+      var nul = null;
+      // Declare an undefined variable
+      var und;
+      // Declare a symbol variable
+      var sym = Symbol("id");
+      // Declare a bigint variable
+      var big = 123n;
+      // Declare an object variable
+      var obj = {name: "Alice", age: 20};
+      // Display the types of the variables
+      console.log(typeof num); // number
+      console.log(typeof str); // string
+      console.log(typeof bool); // boolean
+      console.log(typeof nul); // object
+      console.log(typeof und); // undefined
+      console.log(typeof sym); // symbol
+      console.log(typeof big); // bigint
+      console.log(typeof obj); // object
+      // Declare an array of numbers
+      var arr = [1, 2, 3, 4, 5];
+      // Use a for loop to iterate over the array
+      for (var i = 0; i < arr.length; i++) {
+        // Display the current element
+        console.log(arr[i]);
+      }
+      // Use a while loop to iterate over the array
+      var i = 0;
+      while (i < arr.length) {
+        // Display the current element
+        console.log(arr[i]);
+        // Increment the index
+        i++;
+      }
+      // Use a do-while loop to iterate over the array
+      var i = 0;
+      do {
+        // Display the current element
+        console.log(arr[i]);
+        // Increment the index
+        i++;
+      } while (i < arr.length)
+      // Use a for-in loop to iterate over the array
+      for (var i in arr) {
+        // Display the current element
+        console.log(arr[i]);
+      }
+      // Use a for-of loop to iterate over the array
+      for (var x of arr) {
+        // Display the current element
+        console.log(x);
+      }
+
+      // Declare a variable
+      var x = 10;
+      // Use an if statement to check if x is equal to 10
+      if (x == 10) {
+        // Display a message
+        console.log("x is equal to 10");
+      }
+      // Use an else statement to execute an alternative block of code
+      else {
+        // Display a message
+        console.log("x is not equal to 10");
+      }
+
+      if (x == 10) {
+        // Display a message
+        console.log("x is equal to 10");
+      }
+      // Use an else if statement to check multiple conditions
+      else if (x > 10) {
+        // Display a message
+        console.log("x is greater than 10");
+      }
+      else if (x < 10) {
+        // Display a message
+        console.log("x is less than 10");
+      }
+      // Use a switch statement to compare x with different values
+      switch (x) {
+        case 1:
+          // Display a message
+          console.log("x is 1");
+          // Break out of the switch statement
+          break;
+        case 2:
+          // Display a message
+          console.log("x is 2");
+          // Break out of the switch statement
+          break;
+        case 10:
+          // Display a message
+          console.log("x is 10");
+          // Break out of the switch statement
+          break;
+        default:
+          // Display a message
+          console.log("x is not 1, 2, or 10");
+          // Break out of the switch statement
+          break;
+      }
+      // Use a ternary operator to assign a value to a variable based on a condition
+      var y = x > 10 ? "x is greater than 10" : "x is not greater than 10";
+      // Display the value of y
+      console.log(y);
+    </script>
+</body>
+</html>
