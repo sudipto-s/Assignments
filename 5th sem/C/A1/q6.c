@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-float celcius_at_depth(double);
-float farenheit(double);
+double celcius_at_depth(double);
+double farenheit(double);
 
 void main() {
    double depth, celcius, frhen;
