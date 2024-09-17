@@ -1,21 +1,21 @@
 #include <stdio.h>
 
-float celcius_at_depth(float);
-float farenheit(float);
+float celcius_at_depth(double);
+float farenheit(double);
 
 void main() {
-   float depth;
+   double depth, celcius, frhen;
    printf("Enter depth(in kilometers): ");
    scanf("%f", &depth);
-   float celcius = celcius_at_depth(depth);
-   float frhen = farenheit(celcius);
-   printf("Temperature at depth of %.2f km is %.2f℃ and %.2f℉", depth, celcius, frhen);
+   celcius = celcius_at_depth(depth);
+   frhen = farenheit(celcius);
+   printf("Temperature at depth of %lf km is %lf℃ and %lf℉", depth, celcius, frhen);
 }
 
-float celcius_at_depth(float depth) {
+double celcius_at_depth(double depth) {
    return 10 * depth + 20;
 }
 
-float farenheit(float celcius) {
+double farenheit(double celcius) {
    return 1.8 * celcius + 32;
 }
