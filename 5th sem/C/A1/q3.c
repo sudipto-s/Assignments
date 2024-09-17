@@ -9,7 +9,7 @@ int main() {
    takeoff_speed = takeoff_speed * 1000 / 3600; // convert km/h to m/s
    acceleration = (takeoff_speed * takeoff_speed) / ( 2 * distance); // calculate acceleration
    time = takeoff_speed / acceleration; // calculate time
-   printf("The acceleration of the jet is: %.2f m/s^2\n", acceleration);
-   printf("The time for the fighter to be accelerated to takeoff speed is: %.2f", time);
+   printf("The acceleration of the jet is: %lf m/s^2\n", acceleration);
+   printf("The time for the fighter to be accelerated to takeoff speed is: %lf", time);
    retun 0;
 }

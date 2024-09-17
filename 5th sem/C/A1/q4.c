@@ -15,10 +15,10 @@ int main() {
    printf("Enter total number of payments: ");
    scanf("%d", &num_payments);
    principle = purchase_price - down_payment;
-   printf("Amount borrowed: $%lf\n", principle);
+   printf("Amount borrowed: $%.2f\n", principle);
    rate /= 12;
    payment = per_month_payment(principle, rate, num_payments);
-   printf("Payment: $%lf", payment);
+   printf("Payment: $%.2f", payment);
    return 0;
 }
 
