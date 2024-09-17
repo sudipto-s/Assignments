@@ -6,7 +6,7 @@ float farenheit(double);
 void main() {
    double depth, celcius, frhen;
    printf("Enter depth(in kilometers): ");
-   scanf("%f", &depth);
+   scanf("%lf", &depth);
    celcius = celcius_at_depth(depth);
    frhen = farenheit(celcius);
    printf("Temperature at depth of %lf km is %lf℃ and %lf℉", depth, celcius, frhen);
