@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Q10</title>
+</head>
+<body>
+   <script>
+      const constants = [2.72, 3.14, 9.81, 37, 100]
+         const countries = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
+         const rectangle = {
+            width: 20,
+            height: 10,
+            area: 200,
+            perimeter: 60
+         }
+         const users = [
+            {
+               name: 'Brook',
+               scores: 75,
+               skills: ['HTM', 'CSS', 'JS'],
+               age: 16
+            },
+            {
+               name: 'Alex',
+               scores: 80,
+               skills: ['HTM', 'CSS', 'JS'],
+               age: 18
+            },
+            {
+               name: 'David',
+               scores: 75,
+               skills: ['HTM', 'CSS'],
+               age: 22
+            },
+            {
+               name: 'John',
+               scores: 85,
+               skills: ['HTML'],
+               age: 25
+            },
+            {
+               name: 'Sara',
+               scores: 95,
+               skills: ['HTM', 'CSS', 'JS'],
+               age: 26
+            },
+            {
+               name: 'Martha',
+               scores: 80,
+               skills: ['HTM', 'CSS', 'JS'],
+               age: 18
+            },
+            {
+               name: 'Thomas',
+               scores: 90,
+               skills: ['HTM', 'CSS', 'JS'],
+               age: 20
+            }
+         ]
+      //1
+      const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants
+
+      //2
+      const [fin, est, sw, den, nor] = countries
+
+      //3
+      const { width, height, area, perimeter } = rectangle
+
+      //4
+      users.map(({name, scores, skills, age}) => console.log(name, scores, skills, age))
+
+      //5
+      users.map(p => {
+         if(p.skills.length < 2)
+            console.log(p.name)
+      })
+
+      //6
+
+
+      //7
+      
+
+      //8
+      const convertArrayToObject = () => {}
+   </script>
+</body>
+</html>
