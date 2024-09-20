@@ -61,12 +61,15 @@
          ]
       //1
       const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants
+      console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp)
 
       //2
       const [fin, est, sw, den, nor] = countries
+      console.log(fin, est, sw, den, nor)
 
       //3
       const { width, height, area, perimeter } = rectangle
+      console.log(width, height, area, perimeter)
 
       //4
       users.map(({name, scores, skills, age}) => console.log(name, scores, skills, age))
@@ -78,13 +81,18 @@
       })
 
       //6
-
+      /* Country object is not given */
 
       //7
-      
+      /*  */
 
       //8
-      const convertArrayToObject = () => {}
+      const convertArrayToObject = (...arr) => {
+         const [name, score, skills, age] = arr
+         const obj = { name, score, skills, age }
+         console.log(obj)
+      }
+      convertArrayToObject("Brook", 80, ["HTML", "CSS", "JS"], 18)
    </script>
 </body>
 </html>

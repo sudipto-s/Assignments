@@ -9,52 +9,56 @@
 
 <body>
    <script>
-      //1
-      // const sumAll = (...ns) => ns.reduce((acc, c) => acc + c)
-      // console.log(sumAll(1, 2))
+      // 1
+      const sumAll = (...nums) => nums.reduce((acc, c) => acc + c)
+      console.log(sumAll(1, 2))
 
-      //2
-      // const addOnlyNums = (...ns) => {
-      //    let sm = 0
-      //    ns.map(n => { if(typeof n === "number") sm += n })
-      //    return sm
-      // }
-      // console.log(addOnlyNums(1, "s", 2, 4, 1))
+      // 2
+      const addOnlyNums = (...nums) => {
+         let sum = 0
+         nums.map(n => {
+            if(typeof n === "number") sum += n
+         })
+         return sum
+      }
+      console.log(addOnlyNums(1, "s", 2, 4, 1))
 
-      //3
-      // const combineTwoArrays = (ar1, ar2) => [...ar1, ...ar2]
-      // console.log(combineTwoArrays([1, 4], [3, 6]))
+      // 3
+      const combineTwoArrays = (ar1, ar2) => [...ar1, ...ar2]
+      console.log(combineTwoArrays([1, 4], [3, 6]))
 
-      //4
-      const sumEveryOther = () => {}
+      // 4
+      const sumEveryOther = (...nums) => {
+         let sum = 0
+         for (i = 0; i < nums.length; i++)
+            if (!(i % 2))
+               sum += nums[i]
+         return sum
+      }
+      console.log(sumEveryOther(1, 2, 3, 4, 5))
 
-      //5
-      // const onlyUniques = (...a) => {
-      //    const t = []
-      //    for(b of a)
-      //       if(!t.includes(b))
-      //          t.push(b)
-      //    return t
-      // }
-      // console.log(onlyUniques(1, 2, 3, 3, 1))
+      // 5
+      const onlyUniques = (...nums) => {
+         const temp = []
+         nums.map(n => {
+            if(!temp.includes(n)) temp.push(n)
+         })
+         return temp
+      }
+      console.log(onlyUniques(1, 2, 3, 3, 1))
 
-      //6
-      // const combineAllArrays = (...a) => {
-      //    let t = []
-      //    for(b of a)
-      //       t = [...t, ...b]
-      //    return t
-      // }
-      // console.log(combineAllArrays([1, 2], [3, 4], [5, 6]))
+      // 6
+      const combineAllArrays = (...arrays) => {
+         let temp = []
+         for(let ar of arrays)
+            temp = [...temp, ...ar]
+         return temp
+      }
+      console.log(combineAllArrays([1, 2], [3, 4], [5, 6]))
 
-      //7
-      // const squareAndSum = (...a) => {
-      //    let s = 0
-      //    for(b of a)
-      //       s += b ** b
-      //    return s
-      // }
-      // console.log(squareAndSum(1, 2, 2))
+      // 7
+      const squareAndSum = (...nums) => nums.reduce((acc, n) => acc + (n ** 2), 0)
+      console.log(squareAndSum(5, 2, 2))
    </script>
 </body>
 
