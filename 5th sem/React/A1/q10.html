@@ -8,57 +8,89 @@
 <body>
    <script>
       const constants = [2.72, 3.14, 9.81, 37, 100]
-         const countries = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
-         const rectangle = {
-            width: 20,
-            height: 10,
-            area: 200,
-            perimeter: 60
+      const countries = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
+      const rectangle = {
+         width: 20,
+         height: 10,
+         area: 200,
+         perimeter: 60
+      }
+      const users = [
+         {
+            name: 'Brook',
+            scores: 75,
+            skills: ['HTM', 'CSS', 'JS'],
+            age: 16
+         },
+         {
+            name: 'Alex',
+            scores: 80,
+            skills: ['HTM', 'CSS', 'JS'],
+            age: 18
+         },
+         {
+            name: 'David',
+            scores: 75,
+            skills: ['HTM', 'CSS'],
+            age: 22
+         },
+         {
+            name: 'John',
+            scores: 85,
+            skills: ['HTML'],
+            age: 25
+         },
+         {
+            name: 'Sara',
+            scores: 95,
+            skills: ['HTM', 'CSS', 'JS'],
+            age: 26
+         },
+         {
+            name: 'Martha',
+            scores: 80,
+            skills: ['HTM', 'CSS', 'JS'],
+            age: 18
+         },
+         {
+            name: 'Thomas',
+            scores: 90,
+            skills: ['HTM', 'CSS', 'JS'],
+            age: 20
          }
-         const users = [
-            {
-               name: 'Brook',
-               scores: 75,
-               skills: ['HTM', 'CSS', 'JS'],
-               age: 16
-            },
-            {
-               name: 'Alex',
-               scores: 80,
-               skills: ['HTM', 'CSS', 'JS'],
-               age: 18
-            },
-            {
-               name: 'David',
-               scores: 75,
-               skills: ['HTM', 'CSS'],
-               age: 22
-            },
-            {
-               name: 'John',
-               scores: 85,
-               skills: ['HTML'],
-               age: 25
-            },
-            {
-               name: 'Sara',
-               scores: 95,
-               skills: ['HTM', 'CSS', 'JS'],
-               age: 26
-            },
-            {
-               name: 'Martha',
-               scores: 80,
-               skills: ['HTM', 'CSS', 'JS'],
-               age: 18
-            },
-            {
-               name: 'Thomas',
-               scores: 90,
-               skills: ['HTM', 'CSS', 'JS'],
-               age: 20
-            }
-         ]
+      ]
+      const countries_obj = [{
+         name: "India", 
+         capital: "New Delhi",
+         population: 1417200000,
+         languages: ["Bangla", "Hindi", "Odia", "English"]
+      }, {
+         name: "United States",
+         capital: "Washington D.C.",
+         population: 331002651,
+         languages: ["English", "Spanish", "Chinese"]
+      }, {
+         name: "Canada",
+         capital: "Ottawa",
+         population: 37742154,
+         languages: ["English", "French", "Punjabi"]
+      }, {
+         name: "Mexico",
+         capital: "Mexico City",
+         population: 127575529,
+         languages: ["Spanish", "English", "Mayan languages"]
+      }, {
+         name: "United Kingdom",
+         capital: "London",
+         population: 67215293,
+         languages: ["English", "Welsh", "Scottish Gaelic"]
+      }, {
+         name: "France",
+         capital: "Paris",
+         population: 67391582,
+         languages: ["French", "Breton", "Occitan"]
+      }]
+
       //1
       const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants
       console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp)
@@ -75,24 +107,19 @@
       users.map(({name, scores, skills, age}) => console.log(name, scores, skills, age))
 
       //5
-      users.map(p => {
-         if(p.skills.length < 2)
-            console.log(p.name)
-      })
+      users.map(({name, skills}) => skills.length < 2 && console.log(name))
 
       //6
-      /* Country object is not given */
+      countries_obj.map(({name, capital, population, languages}) => console.log(name, capital, population, languages))
 
       //7
-      /*  */
+      const student = ["John", ["JS", "React", "HTML", "CSS"], [97, 100]]
+      const [name, skills, [jsScore, reactScore ]] = student
+      console.log(name, skills, jsScore, reactScore)
 
       //8
-      const convertArrayToObject = (...arr) => {
-         const [name, score, skills, age] = arr
-         const obj = { name, score, skills, age }
-         console.log(obj)
-      }
-      convertArrayToObject("Brook", 80, ["HTML", "CSS", "JS"], 18)
+      const convertArrayToObject = (...arr) => arr.reduce((acc, c) => (acc[c] = c, acc), {})
+      console.log(convertArrayToObject(1, 2, 3, 4 ,5))
    </script>
 </body>
 </html>
