@@ -15,5 +15,4 @@ void main() {
       printf("The bearing is North %lf degrees East.\n", 360 - heading);
    else
       printf("Entered heading is out of range.\n");
-   return;
 }
