@@ -4,10 +4,6 @@ void main() {
    double heading;
    printf("Enter the compass heading(0 - 360): ");
    scanf("%lf", &heading);
-   if (heading < 0) {
-      printf("Invalid heading");
-      return;
-   }
 
    if(heading >= 0 && heading < 90)
       printf("The bearing is North %lf degrees West.\n", heading);
