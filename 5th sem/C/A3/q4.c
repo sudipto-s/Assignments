@@ -21,3 +21,6 @@ void main() {
       scanf("%d", &year);
    }
 }
+
+
+// Credit: lonks.vercel.app/c5th

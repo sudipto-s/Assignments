@@ -18,3 +18,6 @@ void main() {
    std_dv = sqrt((sqrs / n) - (avg * avg));
    printf("Standard deviation: %lf", std_dv);
 }
+
+
+// Credit: lonks.vercel.app/c5th

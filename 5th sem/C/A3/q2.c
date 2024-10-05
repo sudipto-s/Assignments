@@ -34,3 +34,6 @@ void main() {
    printf("Total payroll: %.2f\n", total_payroll);
    printf("Average amount paid: %.2f\n", avg);
 }
+
+
+// Credit: lonks.vercel.app/c5th

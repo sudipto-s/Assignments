@@ -25,3 +25,6 @@ void main() {
    printf("Largest: %d\n", l);
    printf("Average: %.2f", avg);
 }
+
+
+// Credit: lonks.vercel.app/c5th

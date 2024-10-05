@@ -74,3 +74,6 @@ void main() {
    printf("\nNumber of beers in Brand ID Number 3 -> %d", brand3);
    printf("\nNumber of beers in Brand ID Number 4 -> %d", brand4);
 }
+
+
+// Credit: lonks.vercel.app/c5th
