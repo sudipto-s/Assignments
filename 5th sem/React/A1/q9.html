@@ -24,7 +24,7 @@
       console.log(sumEveryOther(1, 2, 3, 4, 5))
 
       // 5
-      const onlyUniques = (...nums) => nums.reduce((acc, c) => !acc.includes(c) ? (acc.push(c), acc) : acc, [])
+      const onlyUniques = (...nums) => nums.reduce((acc, c) => acc.includes(c) ? acc : [...acc, c], [])
       console.log(onlyUniques(1, 2, 3, 3, 1))
 
       // 6
