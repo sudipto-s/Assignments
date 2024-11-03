@@ -16,8 +16,8 @@ void main() {
    }
    while(year >= 2005) {
       charges = fast_food_billion(year);
-      printf("\nCharges for %d - %.1f billions", year, charges);
-      printf("\nEnter year (or any year before 2005 to stop)- ");
+      printf("\nCharges for %d - %f billions", year, charges);
+      printf("\nEnter year (or any year before 2005 to stop): ");
       scanf("%d", &year);
    }
 }

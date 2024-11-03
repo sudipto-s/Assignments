@@ -1,26 +1,26 @@
 #include <stdio.h>
 
 void main() {
-   int l, s, n, t, sum = 0;
-   double avg;
+   int l, s, n, temp;
+   double avg, sum = 0;
    printf("Enter N: ");
    scanf("%d", &n);
    printf("Enter the numbers:\n");
    for (int i = 1; i <= n; i++) {
-      scanf("%d", &t);
-      if (i > 1) {
-         if (t > l)
-            l = t;
-         if (t < s)
-            s = t;
+      scanf("%d", &temp);
+      if (i == 1) {
+         l = temp;
+         s = temp;
       } else {
-         l = t;
-         s = t;
+         if (temp > l)
+            l = temp;
+         if (temp < s)
+            s = temp;
       }
-      sum += t;
+      sum += temp;
    }
 
-   avg = (double)sum / n;
+   avg = sum / n;
    printf("Smallest: %d\n", s);
    printf("Largest: %d\n", l);
    printf("Average: %.2f", avg);
