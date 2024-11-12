@@ -23,12 +23,9 @@ int isPrime(int n) {
 }
 
 void point(int n, int *a, int *b, int *c) {
-   if (multiple(n))
-      *a = 1;
-   if (sumEvOd(n))
-      *b = 1;
-   if (isPrime(n))
-      *c = 1;
+   *a = multiple(n);
+   *b = sumEvOd(n);
+   *c = isPrime(n);
 }
 
 void main() {
