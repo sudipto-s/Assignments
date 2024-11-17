@@ -1,15 +1,17 @@
 #include <stdio.h>
 
 void display(int odometer, double emit, double max1, double max2) {
+   double myEmit, left, limit;
+   
    if (odometer <= 50000) {
       if (emit <= max1)
          printf("Emissions are under permitted level of %lf grams/mile.", max1);
       else
          printf("Emissions exceed permitted level of %lf grams/mile.", max1);
    } else {
-      double myEmit = odometer * emit;
-      double left = odometer - 50000;
-      double limit = (50000 * max1) + (left * max2);
+      myEmit = odometer * emit;
+      left = odometer - 50000;
+      limit = (50000 * max1) + (left * max2);
       if (myEmit <= limit)
          printf("Emissions are under permitted level of %lf grams/mile.", max2);
       else
