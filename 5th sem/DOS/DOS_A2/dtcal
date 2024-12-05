@@ -1,0 +1,4 @@
+current_time=$(date +"%d-%m-%Y")
+echo "Date: $current_time"
+echo "Calender:"
+cal $1 $2
