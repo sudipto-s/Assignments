@@ -2,7 +2,7 @@
 #include <math.h>
 
 void main() {
-   int l, s, n, temp;
+   int l, s, n, temp, range;
    double avg, std_dv, sum = 0, sqrs = 0;
    printf("Enter N: ");
    scanf("%d", &n);
@@ -22,10 +22,12 @@ void main() {
       sqrs += (temp * temp);
    }
 
+   range = l - s;
    avg = sum / n;
    std_dv = sqrt((sqrs / n) - (avg * avg));
    printf("Smallest: %d\n", s);
    printf("Largest: %d\n", l);
+   printf("Range: %d\n", range);
    printf("Average: %.2f\n", avg);
    printf("Standard deviation: %lf", std_dv);
 }
