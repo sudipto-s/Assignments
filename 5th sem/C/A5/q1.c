@@ -18,6 +18,7 @@ void main() {
 
    printf("Odd sum: %d\n", od_sum);
    printf("Even sum: %d\n", ev_sum);
+   printf("Total sum: %d\n", sum);
    if (chk_bit == barcode[11])
       printf("Barcode validated");
    else
