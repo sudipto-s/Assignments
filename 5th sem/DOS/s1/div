@@ -1,0 +1,25 @@
+echo "Enter 5 marks:"
+read -p "Mark 1: " mark1
+read -p "Mark 2: " mark2
+read -p "Mark 3: " mark3
+read -p "Mark 4: " mark4
+read -p "Mark 5: " mark5
+
+total=$((mark1 + mark2 + mark3 + mark4 + mark5))
+average=$((total / 5))
+
+if (( $average >= 60 ))
+then
+   division="First Division"
+elif (( $average >= 50 ))
+then
+   division="Second Division"
+elif (( $average >= 40 ))
+then
+   division="Third Division"
+else
+   division="Fail"
+fi
+
+echo "Average Marks: $average"
+echo "Division: $division"
