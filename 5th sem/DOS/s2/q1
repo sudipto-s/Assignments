@@ -1,0 +1,14 @@
+for (( i=1; i<=10; i++ ))
+do
+   read -p "Enter hours worked by employee $i: " hours_worked
+
+   overtime_pay=0
+
+   if (( hours_worked > 40 ))
+   then
+      overtime_hours=$(( hours_worked - 40 ))
+      overtime_pay=$(( overtime_hours * 12 ))
+   fi
+
+   echo "Overtime pay for employee $i: Rs. $overtime_pay"
+done

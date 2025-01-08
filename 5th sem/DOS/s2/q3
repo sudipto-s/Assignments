@@ -1,0 +1,27 @@
+read -p "Enter attendance percentage: " attn
+read -p "Enter internal marks: " internal
+read -p "Enter external marks: " external
+
+messages=""
+
+if (( $internal < 16 ))
+then
+   messages+="Internal marks are insufficient\n"
+fi
+
+if (( $attn < 40 ))
+then
+   messages+="Attendance percentage is insufficient\n"
+fi
+
+if (( $external < 24 ))
+then
+   messages+="External marks are insufficient\n"
+fi
+
+if [ -z "$messages" ]
+then
+   echo "Allowed for next semester"
+else
+   echo -e "$messages"
+fi
