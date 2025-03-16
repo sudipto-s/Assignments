@@ -28,7 +28,7 @@ g)
 select distinct(dept_name) from instructor;
 
 h)
-select course_id from teaches where semester='Spring';
+select course_id from teaches where semester='Spring' and year=2009;
 
 i)
 select title from course where dept_name='Comp. Sci' and credits!=3;
@@ -66,14 +66,7 @@ r)
 alter table course modify sub_code varchar2(8);
 
 s)
-delete from prerequired;
-select * from prerequired;
-desc prerequired;
-insert into prereq values ('BIO-301', 'BIO-101');
-truncate table prerequired;
-select * from prerequired;
-desc prerequired;
-insert into prereq values ('BIO-301', 'BIO-101');
+drop table prerequired;
 
 t)
 alter table department rename column building to builder;
