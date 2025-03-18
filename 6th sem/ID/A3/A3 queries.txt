@@ -1,0 +1,40 @@
+a)
+select sub_code, title, credits from course
+where department in ('Physics','Music','Finance','Biology');
+
+b)
+select * from faculty_info where name like 'K%' and salary>65000;
+
+c)
+select name, department,
+salary + salary * 1.05 + salary * 0.2 as gross_salary,
+salary + salary * 1.05 + salary * 0.2 - salary * 0.3 as net_salary
+from faculty_info;
+
+d)
+select * from faculty_info where salary between 60000 and 80000;
+
+e)
+select * from faculty_info where name like '_r%';
+
+f)
+select name from faculty_info where department='Comp. Sci.' order by salary desc;
+
+h)
+update faculty_info set salary = salary + salary * 0.03
+where department='Comp. Sci.' and salary<70000;
+
+g)
+update faculty_info set salary = salary + salary * 0.15;
+
+i)
+select salary * 12 as annual_salary from faculty_info;
+
+j)
+update course set title='Game Theory' where title='Game Design';
+
+k)
+delete from faculty_info where department='History';
+
+l)
+delete from course where sub_code like 'BIO%';
