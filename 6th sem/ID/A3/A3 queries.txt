@@ -76,7 +76,7 @@ i)
 	select count(*) as no_of_deps from faculty_info group by department;
 
 j)
-	select count(*) as no_of_deps from faculty_infogroup by department order by count(*) desc;
+	select count(*) as no_of_deps from faculty_info group by department order by count(*) desc;
 
 k)
 	select count(*) as semesters from teaches group by semester;
@@ -86,7 +86,7 @@ l)
 
 m)
 	select count(*) as no_of_deps from faculty_info
-   where department not in 'Finance' group by department
+   where department!='Finance' group by department
    having count(*)>=2 order by department desc;
 	
 n)
