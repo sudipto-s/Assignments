@@ -85,7 +85,7 @@ l)
 	select department from faculty_info group by department having count(*)<2;
 
 m)
-	select count(*) as no_of_deps from faculty_info
+	select count(*) as no_of_instructor from faculty_info
    where department!='Finance' group by department
    having count(*)>=2 order by department desc;
 	
