@@ -1,3 +1,4 @@
+1)
 a)
 select sub_code, title, credits from course
 where department in ('Physics','Music','Finance','Biology');
@@ -38,3 +39,61 @@ delete from faculty_info where department='History';
 
 l)
 delete from course where sub_code like 'BIO%';
+
+
+
+
+2)
+a)
+	select avg(salary) as avg_salary from faculty_info where department='Physics';
+
+b)
+	select department, avg(salary) as average_salary from faculty_info group by department;
+
+c)
+	select id, name, department from faculty_info
+   where salary=(select max(salary) from faculty_info);
+
+d)
+	select count(*) as no_of_instructor from faculty_info where department='Comp. Sci.';
+
+e)
+	select sum(credits) as credits from course where department='Comp. Sci.';
+
+f)
+	select count(*) as no_of_instructor, sum(salary) as total_salary
+   from faculty_info where department in ('Comp. Sci.', 'Physics') group by department;
+
+g)
+	-- first insert BIO-101, -BIO-301, BIO-399
+	select sum(credits) as credits from course
+   where department in ('Comp. Sci.', 'Biology') group by department;
+
+h)
+	select sum(budget) as budget from department group by builder;
+
+i)
+	select count(*) as no_of_deps from faculty_info group by department;
+
+j)
+	select count(*) as no_of_deps from faculty_infogroup by department order by count(*) desc;
+
+k)
+	select count(*) as semesters from teaches group by semester;
+
+l)
+	select department from faculty_info group by department having count(*)<2;
+
+m)
+	select count(*) as no_of_deps from faculty_info
+   where department not in 'Finance' group by department
+   having count(*)>=2 order by department desc;
+	
+n)
+	select department from faculty_info group by department having sum(salary)>50000;
+
+o)
+	select sum(budget) as budget from department where builder='Watson' group by builder;
+
+p)
+	select max(salary) as max_salary from faculty_info where department='Comp. Sci.';
