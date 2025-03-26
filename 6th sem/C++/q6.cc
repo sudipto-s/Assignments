@@ -45,7 +45,7 @@ int main() {
       print(mtx, n, m);
    }
 
-   for(i = 0; i < n; i++)
+   for(i = 0; i < m; i++)
       delete[] mtx[i];
    delete[] mtx;
    return 0;

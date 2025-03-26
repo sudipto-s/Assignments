@@ -26,7 +26,7 @@ int main() {
    }
 
 
-   for(i = 0; i < n; i++)
+   for(i = 0; i < m; i++)
       delete[] mtx[i];
    delete[] mtx;
    return 0;

@@ -33,7 +33,7 @@ int main() {
    read(mtx, m, n);
    print(mtx, m, n);
 
-   for(i = 0; i < n; i++)
+   for(i = 0; i < m; i++)
       delete[] mtx[i];
    delete[] mtx;
    return 0;
