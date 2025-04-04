@@ -97,3 +97,54 @@ o)
 
 p)
 	select max(salary) as max_salary from faculty_info where department='Comp. Sci.';
+
+
+
+
+3)
+a)
+	select initcap('sudipto') caps from dual;
+
+b)
+	select substr('sudipto', 2, 4) substr from dual;
+
+c)
+	select length('siksha o anusandhan') length from dual;
+
+d)
+	select initcap(name) name from faculty_info;
+
+e)
+	select upper(substr(department, 1, 3)) dep_code from faculty_info group by department;
+
+f)
+	select extract(MONTH FROM date_of_join) month from faculty_info;
+
+g)
+	select to_char(date_of_join, 'dd/mm/yyyy') date_of_join from faculty_info;
+
+h)
+	select round(months_between(sysdate, date_of_join)) moths_exp from faculty_info;
+
+i)
+	select id, trunc(months_between(sysdate, date_of_join) / 12) years,
+   mod(trunc(months_between(sysdate, date_of_join)), 12) months
+   from faculty_info;
+
+j)
+	select date_of_join from faculty_info;
+
+k)
+	select sysdate+15 future from dual;
+
+l)
+	select round(94204.27348, 2) round from dual;
+
+m)
+	select 5 + power(8, 9) power from dual;
+
+n)
+	select sqrt(6464312) sqrt from dual;
+
+o)
+	select lower('HELLO ITER') lower from dual;
