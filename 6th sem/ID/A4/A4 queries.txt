@@ -19,6 +19,21 @@ insert into customer (cust_no, name, city) values ('C0010', 'ASLESHA TIWARI', 'M
 
 
 
+create table branch(
+branch_code varchar2(4) primary key,
+branch_name varchar2(20) not null,
+branch_city varchar2(8) check(branch_city in ('Delhi','Mumbai','Chennai','Kolkata')));
+
+insert into branch values ('B001', 'Janakpuri Branch', 'Delhi');
+insert into branch values ('B002', 'Chandnichowk Branch', 'Delhi');
+insert into branch values ('B003', 'Juhu Branch', 'Mumbai');
+insert into branch values ('B004', 'Andheri Branch', 'Mumbai');
+insert into branch values ('B005', 'Saltlake Branch', 'Kolkata');
+insert into branch values ('B006', 'Srirampuram Branch', 'Chennai');
+
+
+
+
 create table account(
 account_no varchar2(5) check(account_no like 'A%') primary key,
 type varchar2(2) check(type in ('SB','FD','CA')),
@@ -36,21 +51,6 @@ insert into account values ('A0007', 'SB', 48000, 'B001');
 insert into account values ('A0008', 'SB', 7200, 'B002');
 insert into account values ('A0009', 'SB', 18750, 'B003');
 insert into account values ('A0010', 'FD', 99000, 'B004');
-
-
-
-
-create table branch(
-branch_code varchar2(4) primary key,
-branch_name varchar2(20) not null,
-branch_city varchar2(8) check(branch_city in ('Delhi','Mumbai','Chennai','Kolkata')));
-
-insert into branch values ('B001', 'Janakpuri Branch', 'Delhi');
-insert into branch values ('B002', 'Chandnichowk Branch', 'Delhi');
-insert into branch values ('B003', 'Juhu Branch', 'Mumbai');
-insert into branch values ('B004', 'Andheri Branch', 'Mumbai');
-insert into branch values ('B005', 'Saltlake Branch', 'Kolkata');
-insert into branch values ('B006', 'Srirampuram Branch', 'Chennai');
 
 
 
