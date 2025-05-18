@@ -1,0 +1,130 @@
+A)
+1)
+	select name, phone_no, cust_no from customer
+	where cust_no in (select cust_no from depositor where account_no='A0004');
+
+2)
+	select name from customer
+	where cust_no not in (select cust_no from loan);
+
+3)
+	select account_no, balance from account
+	where account_no in (select account_no from depositor where cust_no='C0010');
+
+4)
+	select branch_city from branch
+	where branch_code in (select branch_code from loan where cust_no in
+   (select cust_no from customer where name='ASLESHA TIWARI'));
+
+5)
+	select * from installment
+	where loan_no in (select loan_no from loan where cust_no in
+   (select cust_no from customer where name='ANKITA SINGH'));
+
+6)
+	select branch_name, branch_city from branch
+	where branch_code in (select branch_code from account where account_no in
+   (select account_no from depositor where cust_no in
+   (select cust_no from customer where name='ABHIJIT MISHRA')));
+
+7)
+	create table account_type(
+	account_no varchar2(5) check(account_no like 'A%') primary key,
+	type varchar2(2) check(type in ('SB','FD','CA')));
+
+8)
+	insert into account_type
+	(select account_no, type from account where balance < 50000);
+
+9)
+	update account_type set type = 'FD'
+	where account_no = (select account_no from depositor where cust_no = 'C0007');
+
+10)
+	delete from account_type
+	where account_no in (select account_no from account where balance < 20000);
+
+11)
+	select account_no from account
+	where balance > some (select balance from account where type = 'FD');
+
+12)
+	select account_no from account
+	where balance > all (select balance from account where type = 'FD');
+
+13)
+	select * from branch B
+	where exists (select * from loan L where L.branch_code = B.branch_code);
+
+14)
+	select * from loan L
+	where not exists (select * from installment I where I.loan_no = L.loan_no);
+
+15)
+	update account set balance =
+	case when balance > 80000 then
+	balance + 0.06 * balance
+	else
+	balance + 0.05 * balance
+	end;
+
+
+
+
+B)
+1)
+	select L.loan_no from loan L
+	join branch B on L.branch_code = B.branch_code
+	where B.branch_city = 'Mumbai';
+
+2)
+	select A.type from account A
+	join branch B on A.branch_code = B.branch_code
+	where B.branch_city='Delhi';
+
+3)
+	select C.name, C.phone_no from customer C
+	join depositor D on C.cust_no = D.cust_no
+	join account A on A.account_no = D.account_no
+	where A.balance > 100000;
+
+4)
+   select I.inst_no, I.inst_amount from installment I
+   join loan L on L.loan_no = I.loan_no
+   join customer C on C.cust_no = L.cust_no
+   where C.name='RAJ ANAND SINGH';
+
+5)
+   select distinct C.name from customer C
+   join depositor D on D.cust_no = C.cust_no
+   join account A on A.account_no = D.account_no
+   where A.type!='SB';
+
+6)
+   select distinct C.name from customer C
+   join loan L on L.cust_no = C.cust_no
+   join installment I on I.loan_no = L.loan_no
+   where I.inst_amount >= 50000;
+
+7)
+   select C.phone_no from customer C
+   join depositor D on D.cust_no = C.cust_no
+   join account A on A.account_no = D.account_no
+   join branch B on B.branch_code = A.branch_code
+   where B.branch_name='Saltlake Branch';
+
+8)
+   select B.branch_name, B.branch_city from branch B
+   join account A on A.branch_code = B.branch_code
+   join depositor D on D.account_no = A.account_no
+   join customer C on C.cust_no = D.cust_no
+   where C.name='ABHIJIT MISHRA';
+
+9)
+   select A.type, A.balance from account A
+   join depositor D on D.account_no = A.account_no
+   join customer C on C.cust_no = D.cust_no
+   where C.name='SWAROOP RAY';
+
+10)
+   --
