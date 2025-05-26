@@ -1,0 +1,350 @@
+ASSIGNMENT 2 OUTPUTS
+
+a)
+*instructor*                                                                                     
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+NAME                                               VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(30)                                         
+SALARY                                             NUMBER(6)                                                 
+                                                                                                       
+*course*                                                                                         
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+COURSE_ID                                          VARCHAR2(10)                                         
+TITLE                                              VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+CREDITS                                            NUMBER(2)                                                                                                                                                   
+
+*prereq*                                                                                        
+Name                                      Null?    Type                                                
+----------------------------------------- -------- ----------------------------                        
+COURSE_ID                                          VARCHAR2(10)                                        
+PREREQ_ID                                          VARCHAR2(10)                                                                                                                                                
+
+*department*                                                                                    
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+BUILDING                                           VARCHAR2(20)                                         
+BUDGET                                             NUMBER(10)                                                                                                                                                  
+
+*teaches*                                                                                        
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+COURSE_ID                                          VARCHAR2(10)                                         
+SEC_ID                                             NUMBER(2)                                            
+SEMESTER                                           VARCHAR2(10)                                         
+YEAR                                               NUMBER(4)                                        
+
+
+
+c)                                                                                                                                                               
+NAME                           DEPT_NAME                                                                
+------------------------------ ------------------------------                                           
+Srinivasan                     Comp. Sci.                                                                
+Wu                             Finance                                                                  
+Mozart                         Music                                                                    
+Einstein                       Physics                                                                  
+El Said                        History                                                                  
+Gold                           Physics                                                                  
+Katz                           Comp. Sci.                                                               
+Califieri                      History                                                                  
+Singh                          Finance                                                                  
+Crick                          Biology                                                                  
+Brandt                         Comp. Sci.                                                                 
+Kim                            Elec. Eng.
+
+
+
+
+d)                                                                                                                                          
+NAME                               SALARY                                                               
+------------------------------ ----------                                                               
+Srinivasan                          65000                                                               
+Katz                                75000                                                               
+Brandt                              92000 
+
+
+
+e)                                                                                                                                               
+ID         NAME     DEPT_NAME 	 SALARY    
+---------- -------- ------------ ----------                                                                                       
+33456      Gold     Physics      87000                                                                                                                                                                                                                                                                                                 
+
+
+
+f)                                                                                                                                                 
+NAME                                                                                                    
+------------------------------                                                                          
+Wu                                                                                                      
+Mozart                                                                                                  
+Einstein                                                                                                
+El Said                                                                                                 
+Gold                                                                                                    
+Califieri                                                                                               
+Singh                                                                                                   
+Crick                                                                                                   
+Kim
+
+
+
+g)                                                                                                                                                               
+DEPT_NAME                                                                                               
+------------------------------                                                                          
+Comp. Sci.                                                                                              
+Finance                                                                                                 
+Music                                                                                                   
+Physics                                                                                                 
+History                                                                                                 
+Biology                                                                                                 
+Elec. Eng.
+
+
+
+h)                                                                                                                                      
+COURSE_ID                                                                                               
+----------                                                                                               
+CS-190                                                                                                  
+CS-190                                                                                                  
+EE-181
+
+
+
+i)                                                                                                                                      
+TITLE                                                                                                   
+------------------------------                                                                          
+Intro. to Computer Science                                                                              
+Game Design
+
+
+
+j)                                                                                                                                                              
+COURSE_ID  TITLE                          DEPT_NAME               CREDITS                               
+---------- ------------------------------ -------------------- ----------                               
+PHY-101    Physics Principles             Physics                       4                               
+MU-199     Music Video Production         Music                         3                               
+HIS-351    World History                  History                       3                               
+FIN-201    Investment Banking             Finance                       3                               
+EE-181     Intro. to Digital Systems      Elec. Eng.                    3                               
+CS-347     Database System Concepts       Comp. Sci.                    3                               
+CS-315     Robotics                       Comp. Sci.                    3                               
+CS-190     Game Design                    Comp. Sci.                    4                               
+CS-101     Intro. to Computer Science     Comp. Sci.                    4                               
+CS-319     Image Processing               Comp. Sci.                    3                               
+BIO-301    Genetics                       Biology                       4                               
+BIO-101    Intro. to Biology              Biology                       4                               
+BIO-399    Computational Biology          Biology                       3
+
+
+
+
+k)
+*BEFORE*                                                                                    
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+NAME                                               VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(30)                                         
+SALARY                                             NUMBER(6)
+
+*AFTER*
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+NAME                                               VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(30)                                         
+SALARY                                             NUMBER(6)                                            
+DATE_OF_JOIN                                       DATE
+
+
+
+l)
+ID         NAME     DEPT_NAME 	 SALARY     DATE_OF_JOIN
+---------- -------- ------------ ---------- ------------------------------                                                                                        
+33456      Gold     Physics      87000      03-JUL-92                                                                                                                                                                                                                                                                                                   
+
+
+
+m)
+*BEFORE*
+*instructor*                                                                                     
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+NAME                                               VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(30)                                         
+SALARY                                             NUMBER(6)                                            
+DATE_OF_JOIN                                       DATE                                                 
+                                                                                                       
+*course*                                                                                         
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+COURSE_ID                                          VARCHAR2(10)                                         
+TITLE                                              VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+CREDITS                                            NUMBER(2)
+
+*department*                                                                                    
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+BUILDING                                           VARCHAR2(20)                                         
+BUDGET                                             NUMBER(10)
+
+
+*AFTER*
+*instructor*                                                                                     
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+NAME                                               VARCHAR2(30)                                         
+DEPARTMENT                                         VARCHAR2(30)                                         
+SALARY                                             NUMBER(6)                                            
+DATE_OF_JOIN                                       DATE                                                 
+                                                                                                       
+*course*                                                                                         
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+COURSE_ID                                          VARCHAR2(10)                                         
+TITLE                                              VARCHAR2(30)                                         
+DEPARTMENT                                         VARCHAR2(20)                                         
+CREDITS                                            NUMBER(2)
+
+*department*                                                                                    
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+DEPARTMENT                                         VARCHAR2(20)                                         
+BUILDING                                           VARCHAR2(20)                                         
+BUDGET                                             NUMBER(10)                                                                                                                                                  
+
+
+
+n)
+*ONLY NAME CHANGE*
+
+
+
+o)
+*BEFORE*
+*course*                                                                                         
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+COURSE_ID                                          VARCHAR2(10)                                         
+TITLE                                              VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+CREDITS                                            NUMBER(2)                                                                                                                                                   
+
+*prerequired*                                                                                        
+Name                                      Null?    Type                                                
+----------------------------------------- -------- ----------------------------                        
+COURSE_ID                                          VARCHAR2(10)                                        
+PREREQ_ID                                          VARCHAR2(10)                                                                                                                                                
+
+*teaches*                                                                                        
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+COURSE_ID                                          VARCHAR2(10)                                         
+SEC_ID                                             NUMBER(2)                                            
+SEMESTER                                           VARCHAR2(10)                                         
+YEAR                                               NUMBER(4)                                        
+
+
+*AFTER*
+*course*                                                                                         
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+SUB_CODE                                           VARCHAR2(10)                                         
+TITLE                                              VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+CREDITS                                            NUMBER(2)                                                                                                                                                   
+
+*prerequired*                                                                                        
+Name                                      Null?    Type                                                
+----------------------------------------- -------- ----------------------------                        
+SUB_CODE                                           VARCHAR2(10)                                        
+PREREQ_ID                                          VARCHAR2(10)                                                                                                                                                
+
+*teaches*                                                                                        
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+SUB_CODE                                           VARCHAR2(10)                                         
+SEC_ID                                             NUMBER(2)                                            
+SEMESTER                                           VARCHAR2(10)                                         
+YEAR                                               NUMBER(4)                                        
+
+
+
+
+p)
+*BEFORE*
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+NAME                                               VARCHAR2(30)                                         
+DEPARTMENT                                         VARCHAR2(30)                                         
+SALARY                                             NUMBER(6)                                            
+DATE_OF_JOIN                                       DATE
+
+*AFTER*
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+ID                                                 NUMBER(5)                                            
+NAME                                               VARCHAR2(50)                                         
+DEPARTMENT                                         VARCHAR2(30)                                         
+SALARY                                             NUMBER(6)                                            
+DATE_OF_JOIN                                       DATE
+
+
+
+q)
+*ONLY NAME CHANGE*
+
+
+
+r)
+*BEFORE*                                                                                       
+Name                                      Null?    Type                         
+----------------------------------------- -------- ----------------------------
+SUB_CODE                                           VARCHAR2(10)                                         
+TITLE                                              VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+CREDITS                                            NUMBER(2)                                                                                                                                                   
+
+
+*AFTER*                                                                                        
+Name                                      Null?    Type                                                 
+----------------------------------------- -------- ----------------------------                         
+SUB_CODE                                           VARCHAR2(8)                                         
+TITLE                                              VARCHAR2(30)                                         
+DEPT_NAME                                          VARCHAR2(20)                                         
+CREDITS                                            NUMBER(2)                                                                                                                                                   
+
+
+
+s)
+*DROP TABLE*
+
+
+
+t)
+ *BEFORE*
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPARTMENT                                         VARCHAR2(20)
+ BUILDING                                           VARCHAR2(20)
+ BUDGET                                             NUMBER(10)
+
+
+ *AFTER*
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPARTMENT                                         VARCHAR2(20)
+ BUILDER                                            VARCHAR2(20)
+ BUDGET                                             NUMBER(10)
+
+

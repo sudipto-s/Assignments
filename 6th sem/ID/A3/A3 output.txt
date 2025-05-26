@@ -1,0 +1,543 @@
+1)
+a)
+SUB_CODE TITLE                             CREDITS                                                      
+-------- ------------------------------ ----------                                                      
+BIO-101  Intro. to Biology                       4                                                      
+BIO-301  Genetics                                4                                                      
+BIO-399  Computational Biology                   3                                                      
+FIN-201  Investment Banking                      3                                                      
+MU-199   Music Video Production                  3                                                      
+PHY-101  Physics Principles                      4
+
+
+
+b)
+ID         NAME     DEPT_NAME 	 SALARY     DATE_OF_JOIN
+---------- -------- ------------ ---------- ------------------------------                                                                                        
+45565      Katz     Comp. Sci.        75000 03-JUL-92                                                                                                                                                                                                                                                                                                    
+98345	   Kim 	    Elec. Eng.	      80000 03-JUL-92
+
+
+
+c)
+NAME                        DEPARTMENT        GROSS_SALARY      NET_SALARY                                            
+--------------------------  ---------------   -------------	-----------
+Srinivasan                  Comp. Sci.        84825    		126750                                                                                                                                                          Wu                          Finance           117450     	175500                                                                                                                                                          Mozart                      Music             52200      	78000                                                 
+Einstein                    Physics           123975     	185250                                                                                                                                                          El Said                     History           78300     	117000                                                                                                                                                          Gold                        Physics           113535     	169650                                                   
+Katz                        Comp. Sci.        97875     	146250                                                                                                                                                          Califieri                   History           80910     	120900                                                                                                                                                          Singh                       Finance           104400     	156000                                                  
+Crick                       Biology           93960     	140400                                                                                                                                                          Brandt			    Comp. Sci.        120060     	179400                                                                                                                                                          Kim			    Elec. Eng.        104400     	156000                                                     
+
+
+
+d)
+ID	NAME		DEPARTMENT	SALARY	DATE_OF_JOIN
+------	--------------	--------------	-------	-------------
+10101 	Srinivasan	Comp. Sci.      65000  	03-JUL-92
+32343 	El Said		History         60000 	03-JUL-92
+45565 	Katz		Comp. Sci.      75000  	03-JUL-92
+58583 	Califieri	History         62000 	03-JUL-92
+76543 	Singh		Finance         80000  	03-JUL-92
+76766 	Crick		Biology         72000  	03-JUL-92
+98345 	Kim		Elec. Eng.      80000  	03-JUL-92
+
+
+
+e)
+ID	NAME		DEPARTMENT	SALARY	DATE_OF_JOIN
+------	--------------	--------------	-------	-------------
+10101 	Srinivasan	Comp. Sci.      65000  	03-JUL-92
+76766 	Crick		Biology         72000  	03-JUL-92
+83821 	Brandt		Comp. Sci.      92000  	03-JUL-92
+
+
+
+f)
+NAME                                                                                                    
+--------------------------------------------------                                                      
+Brandt                                                                                                  
+Katz                                                                                                    
+Srinivasan 
+
+
+
+h)
+*BEFORE*
+ID         NAME         DEPT_NAME      SALARY     DATE_OF_JOIN
+---------- --------     ------------   ---------- ------------------------------                                                                                        
+10101      Srinivasan   Comp. Sci.     65000      03-JUL-92                                                                                                                                                                                                                                                                                               
+
+
+*AFTER*
+ID         NAME         DEPT_NAME      SALARY     DATE_OF_JOIN
+---------- --------     ------------   ---------- ------------------------------                                                                                        
+10101      Srinivasan   Comp. Sci.     66950 	  03-JUL-92
+
+
+
+g)
+*BEFORE*
+        ID NAME
+---------- --------------------------------------------------
+DEPARTMENT                         SALARY DATE_OF_JOIN
+------------------------------ ---------- ------------
+     10101 Srinivasan
+Comp. Sci.                          66950 03-JUL-92
+
+     12121 Wu
+Finance                             90000 03-JUL-92
+
+     15151 Mozart
+Music                               40000 03-JUL-92
+
+     22222 Einstein
+Physics                             95000 03-JUL-92
+
+     32343 El Said
+History                             60000 03-JUL-92
+
+     33456 Gold
+Physics                             87000 03-JUL-92
+
+     45565 Katz
+Comp. Sci.                          75000 03-JUL-92
+
+     58583 Califieri
+History                             62000 03-JUL-92
+
+     76543 Singh
+Finance                             80000 03-JUL-92
+
+     76766 Crick
+Biology                             72000 03-JUL-92
+
+     83821 Brandt
+Comp. Sci.                          92000 03-JUL-92
+
+     98345 Kim
+Elec. Eng.                          80000 03-JUL-92
+
+
+*AFTER*
+        ID NAME
+---------- --------------------------------------------------
+DEPARTMENT                         SALARY  DATE_OF_JOIN
+------------------------------ ----------  ------------
+     10101 Srinivasan
+Comp. Sci.                          76993  03-JUL-92
+
+     12121 Wu
+Finance                             103500 03-JUL-92
+
+     15151 Mozart
+Music                               46000  03-JUL-92
+
+     22222 Einstein
+Physics                             109250 03-JUL-92
+
+     32343 El Said
+History                             69000  03-JUL-92
+
+     33456 Gold
+Physics                             100050 03-JUL-92
+
+     45565 Katz
+Comp. Sci.                          86250  03-JUL-92
+
+     58583 Califieri
+History                             71300  03-JUL-92
+
+     76543 Singh
+Finance                             92000  03-JUL-92
+
+     76766 Crick
+Biology                             82800  03-JUL-92
+
+     83821 Brandt
+Comp. Sci.                          105800 03-JUL-92
+
+     98345 Kim
+Elec. Eng.                          92000  03-JUL-92
+
+
+
+i)
+ANNUAL_SALARY
+-------------
+       923916
+      1242000
+       552000
+      1311000
+       828000
+      1200600
+      1035000
+       855600
+      1104000
+       993600
+      1269600
+      1104000
+
+
+
+j)
+*BEFORE*
+SUB_CODE TITLE                          DEPARTMENT              CREDITS
+-------- ------------------------------ -------------------- ----------
+CS-190   Game Design                    Comp. Sci.                    4
+
+
+*AFTER*
+SUB_CODE TITLE                          DEPARTMENT              CREDITS
+-------- ------------------------------ -------------------- ----------
+CS-190   Game Theory                    Comp. Sci.                    4
+
+
+
+k)
+ID	NAME		DEPARTMENT	SALARY	DATE_OF_JOIN
+------	--------------	--------------	-------	-------------
+10101 	Srinivasan	Comp. Sci.      76993  	03-JUL-92
+12121 	Wu		Finance         103500 	03-JUL-92
+15151 	Mozart		Music           46000  	03-JUL-92
+22222 	Einstein	Physics         109250 	03-JUL-92
+33456 	Gold		Physics         100050 	03-JUL-92
+45565 	Katz		Comp. Sci.      86250  	03-JUL-92
+76543 	Singh		Finance         92000  	03-JUL-92
+76766 	Crick		Biology         82800  	03-JUL-92
+83821 	Brandt		Comp. Sci.      105800 	03-JUL-92
+98345 	Kim		Elec. Eng.      92000  	03-JUL-92
+
+
+
+l)
+SUB_CODE TITLE                          DEPARTMENT              CREDITS
+-------- ------------------------------ -------------------- ----------
+CS-101   Intro. to Computer Science     Comp. Sci.                    4
+CS-190   Game Theory                    Comp. Sci.                    4
+CS-315   Robotics                       Comp. Sci.                    3
+CS-319   Image Processing               Comp. Sci.                    3
+CS-347   Database System Concepts       Comp. Sci.                    3
+EE-181   Intro. to Digital Systems      Elec. Eng.                    3
+FIN-201  Investment Banking             Finance                       3
+HIS-351  World History                  History                       3
+MU-199   Music Video Production         Music                         3
+PHY-101  Physics Principles             Physics                       4
+
+
+
+
+
+
+
+
+
+2)
+a)
+AVG_SALARY
+-----------
+     104650
+
+
+
+b)
+DEPARTMENT                     AVG_SALARY
+------------------------------ -----------
+Comp. Sci.                           89681
+Finance                              97750
+Music                                46000
+Physics                             104650
+Biology                              82800
+Elec. Eng.                           92000
+
+
+
+c)
+        ID NAME	      DEPARTMENT
+---------- ---------- ------------
+     22222 Einstein   Physics
+
+
+
+d)
+NO_OF_INSTRUCTOR
+----------------
+               3
+
+
+
+e)
+CREDITS
+-------------
+           17
+
+
+
+f)
+NO_OF_INSTRUCTOR TOTAL_SALARY
+---------------- ------------
+               3       269043
+               2       209300
+
+
+
+g)
+CREDITS
+-------------
+           17
+           11
+
+
+
+
+h)
+    BUDGET
+----------
+    160000
+    100000
+     85000
+    170000
+     80000
+
+
+
+i)
+NO_OF_DEPS
+----------
+         3
+         2
+         1
+         2
+         1
+         1
+
+
+
+j)
+NO_OF_DEPS
+----------
+         3
+         2
+         2
+         1
+         1
+         1
+
+
+
+k)
+ SEMESTERS
+----------
+         3
+        12
+
+
+
+l)
+DEPARTMENT
+------------------------------
+Music
+Biology
+Elec. Eng.
+
+
+
+m)
+NO_OF_DEPS
+----------
+         2
+         3
+
+
+
+n)
+DEPARTMENT
+------------------------------
+Comp. Sci.
+Finance
+Physics
+Biology
+Elec. Eng.
+
+
+
+o)
+    BUDGET
+----------
+    160000
+
+
+
+p)
+MAX_SALARY
+----------
+    105800
+
+
+
+
+
+
+
+3)
+a)
+CAPS
+-------
+Sudipto
+
+
+
+b)
+SUBS
+----
+udip
+
+
+
+c)
+    LENGTH
+----------
+        19
+
+
+
+d)
+NAME
+--------------------------------------------------
+Srinivasan
+Wu
+Mozart
+Einstein
+Gold
+Katz
+Singh
+Crick
+Brandt
+Kim
+
+
+
+e)
+DEP_CODE
+------------
+COM
+FIN
+MUS
+PHY
+BIO
+ELE
+
+
+
+f)
+     MONTH
+----------
+         3
+         2
+         1
+        12
+         9
+         7
+         3
+         8
+         7
+        11
+
+
+
+g)
+DATE_OF_JO
+----------
+15/03/2001
+14/02/2022
+22/01/2005
+20/12/2021
+09/09/2024
+29/07/1999
+14/03/2004
+01/08/2015
+03/07/1992
+22/11/2020
+
+
+
+h)
+ MOTHS_EXP
+----------
+       289
+        38
+       242
+        40
+         7
+       308
+       253
+       116
+       393
+        52
+
+
+
+i)
+        ID      YEARS     MONTHS
+---------- ---------- ----------
+     10101         24          0
+     12121          3          1
+     15151         20          2
+     22222          3          3
+     33456          0          6
+     45565         25          8
+     76543         21          0
+     76766          9          8
+     83821         32          9
+     98345          4          4
+
+
+
+
+j)
+DATE_OF_J
+---------
+15-MAR-01
+14-FEB-22
+22-JAN-05
+20-DEC-21
+09-SEP-24
+29-JUL-99
+14-MAR-04
+01-AUG-15
+03-JUL-92
+22-NOV-20
+
+
+
+k)
+FUTURE
+---------
+18-APR-25
+
+
+
+l)
+     ROUND
+----------
+  94204.27
+
+
+
+m)
+     POWER
+----------
+ 134217733
+
+
+
+
+n)
+	 SQRT
+-------------
+   2542.50113
+
+
+
+o)
+LOWER
+----------
+hello iter

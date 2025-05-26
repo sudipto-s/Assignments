@@ -1,0 +1,207 @@
+A)
+1)
+NAME                   PHONE_NO CUST_
+-------------------- ---------- -----
+SWAROOP RAY          9437855466 C0006
+
+
+2)
+NAME
+--------------------
+ABHIJIT MISHRA
+SURYA NARAYAN
+SWAROOP RAY
+SOUMYA JHA
+
+
+3)
+ACCOU    BALANCE
+----- ----------
+A0006     550000
+
+
+4)
+BRANCH_C
+--------
+Mumbai
+
+
+5)
+   INST_NO LOAN_ INST_AMOUNT
+---------- ----- -----------
+         1 L0003       50000
+         2 L0003       50000
+
+
+6)
+BRANCH_NAME          BRANCH_C
+-------------------- --------
+Chandnichowk Branch  Delhi
+Juhu Branch          Mumbai
+
+
+7)
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCOUNT_NO                                NOT NULL VARCHAR2(5)
+ TYPE                                               VARCHAR2(2)
+
+
+8)
+ACCOU TY
+----- --
+A0002 SB
+A0004 CA
+A0005 FD
+A0007 SB
+A0008 SB
+A0009 SB
+
+
+9)
+*Before*
+ACCOU TY
+----- --
+A0009 SB
+
+*After*
+ACCOU TY
+----- --
+A0009 FD
+
+
+10)
+ACCOU TY
+----- --
+A0004 CA
+A0005 FD
+A0007 SB
+
+
+11)
+ACCOU
+-----
+A0003
+A0006
+A0001
+A0010
+A0007
+A0004
+
+
+12)
+ACCOU
+-----
+A0003
+
+
+13)
+BRAN BRANCH_NAME          BRANCH_C
+---- -------------------- --------
+B006 Srirampuram Branch   Chennai
+B005 Saltlake Branch      Kolkata
+B004 Andheri Branch       Mumbai
+
+
+14)
+LOAN_ CUST_     AMOUNT BRAN
+----- ----- ---------- ----
+L0001 C0005    3000000 B006
+
+
+15)
+ACCOU TY    BALANCE BRAN
+----- -- ---------- ----
+A0001 SB     212000 B003
+A0002 SB      15750 B002
+A0003 CA     901000 B004
+A0004 CA      36750 B004
+A0005 FD      29925 B005
+A0006 FD     583000 B005
+A0007 SB      50400 B001
+A0008 SB       7560 B002
+A0009 SB      19688 B003
+A0010 FD     104940 B004
+
+
+
+
+
+
+B)
+1)
+LOAN_
+-----
+L0003
+L0004
+
+
+2)
+TY
+--
+SB
+SB
+SB
+
+
+3)
+NAME                   PHONE_NO
+-------------------- ----------
+SOUMYA JHA           9885623344
+ABHIJIT MISHRA       9455845425
+SWAROOP RAY          9437855466
+ASLESHA TIWARI
+SWAROOP RAY          9437855466
+
+
+4)
+   INST_NO INST_AMOUNT
+---------- -----------
+         1       10000
+         2       10000
+         3       10000
+
+
+5)
+NAME
+--------------------
+RAJ ANAND SINGH
+ANKITA SINGH
+SWAROOP RAY
+ASLESHA TIWARI
+
+
+6)
+NAME
+--------------------
+ANKITA SINGH
+STUTI MISHRA
+
+
+7)
+  PHONE_NO
+----------
+9861258466
+9879958651
+
+
+8)
+BRANCH_NAME          BRANCH_C
+-------------------- --------
+Juhu Branch          Mumbai
+Chandnichowk Branch  Delhi
+
+
+9)
+TY    BALANCE
+-- ----------
+CA     850000
+CA      35000
+FD      99000
+
+
+10)
+BRAN
+----
+B005
+B004

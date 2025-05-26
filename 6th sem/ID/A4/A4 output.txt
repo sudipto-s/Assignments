@@ -1,0 +1,144 @@
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUST_NO                                   NOT NULL VARCHAR2(5)
+ NAME                                      NOT NULL VARCHAR2(20)
+ PHONE_NO                                           NUMBER(10)
+ CITY                                      NOT NULL VARCHAR2(9)
+
+
+CUST_ NAME                   PHONE_NO CITY
+----- -------------------- ---------- ---------
+C0001 RAJ ANAND SINGH      9861258466 DELHI
+C0002 ANKITA SINGH         9879958651 BANGALORE
+C0003 SOUMYA JHA           9885623344 MUMBAI
+C0004 ABHIJIT MISHRA       9455845425 MUMBAI
+C0005 YASH SARAF           9665854585 KOLKATA
+C0006 SWAROOP RAY          9437855466 CHENNAI
+C0007 SURYA NARAYAN        9937955212 GURGAON
+C0008 PRANAV PRAVEEN       9336652441 PUNE
+C0009 STUTI MISHRA         7870266534 DELHI
+C0010 ASLESHA TIWARI                  MUMBAI
+
+
+
+
+
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCOUNT_NO                                NOT NULL VARCHAR2(5)
+ TYPE                                               VARCHAR2(2)
+ BALANCE                                            NUMBER(7)
+ BRANCH_CODE                                        VARCHAR2(4)
+
+
+ACCOU TY    BALANCE BRAN
+----- -- ---------- ----
+A0001 SB     200000 B003
+A0002 SB      15000 B002
+A0003 CA     850000 B004
+A0004 CA      35000 B004
+A0005 FD      28500 B005
+A0006 FD     550000 B005
+A0007 SB      48000 B001
+A0008 SB       7200 B002
+A0009 SB      18750 B003
+A0010 FD      99000 B004
+
+
+
+
+
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BRANCH_CODE                               NOT NULL VARCHAR2(4)
+ BRANCH_NAME                               NOT NULL VARCHAR2(20)
+ BRANCH_CITY                                        VARCHAR2(8)
+
+
+BRAN BRANCH_NAME          BRANCH_C
+---- -------------------- --------
+B001 Janakpuri Branch     Delhi
+B002 Chandnichowk Branch  Delhi
+B003 Juhu Branch          Mumbai
+B004 Andheri Branch       Mumbai
+B005 Saltlake Branch      Kolkata
+B006 Srirampuram Branch   Chennai
+
+
+
+
+
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUST_NO                                   NOT NULL VARCHAR2(5)
+ ACCOUNT_NO                                NOT NULL VARCHAR2(5)
+
+
+CUST_ ACCOU
+----- -----
+C0001 A0005
+C0002 A0005
+C0003 A0001
+C0004 A0001
+C0004 A0002
+C0006 A0003
+C0006 A0004
+C0006 A0010
+C0007 A0009
+C0008 A0008
+C0009 A0007
+
+
+
+
+
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ LOAN_NO                                   NOT NULL VARCHAR2(5)
+ CUST_NO                                            VARCHAR2(5)
+ AMOUNT                                             NUMBER(10)
+ BRANCH_CODE                                        VARCHAR2(4)
+
+
+LOAN_ CUST_     AMOUNT BRAN
+----- ----- ---------- ----
+L0001 C0005    3000000 B006
+L0002 C0001      50000 B005
+L0003 C0002    8000000 B004
+L0004 C0010     100000 B004
+L0005 C0009    9500000 B005
+L0006 C0008      25000 B006
+
+
+
+
+
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INST_NO                                   NOT NULL NUMBER(2)
+ LOAN_NO                                   NOT NULL VARCHAR2(5)
+ INST_AMOUNT                               NOT NULL NUMBER(20)
+
+
+   INST_NO LOAN_ INST_AMOUNT
+---------- ----- -----------
+         1 L0005      500000
+         1 L0002       10000
+         1 L0003       50000
+         1 L0004       20000
+         2 L0005      500000
+         1 L0006        3000
+         2 L0002       10000
+         3 L0002       10000
+         2 L0003       50000
+         2 L0004       20000
+
+
+
+
+
