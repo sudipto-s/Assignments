@@ -127,4 +127,14 @@ B)
    where C.name='SWAROOP RAY';
 
 10)
-   --
+   WITH BranchTotalBalance AS (
+      select branch_code, sum(balance) TotalBalance
+      from account group by branch_code
+   ),
+   AverageBranchBalance AS (
+      select avg(TotalBalance) AvgBalance
+      from BranchTotalBalance
+   )
+   select B.branch_code
+   from BranchTotalBalance B, AverageBranchBalance A
+   where B.TotalBalance > A.AvgBalance
