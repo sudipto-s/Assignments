@@ -1,0 +1,33 @@
+Q10.
+Bootstrap-
+Props:
+* Rapid development as there are predefined compenents
+* It utilizes class names that saves implementation time.
+
+Cons:
+* It uses global CSS which overrides with other in app styles.
+
+Custom CSS-
+Props:
+* We can define styles whatever we want.
+* Ideal for custom UI.
+
+Cons:
+* Requires more time and efforts to design and maintain.
+* May conflict with other CSS.
+
+
+
+Q11.
+When using React, it's recommended that we validate any props we send to components since JavaScript's dynamic type system may lead to situations where variables are undefined or have an incorrect type.
+During dev:
+* Early error detection.
+
+During prod:
+* They are ignored during production for performance reasons, so no type checking in prod.
+
+
+
+Q12.
+JavaScript is a programming language used to build react applications, utilizes JSX syntax, whereas babel is a JS transpiler that converts JSX into browser supported JS.
+Babel-loader is a webpack loader that tells webpack to pass JS files through babel before bundling.
