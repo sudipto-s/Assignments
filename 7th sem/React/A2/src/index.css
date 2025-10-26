@@ -1,0 +1,19 @@
+.counter button {
+   padding: 5px 10px;
+   background: #2b74e2;
+   color: white;
+}
+
+.q5 {
+   width: 300px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   background: #ccc;
+}
+.q5 div {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
