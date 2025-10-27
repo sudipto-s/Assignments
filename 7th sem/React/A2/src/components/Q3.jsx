@@ -1,20 +1,17 @@
 import { useState } from 'react'
 
 export default function Q2() {
-   const [data, setData] = useState({
-      name: '',
-      password: ''
-   })
+   const [username, setUsername] = useState('')
+   const [password, setPassword] = useState('')
+   const [submitted, setSubmitted] = useState(false)
    const [errors, setErrors] = useState({
       name: '',
       password: ''
    })
 
-   const handleChange = e => {
+   const handleSubmit = e => {
       e.preventDefault()
-      const name = e.target[0].value
-      const password = e.target[1].value
-      if(name.length < 8) {
+      if(username.length < 8) {
          setErrors({
             ...errors,
             name: 'Name must be at least 8 characters long'
@@ -28,25 +25,25 @@ export default function Q2() {
          })
          return
       }
+      setSubmitted(true)
       setErrors({
          name: '',
          password: ''
       })
-      setData({ name, password })
    }
 
    return (
       <div>
          <h1>Login</h1>
-         <form onSubmit={handleChange}>
+         <form onSubmit={handleSubmit}>
             <div>
-               <label htmlFor="name">Name:</label>
-               <input type="text" id="name" name="name" required />
+               <label htmlFor="username">Username:</label>
+               <input type="text" id="username" value={username} onChange={e => setUsername(e.target.value)} required />
                <span className='error'>{errors.name}</span>
             </div>
             <div>
                <label htmlFor="password">Password:</label>
-               <input type="password" id="password" name="password" required />
+               <input type="password" id="passowrd" value={password} onChange={e => setPassword(e.target.value)} required />
                <span className='error'>{errors.password}</span>
             </div>
             <div>
@@ -58,7 +55,7 @@ export default function Q2() {
                Forgot <a href="#">Username</a>/<a href="#">Password</a>?
             </span>
             <span>Don't have an account? <a href="#">Sign up</a></span>
-            {data.name && <p>Welcome, {data.name}!</p>}
+            {submitted && <p>Welcome, {username}!</p>}
          </form>
       </div>
    )
